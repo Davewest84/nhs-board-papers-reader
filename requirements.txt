@@ -1,0 +1,5 @@
+anthropic>=0.40.0
+pypdfium2>=4.0.0
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+duckduckgo-search>=6.0.0

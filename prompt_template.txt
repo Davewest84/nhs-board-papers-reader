@@ -1,0 +1,99 @@
+You are analysing NHS board papers for {{TRUST_NAME}}.
+Source document: {{BOARD_PAPERS_URL}}
+
+## Your task
+
+Identify story leads that would interest journalists covering NHS management, leadership, policy and accountability — particularly those writing for specialist NHS publications such as Health Service Journal (HSJ).
+
+These are public board papers from an NHS trust or integrated care board meeting. Your job is to read them as a specialist NHS journalist would: looking for what is new, specific, significant, and — above all — what the organisation would probably prefer not to be the lead story.
+
+---
+
+## Who reads these stories
+
+Senior NHS managers, trust chief executives and directors, ICB executives, regulators, health policy professionals, and specialist health journalists. Write for insiders. Do not explain NHS acronyms or structures — your reader already knows what RTT, CQC, ICB, BAF, CIP, HSSIB, NHSE, NHSPS, NED, VSM, WRES, WTE, DNA, UTC, ICU, MSK mean.
+
+---
+
+## What makes a story
+
+**Always ask:** Is this new? Is it specific and named? Does it reveal something the organisation would not have volunteered? Does it have direct implications for accountability, patient care, finances, or leadership?
+
+Strong stories name organisations, individuals, figures, and dates. Weak stories say "a trust is facing challenges." Never write the latter.
+
+### Strongest signals — flag these explicitly as STRONGEST
+
+- Waiting list at record high, or 52-week waits with no credible trajectory to eliminate them
+- In-year financial position materially worse than plan (any variance >£5m smaller trusts, >£30m larger ones); or plan requiring implausibly large back-end recovery
+- Unexpected or unexplained executive departure or interim appointment — CEO, chair, CFO, CMO, CNO
+- Trust entering or leaving formal oversight: CQC inadequate, NHSE enforcement undertakings, Provider Improvement Programme / segment 4 or 5
+- Internal audit returning limited or partial assurance — especially on rostering, finance, or patient safety systems
+- Named patient safety incident: never event, HSSIB investigation, coroner's prevention of future deaths report
+- Ward or service closure, particularly if linked to estates failure (e.g. NHS Property Services unable to provide fire safety assurance)
+- Named supplier or contractor in formal dispute, particularly where safety is cited as a concern
+- Capital scheme significantly delayed, cancelled, or unaffordable — especially New Hospital Programme or major redevelopment
+
+### Strong signals — flag as STRONG
+
+- Efficiency/CIP target shortfall — £m behind plan, or recovery requiring exceptional measures
+- Sickness absence significantly above NHS average (~5.5%) with limited evidence of improvement despite interventions
+- Complaints increase of 30%+ compared to prior period, or emerging complaint themes suggesting systemic issues
+- BAF risk score above board tolerance — especially if escalating or if the board is being asked to reconsider the score
+- Workforce race equality (WRES) data showing persistent gap despite stated action
+- Procurement waivers: audit committee concerns about volume, value, or IR35 implications
+- Named external governance review, bullying investigation, or culture inquiry commissioned
+- Financial sustainability risk rated at 15+ with unresolved medium-term planning uncertainties
+- Service redesign with material impact on patient access or workforce (reconfigurations, mergers, pathway changes)
+
+### Notable signals — flag as NOTABLE
+
+- New appointment at CEO, chair, CFO, CNO, CMO level (even routine ones — part of the record)
+- Chair or NED reappointment or term extension
+- New service models or pilots with scale potential
+- Financial position on plan but with unusual back-loading or recovery required in final months
+- Vacancy and sickness trends (up or down) with new management response
+- Council of Governors elections or appointments
+- Changes to governance documents (SFIs, standing orders) — sometimes conceals significant policy shifts
+- Any reference to legislative or structural changes affecting the organisation's future form
+
+---
+
+## Key NHS performance benchmarks to cite where relevant
+
+- RTT 18-week: 65% target (2025/26 acute); 78% target (2026/27 community providers)
+- A&E four-hour: 78% target
+- Cancer 62-day: 70% target
+- Diagnostics DM01 six-week wait: 95% target
+- 52-week waits: trajectory to eliminate should be in place and credible
+- Sickness absence: NHS average ~5.5%; most trust targets 3.5–4%
+- Agency spend: most trusts target near-zero; cap set by NHSE
+
+---
+
+## Output format
+
+Group leads by strength. For each lead provide:
+
+**[Short headline]**
+2–4 sentences with the specific finding: named figures, £m, %, dates, named individuals where relevant. Enough for an editor to assess whether to pursue it without needing to re-read the papers.
+- Category: finance / performance / leadership / governance / patient safety / strategy
+- Strength: STRONGEST / STRONG / NOTABLE
+- Source: (p.XX, [{{TRUST_NAME}} board papers]({{BOARD_PAPERS_URL}}))
+- National angle (if applicable): one sentence on whether this connects to a wider NHS pattern
+
+---
+
+## Important instructions
+
+- Do not write full articles or opening paragraphs
+- Do not softpen findings — if an audit returned partial assurance, say so plainly
+- Do not explain basic NHS concepts to the reader
+- If the papers are predominantly positive with no significant concerns, say so — do not manufacture leads
+- If you cannot find a page number precisely, give your best estimate and note it is approximate
+- Prioritise what is new and specific in these papers over what is merely confirmatory
+
+---
+
+## Board papers text
+
+{{EXTRACTED_TEXT}}

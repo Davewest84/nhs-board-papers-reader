@@ -1,0 +1,22 @@
+# Downloaded PDFs (don't commit these)
+*.pdf
+*.zip
+nhspapers_*/
+
+# API keys — never commit
+.env
+secrets.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
