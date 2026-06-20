@@ -331,10 +331,22 @@ Steps:
    naming the surviving org. Read the Legal End date, never Status.
 
    ORD API base (no auth, <5 req/s): https://directory.spineservices.nhs.uk/ORD/2-0-0/
+   TWO ORD GOTCHAS (confirmed 2026-06-13 and 2026-06-20 — do not relearn these):
+     - Role IDs: the prompt's old defaults are wrong. Use trusts =
+       RO197 + RO57 + RO107 (RO107 covers a few FTs e.g. TAD/TAH/TAJ); ICBs =
+       RO261 filtered to names containing "INTEGRATED CARE BOARD" (RO318 is a
+       non-primary role and returns 0). Live sets are ~252 trusts / ~48 ICB-named.
+     - Paging/fetch: ORD rejects Offset<=1 ("Supplied Offset must be greater
+       than 1"), so do NOT send Offset=0 — every role set here is <1000, so a
+       single Limit=1000 page with NO Offset suffices. Also Python urllib trips
+       the ORD WAF (HTTP 406) on the search endpoint; fetch via curl (or set a
+       browser User-Agent) instead. The /sync change feed works either way.
 
-   a. Live superset via search (codes only, page with Limit/Offset):
-        trusts: /organisations?PrimaryRoleId=RO197&Status=Active  AND  ...&PrimaryRoleId=RO57
-        ICBs:   /organisations?PrimaryRoleId=RO318&Status=Active
+   a. Live superset via search (codes only, single Limit=1000 page, no Offset):
+        trusts: /organisations?PrimaryRoleId=RO197&Status=Active&Limit=1000
+                (repeat for RO57 and RO107; union the codes)
+        ICBs:   /organisations?PrimaryRoleId=RO261&Status=Active&Limit=1000
+                (then keep only names containing "INTEGRATED CARE BOARD")
       Union the trust codes -> set A_trust; ICB codes -> set A_icb. (Status=Active is
       a SUPERSET of truly-live orgs — it still includes recently-merged ones, which
       the detail checks below filter out.)
