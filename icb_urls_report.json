@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-13T04:11:38.845813+00:00",
+  "generated_at": "2026-06-20T05:41:28.068918+00:00",
   "label": "ICB",
   "total": 36,
   "ok": 35,
@@ -90,10 +90,10 @@
       "ods_code": "QWU",
       "name": "Coventry and Warwickshire ICB",
       "url": "https://www.happyhealthylives.uk/integrated-care-board/about-us/icb-board-meetings/",
-      "ok": true,
-      "status": 200,
-      "final_url": "https://www.happyhealthylives.uk/integrated-care-board/about-us/icb-board-meetings/",
-      "error": "(rescued by playwright fallback)"
+      "ok": false,
+      "status": null,
+      "final_url": null,
+      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.happyhealthylives.uk/integrated-care-board/about-us/icb-board-meetings/\nCall l"
     },
     {
       "ods_code": "QGH",
@@ -323,11 +323,11 @@
     {
       "ods_code": "QJK",
       "name": "Devon ICB",
-      "url": "https://devon.icb.nhs.uk/nhs-devon-board/meetings-and-papers/",
-      "ok": false,
-      "status": 404,
-      "final_url": null,
-      "error": "http: HTTP 404; playwright: HTTP 404"
+      "url": "https://swpboard.nhs.uk/board-meetings/",
+      "ok": true,
+      "status": 403,
+      "final_url": "https://swpboard.nhs.uk/board-meetings/",
+      "error": "(rescued by playwright fallback)"
     }
   ]
 }

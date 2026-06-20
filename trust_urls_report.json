@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-13T04:09:42.307124+00:00",
+  "generated_at": "2026-06-20T05:39:43.456850+00:00",
   "label": "trust",
   "total": 206,
   "ok": 203,
@@ -206,11 +206,11 @@
     {
       "ods_code": "RT5",
       "name": "Leicestershire Partnership NHS Trust",
-      "url": "https://www.leicspart.nhs.uk/about-us/trust-board/",
-      "ok": false,
-      "status": null,
-      "final_url": null,
-      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.leicspart.nhs.uk/about-us/trust-board/\nCall log:\n  - navigating to \"https://ww"
+      "url": "https://www.leicspart.nhs.uk/about/corporate-responsibilities/trust-board/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.leicspart.nhs.uk/about/corporate-responsibilities/trust-board/",
+      "error": null
     },
     {
       "ods_code": "RTG",
@@ -327,7 +327,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.uhcw.nhs.uk/our-organisation/trust-board-meetings/",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RL1",
@@ -522,10 +522,10 @@
       "ods_code": "RJ7",
       "name": "St George's University Hospitals NHS Foundation Trust",
       "url": "https://www.stgeorges.nhs.uk/about/our-board/board-meetings/group-board-papers-and-agenda/",
-      "ok": true,
-      "status": 200,
-      "final_url": "https://www.stgeorges.nhs.uk/about/our-board/board-meetings/group-board-papers-and-agenda/",
-      "error": "(rescued by playwright fallback)"
+      "ok": false,
+      "status": null,
+      "final_url": null,
+      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.stgeorges.nhs.uk/about/our-board/board-meetings/group-board-papers-and-agenda/"
     },
     {
       "ods_code": "RJZ",
@@ -593,11 +593,11 @@
     {
       "ods_code": "RCB",
       "name": "York and Scarborough Teaching Hospitals NHS Foundation Trust",
-      "url": "https://www.yorkscarborough.nhs.uk/about-us/board-of-directors/board-of-directors-papers/",
-      "ok": false,
-      "status": null,
-      "final_url": null,
-      "error": "http: HTTPSConnectionPool(host='www.yorkscarborough.nhs.uk', port=443): Max retries exceeded with url: /about-us/board-of-directors/board-of-directors-paper; playwright: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.yorkscarborough.nhs.uk/about-us/board-of-directors/board-of-directors-papers/"
+      "url": "https://www.yorkhospitals.nhs.uk/about-us/board-of-directors/board-of-directors-papers/",
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.yorkhospitals.nhs.uk/about-us/board-of-directors/board-of-directors-papers/",
+      "error": null
     },
     {
       "ods_code": "RCD",
@@ -1161,10 +1161,10 @@
       "ods_code": "RP4",
       "name": "Great Ormond Street Hospital for Children NHS Foundation Trust",
       "url": "https://www.gosh.nhs.uk/about-us/who-we-are/organisational-structure/trust-board/trust-board-meetings/",
-      "ok": true,
-      "status": 200,
-      "final_url": "https://www.gosh.nhs.uk/about-us/who-we-are/organisational-structure/trust-board/trust-board-meetings/",
-      "error": "(rescued by playwright fallback)"
+      "ok": false,
+      "status": null,
+      "final_url": null,
+      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.gosh.nhs.uk/about-us/who-we-are/organisational-structure/trust-board/trust-boa"
     },
     {
       "ods_code": "RRU",
@@ -1835,10 +1835,10 @@
     {
       "ods_code": "RYE",
       "name": "South Central Ambulance Service NHS Foundation Trust",
-      "url": "https://www.scas.nhs.uk/document-category/board-papers/",
+      "url": "https://www.scas.nhs.uk/about-scas/our-board/board-meetings/",
       "ok": true,
       "status": 200,
-      "final_url": "https://www.scas.nhs.uk/document-category/board-papers/",
+      "final_url": "https://www.scas.nhs.uk/about-scas/our-board/",
       "error": null
     },
     {
