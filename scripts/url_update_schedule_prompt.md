@@ -28,16 +28,32 @@ Plus:
   scripts/_run_claude_patch.ps1 — bootstrap (this is what called you)
   scripts/url_update_schedule_prompt.md — this file
 
+IMPORTANT — headless execution model (read before step 1):
+You are running as a non-interactive `claude -p` session launched by
+scripts/_run_claude_patch.ps1. When you end a turn with no pending FOREGROUND
+tool call, the process exits immediately and the whole run dies. The long scans
+in steps 1 and 1b therefore MUST be run as foreground, blocking Bash calls —
+one call each, with `timeout` set to the maximum 600000 ms (each takes ~9-10
+min, comfortably inside that ceiling). Do NOT launch them with
+`run_in_background`, and NEVER end your turn to "wait for them to finish" or
+"wait for completion notifications" — there is no interactive loop to wake you,
+so the session terminates before the scans write anything. (This exact mistake
+caused the 2026-06-20 run to exit after ~90s with FAIL no-commit.) Stay in-turn
+until both report JSONs exist on disk, then continue.
+
 Steps:
 
-1. URL health check (shallow — HTTP 200). Walks both URL JSONs:
+1. URL health check (shallow — HTTP 200). Walks both URL JSONs. Run in the
+   FOREGROUND, blocking, with timeout=600000 ms (see headless note above):
        py scripts/check_urls.py
    Produces trust_urls_report.json + icb_urls_report.json at the repo root.
-   Takes ~9-10 minutes.
+   Takes ~9-10 minutes. Do not background it; do not yield the turn waiting.
 
 1b. Deep landing validation (NEW, May 2026). Confirms each landing page
     actually exposes dated board papers — catches the "200 OK but the URL
-    points at the wrong sub-page" case that step 1 misses:
+    points at the wrong sub-page" case that step 1 misses. Run in the
+    FOREGROUND, blocking, with timeout=600000 ms (see headless note above —
+    do not background it; do not yield the turn waiting):
        py scripts/validate_landing.py
     Produces trust_urls_validation.json + icb_urls_validation.json at the
     repo root. Each entry's `classification` is one of:
@@ -392,6 +408,10 @@ Safety rules:
   commit local and report. Do not force-push. Do not reset.
 - If the health-check script fails to run (dependency missing, network
   down), stop and report — do not attempt a fix.
+- NEVER run steps 1 or 1b in the background, and never end a turn to "wait"
+  for a background job — in this headless `claude -p` session that exits the
+  whole run before the scans complete (the 2026-06-20 failure). Both scans are
+  foreground, blocking calls with timeout=600000 ms.
 - Step 7 (local Lookup mirror) is best-effort. If it fails, report but do
   NOT roll back the canonical commit from step 6.
 - The ICB DB schema differs slightly from the trust DB — it has additional
