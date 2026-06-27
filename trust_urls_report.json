@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-20T05:39:43.456850+00:00",
+  "generated_at": "2026-06-27T04:10:10.999091+00:00",
   "label": "trust",
   "total": 206,
-  "ok": 203,
-  "broken": 3,
+  "ok": 202,
+  "broken": 4,
   "results": [
     {
       "ods_code": "RA2",
@@ -21,7 +21,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.sussexcommunity.nhs.uk/about-us/how-we-are-run/board-of-directors/board-meetings-and-papers",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RN7",
@@ -102,7 +102,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.esht.nhs.uk/about-us/trust-board/meetings-in-public/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RXX",
@@ -324,10 +324,10 @@
       "ods_code": "RKB",
       "name": "University Hospitals Coventry and Warwickshire NHS Trust",
       "url": "https://www.uhcw.nhs.uk/our-organisation/trust-board-meetings/",
-      "ok": true,
-      "status": 200,
-      "final_url": "https://www.uhcw.nhs.uk/our-organisation/trust-board-meetings/",
-      "error": null
+      "ok": false,
+      "status": null,
+      "final_url": null,
+      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.uhcw.nhs.uk/our-organisation/trust-board-meetings/\nCall log:\n  - navigating to"
     },
     {
       "ods_code": "RL1",
@@ -660,7 +660,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.sth.nhs.uk/about-us/board-meetings/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RJL",
@@ -831,7 +831,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.cuh.nhs.uk/about-us/board-directors/board-of-directors-meetings/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RM1",
@@ -1161,10 +1161,10 @@
       "ods_code": "RP4",
       "name": "Great Ormond Street Hospital for Children NHS Foundation Trust",
       "url": "https://www.gosh.nhs.uk/about-us/who-we-are/organisational-structure/trust-board/trust-board-meetings/",
-      "ok": false,
-      "status": null,
-      "final_url": null,
-      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.gosh.nhs.uk/about-us/who-we-are/organisational-structure/trust-board/trust-boa"
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.gosh.nhs.uk/about-us/who-we-are/organisational-structure/trust-board/trust-board-meetings/",
+      "error": null
     },
     {
       "ods_code": "RRU",
@@ -1296,10 +1296,10 @@
       "ods_code": "RX4",
       "name": "Cumbria, Northumberland, Tyne and Wear NHS Foundation Trust",
       "url": "https://www.cntw.nhs.uk/about/publications/?filter_publication_type=344",
-      "ok": true,
-      "status": 200,
-      "final_url": "https://www.cntw.nhs.uk/about/publications/?filter_publication_type=344",
-      "error": null
+      "ok": false,
+      "status": 404,
+      "final_url": null,
+      "error": "http: HTTP 404; playwright: HTTP 404"
     },
     {
       "ods_code": "RXP",
@@ -1712,7 +1712,7 @@
       "url": "https://whh.nhs.uk/about-us/how-we-work/board-meetings-and-papers/",
       "ok": true,
       "status": 200,
-      "final_url": "https://northcheshireandmersey.nhs.uk/about-us/how-we-work/board-meetings-and-papers/",
+      "final_url": "https://whh.nhs.uk/about-us/how-we-work/board-meetings-and-papers/",
       "error": null
     },
     {
@@ -1757,7 +1757,7 @@
       "url": "https://bridgewater.nhs.uk/about-us/how-we-work/board-meetings-and-papers/",
       "ok": true,
       "status": 200,
-      "final_url": "https://northcheshireandmersey.nhs.uk/about-us/how-we-work/board-meetings-and-papers/",
+      "final_url": "https://bridgewater.nhs.uk/about-us/how-we-work/board-meetings-and-papers/",
       "error": null
     },
     {

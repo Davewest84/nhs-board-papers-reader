@@ -26,11 +26,11 @@
     "ods_code": "RTK",
     "press_email": "asp-tr.comms.mailbox@nhs.net",
     "press_email_alt": null,
-    "press_source_url": "Temp/Comms contacts.xlsx (May 2026)",
+    "press_source_url": "https://www.ashfordstpeters.nhs.uk/about-us/useful-contacts",
     "foi_email": "asp-tr.foi@nhs.net",
     "foi_email_alt": null,
-    "foi_source_url": "Temp/Comms contacts.xlsx (May 2026)",
-    "notes": "press email not found on site; FOI email not found on site; Ashford & St Peter's website returns empty body / Cloudflare-blocked to WebFetch on /, /contact-us, /freedom-of-information. Could not verify any email."
+    "foi_source_url": "https://www.ashfordstpeters.nhs.uk/about-us/useful-contacts",
+    "notes": "press email not found on site; FOI email not found on site; Ashford & St Peter's website returns empty body / Cloudflare-blocked to WebFetch on /, /contact-us, /freedom-of-information. Could not verify any email. | press_email & foi_email re-verified on site 2026-06-27 (Useful Contacts page, JS-obfuscated mailto); source_urls updated from xlsx placeholder, emails unchanged"
   },
   {
     "trust_name": "Avon and Wiltshire Mental Health Partnership NHS Trust",
@@ -291,10 +291,10 @@
     "press_email": "crhft.communications@nhs.net",
     "press_email_alt": null,
     "press_source_url": "https://www.chesterfieldroyal.nhs.uk/about-us/contact-and-find-us/media-enquires",
-    "foi_email": "chesterfield@infreemation.co.uk",
-    "foi_email_alt": null,
-    "foi_source_url": "Temp/Comms contacts.xlsx (May 2026)",
-    "notes": "FOI page not found via direct fetch; trust uses publication scheme but no public FOI email located; Chesterfield Royal FOI sub-page 404 at the obvious paths; would need direct site navigation."
+    "foi_email": "CRHFT.FOI@nhs.net",
+    "foi_email_alt": "chesterfield@infreemation.co.uk",
+    "foi_source_url": "https://www.chesterfieldroyal.nhs.uk/about-us/contact-and-find-us/freedom-information-requests",
+    "notes": "FOI page not found via direct fetch; trust uses publication scheme but no public FOI email located; Chesterfield Royal FOI sub-page 404 at the obvious paths; would need direct site navigation. | foi primary updated 2026-06-27 from chesterfieldroyal.nhs.uk FOI page (only CRHFT.FOI@nhs.net shown); prior value chesterfield@infreemation.co.uk moved to foi_email_alt"
   },
   {
     "trust_name": "Cornwall Partnership NHS Foundation Trust",
@@ -411,11 +411,11 @@
     "ods_code": "RP5",
     "press_email": "Adam.Tingle@nhs.net",
     "press_email_alt": null,
-    "press_source_url": "Temp/Comms contacts.xlsx (May 2026)",
+    "press_source_url": "https://www.dbth.nhs.uk/contact/communications-team/",
     "foi_email": "d.wraith@nhs.net",
     "foi_email_alt": "dbth.foi@nhs.net",
     "foi_source_url": "https://www.dbth.nhs.uk/about-us/freedom-of-information/",
-    "notes": "FOI is named individual; Doncaster & Bassetlaw publishes only personal comms emails (Emma.Shaheen@nhs.net, adam.tingle@nhs.net) - no generic press address."
+    "notes": "FOI is named individual; Doncaster & Bassetlaw publishes only personal comms emails (Emma.Shaheen@nhs.net, adam.tingle@nhs.net) - no generic press address. | press_email re-verified 2026-06-27 on Communications Team page; source_url updated from xlsx placeholder, email unchanged"
   },
   {
     "trust_name": "Dorset County Hospital NHS Foundation Trust",
@@ -865,8 +865,8 @@
     "press_source_url": "https://www.lscft.nhs.uk/contact-us/press-and-media",
     "foi_email": "FOIRequests@lancashirecare.nhs.uk",
     "foi_email_alt": null,
-    "foi_source_url": "Temp/Comms contacts.xlsx (May 2026)",
-    "notes": "FOI requests submitted via online form; no direct email provided; Lancashire & South Cumbria FOI page provides postal address and online form only; no FOI email published."
+    "foi_source_url": "https://www.lscft.nhs.uk/about-us/publications-reports-policies/freedom-information",
+    "notes": "FOI requests submitted via online form; no direct email provided; Lancashire & South Cumbria FOI page provides postal address and online form only; no FOI email published. | foi_source_url updated 2026-06-27 to live FOI page; FOI published as postal/online-form only, email not re-confirmable on page"
   },
   {
     "trust_name": "Leeds Community Healthcare NHS Trust",
@@ -1338,8 +1338,8 @@
     "press_source_url": "https://www.ouh.nhs.uk/contact/",
     "foi_email": "oxford@infreemation.co.uk",
     "foi_email_alt": null,
-    "foi_source_url": "Temp/Comms contacts.xlsx (May 2026)",
-    "notes": "FOI requests directed to online form, no email; subject.accessrequest@ouh.nhs.uk only for personal data/SAR; Oxford UH FOI page directs requests via online form (foienquiries.ouh.nhs.uk/start-now) and postal address; no generic FOI email published. subject.accessrequest@ouh.nhs.uk is for Subject Access only."
+    "foi_source_url": "https://www.ouh.nhs.uk/about/foi/request/",
+    "notes": "FOI requests directed to online form, no email; subject.accessrequest@ouh.nhs.uk only for personal data/SAR; Oxford UH FOI page directs requests via online form (foienquiries.ouh.nhs.uk/start-now) and postal address; no generic FOI email published. subject.accessrequest@ouh.nhs.uk is for Subject Access only. | foi_source_url updated 2026-06-27 to live FOI request page; FOI via online form/portal (oxford@infreemation.co.uk), email unchanged"
   },
   {
     "trust_name": "Oxleas NHS Foundation Trust",

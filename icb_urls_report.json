@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T05:41:28.068918+00:00",
+  "generated_at": "2026-06-27T04:12:42.901937+00:00",
   "label": "ICB",
   "total": 36,
   "ok": 35,
@@ -111,7 +111,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://joinedupcarederbyshire.co.uk/derbyshire-integrated-care-board/integrated-care-board-meeting-papers/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "QJM",
@@ -179,10 +179,10 @@
     {
       "ods_code": "D7T5G",
       "name": "Essex ICB",
-      "url": "https://www.essex.icb.nhs.uk/publications/",
+      "url": "https://www.essex.icb.nhs.uk/about/board/",
       "ok": true,
       "status": 200,
-      "final_url": "https://www.essex.icb.nhs.uk/publications/",
+      "final_url": "https://www.essex.icb.nhs.uk/about/board/",
       "error": null
     },
     {
