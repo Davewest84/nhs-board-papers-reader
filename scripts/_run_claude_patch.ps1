@@ -41,35 +41,83 @@ function Send-Summary($status) {
     try {
         if (-not $pyExe) { Write-Log "WARNING: no python launcher found - summary email skipped."; return }
         $date = Get-Date -Format "yyyy-MM-dd"
-        $lines = @("Weekly NHS trust + ICB data refresh - $date", "Status: $status", "")
+        $lines = @("WEEKLY NHS TRUST + ICB DATA REFRESH - $date", "Status: $status", "")
 
-        if ($headBefore -and $headAfter -and ($headBefore -ne $headAfter)) {
-            $lines += "Commits this run:"
-            $log = & git log "$headBefore..$headAfter" --pretty=format:"  %h  %s" 2>$null
-            if ($log) { $lines += $log }
-            $lines += ""
+        # --- What changed this run: Claude's own plain-text narrative ---
+        # The Saturday Claude session writes _run_summary.txt (prompt step 9)
+        # describing exactly what it scanned, fixed and refreshed. This is the
+        # part Dave actually reads. If it's absent the session likely exited
+        # early — fall back to the commits + log below.
+        $lines += "=== WHAT CHANGED THIS RUN ==="
+        $summaryPath = Join-Path $repo "_run_summary.txt"
+        if (Test-Path $summaryPath) {
+            $summaryText = Get-Content $summaryPath -Raw
+            if ($summaryText -and $summaryText.Trim()) {
+                $lines += $summaryText.TrimEnd()
+            } else {
+                $lines += "(run summary file was written but empty)"
+            }
         } else {
-            $lines += "No commit made this run."
-            $lines += ""
+            $lines += "(no run summary written - the Claude session may have exited"
+            $lines += " early; see the commits and full log below for what landed)"
         }
+        $lines += ""
 
+        # --- ODS membership audit ---
+        # Separate genuine action items from the recurring out-of-scope Welsh /
+        # non-England orgs. Those are flagged in the report with a Welsh /
+        # out-of-scope suggested_region or note and need NO action — keep them
+        # out of the action count and show them as a single muted line so they
+        # stop reading as "3 trusts to add".
         $reconPath = Join-Path $repo "ods_reconciliation_report.json"
+        $lines += "=== ODS MEMBERSHIP AUDIT ==="
         if (Test-Path $reconPath) {
             try {
                 $recon = Get-Content $reconPath -Raw | ConvertFrom-Json
-                $adds = @($recon.add_candidates)
+                $allAdds = @($recon.add_candidates)
                 $removes = @($recon.remove_candidates)
-                $lines += "ODS reconciliation (action needed if non-zero):"
-                $lines += "  To ADD (live in ODS, missing from DB): $($adds.Count)"
-                foreach ($a in $adds) { $lines += "    + $($a.ods)  $($a.name)  [$($a.role)]  region~$($a.suggested_region)" }
-                $lines += "  To REMOVE (gone from ODS, still in DB): $($removes.Count)"
-                foreach ($r in $removes) { $lines += "    - $($r.ods)  $($r.name) -> successor $($r.successor_ods) $($r.successor_name) (legal end $($r.legal_end))" }
-                if ($adds.Count -eq 0 -and $removes.Count -eq 0) { $lines += "  (no membership changes flagged this week)" }
+
+                $oos = @($allAdds | Where-Object {
+                    $_.suggested_region -match '(?i)wales|out.?of.?scope' -or
+                    $_.note            -match '(?i)out.?of.?scope|welsh'
+                })
+                $adds = @($allAdds | Where-Object {
+                    -not ($_.suggested_region -match '(?i)wales|out.?of.?scope' -or
+                          $_.note            -match '(?i)out.?of.?scope|welsh')
+                })
+
+                if ($adds.Count -eq 0 -and $removes.Count -eq 0) {
+                    $lines += "No action needed - in-scope membership matches the ODS register."
+                } else {
+                    $lines += "ACTION NEEDED:"
+                    if ($adds.Count -gt 0) {
+                        $lines += "  To ADD (live in ODS, missing from DB): $($adds.Count)"
+                        foreach ($a in $adds) { $lines += "    + $($a.ods)  $($a.name)  [$($a.role)]  region~$($a.suggested_region)" }
+                    }
+                    if ($removes.Count -gt 0) {
+                        $lines += "  To REMOVE (gone from ODS, still in DB): $($removes.Count)"
+                        foreach ($r in $removes) { $lines += "    - $($r.ods)  $($r.name) -> successor $($r.successor_ods) $($r.successor_name) (legal end $($r.legal_end))" }
+                    }
+                }
+                if ($oos.Count -gt 0) {
+                    $oosNames = ($oos | ForEach-Object { $_.name }) -join ", "
+                    $lines += "Out-of-scope (Welsh/non-England), no action: $($oos.Count) - $oosNames"
+                }
             } catch {
                 $lines += "ODS reconciliation report present but unparseable: $($_.Exception.Message)"
             }
         } else {
             $lines += "ODS reconciliation report not found (step 8 may not have completed)."
+        }
+        $lines += ""
+
+        # --- Git commits this run ---
+        $lines += "=== GIT COMMITS ==="
+        if ($headBefore -and $headAfter -and ($headBefore -ne $headAfter)) {
+            $log = & git log "$headBefore..$headAfter" --pretty=format:"  %h  %s" 2>$null
+            if ($log) { $lines += $log }
+        } else {
+            $lines += "  (no commit made this run)"
         }
         $lines += ""
         $lines += "Full log: $logFile"
@@ -89,6 +137,10 @@ function Send-Summary($status) {
 
 Set-Location $repo
 Write-Log "Refresh run started. Repo: $repo"
+
+# Clear any stale run-summary from a previous week so a failed or early-exit run
+# this week can't email last week's narrative. Claude rewrites it (prompt step 9).
+Remove-Item (Join-Path $repo "_run_summary.txt") -Force -ErrorAction SilentlyContinue
 
 # Sync the repo to origin/main before running. If anything's accumulated
 # locally (a previous run that didn't push, or manual edits), we don't want

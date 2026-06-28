@@ -388,7 +388,38 @@ Steps:
       Then mirror ods_reconciliation_report.json to Data/Lookup as in step 7 (best-effort).
 
    h. If there are any flags, surface a one-line summary in the run output / status
-      sentinel so Dave sees "N trusts/ICBs to add, M to remove" at a glance.
+      sentinel so Dave sees "N trusts/ICBs to add, M to remove" at a glance. Count
+      ONLY in-scope orgs as action items. Welsh / non-England orgs (Velindre,
+      Welsh Ambulance, Public Health Wales, etc.) are permanently out of scope —
+      tag them with suggested_region "Wales (out-of-scope)" and a note saying no
+      action is needed, and state them separately, not in the add count.
+
+9. Write the run summary for the weekly email. The bootstrap
+   (_run_claude_patch.ps1) emails Dave the contents of `_run_summary.txt` from the
+   repo root under a "WHAT CHANGED THIS RUN" heading — this file is how Dave learns
+   what actually happened, so make it clear and self-contained.
+
+   Write it as PLAIN TEXT — NO markdown. The email is sent as text/plain, so `**bold**`
+   and `##` headings show up as literal characters. Use plain words, CAPS for section
+   labels, and simple dashes/indentation. Keep it tight (aim ~15-25 lines). Cover:
+
+     - HEADLINE: one line, e.g. "OK - 6 URLs fixed, 2 contact emails changed, nothing to remove".
+     - URLS: how many checked, how many broken/stale, how many CHANGED, and how many
+       were confirmed-correct false positives. List each CHANGE as
+       "ODS  org name: ...old-url-path -> ...new-url-path". If the half-failure
+       circuit breaker tripped for either DB, say so prominently.
+     - CONTACTS: which rotation batch, how many orgs visited, each genuine email change
+       as "ODS  org: field old -> new", and any org whose page could NOT be read
+       (with which fetch method failed) — these are the gaps Dave should know about.
+     - ODS AUDIT: in-scope adds/removes only (the actionable ones). State the Welsh /
+       out-of-scope count separately and explicitly as "no action".
+     - NEEDS ATTENTION: anything requiring Dave — manual review, a systematic blocker,
+       or a newsworthy "trust appears to have stopped publishing" signal. Write
+       "Nothing needs attention this week." if clean.
+
+   Write this file LAST, after the step 6-8 commits and pushes, so it reflects what
+   actually landed (not what you intended). Overwrite any existing _run_summary.txt.
+   It is gitignored and deliberately NOT committed — a per-run artifact like the logs.
 
 Safety rules:
 - Only modify files explicitly named in steps 1-8 of this prompt:
@@ -396,8 +427,8 @@ Safety rules:
   trust-contacts.json / .csv / .xlsx, icb-contacts.json / .csv / .xlsx,
   refresh-rotation-state.json, trust_urls_report.json, icb_urls_report.json,
   trust_urls_validation.json, icb_urls_validation.json,
-  ods_reconciliation_report.json, plus the Data/Lookup copies in steps 7-8. Do
-  not touch any other file in any repo.
+  ods_reconciliation_report.json, _run_summary.txt (step 9, gitignored), plus
+  the Data/Lookup copies in steps 7-8. Do not touch any other file in any repo.
 - Within trust_urls.json and icb_urls.json, only these fields are
   write-allowed: `url`, `access_notes`, `needs_playwright`,
   `pack_pattern_hints`, `exclude_patterns`, `last_validated`,

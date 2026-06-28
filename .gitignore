@@ -23,3 +23,7 @@ Thumbs.db
 
 # Playwright MCP session state — created by Claude during weekly run
 .playwright-mcp/
+
+# Per-run summary for the weekly email — written by Claude (prompt step 9),
+# inlined into the summary email by the bootstrap, not committed.
+_run_summary.txt
