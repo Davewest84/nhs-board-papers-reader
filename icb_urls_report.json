@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T04:12:42.901937+00:00",
+  "generated_at": "2026-07-04T04:30:47.619300+00:00",
   "label": "ICB",
   "total": 36,
   "ok": 35,
@@ -90,10 +90,10 @@
       "ods_code": "QWU",
       "name": "Coventry and Warwickshire ICB",
       "url": "https://www.happyhealthylives.uk/integrated-care-board/about-us/icb-board-meetings/",
-      "ok": false,
-      "status": null,
-      "final_url": null,
-      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.happyhealthylives.uk/integrated-care-board/about-us/icb-board-meetings/\nCall l"
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.happyhealthylives.uk/integrated-care-board/about-us/icb-board-meetings/",
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "QGH",
@@ -108,10 +108,10 @@
       "ods_code": "QJ2",
       "name": "Derby and Derbyshire ICB",
       "url": "https://joinedupcarederbyshire.co.uk/derbyshire-integrated-care-board/integrated-care-board-meeting-papers/",
-      "ok": true,
-      "status": 200,
-      "final_url": "https://joinedupcarederbyshire.co.uk/derbyshire-integrated-care-board/integrated-care-board-meeting-papers/",
-      "error": "(rescued by playwright fallback)"
+      "ok": false,
+      "status": 503,
+      "final_url": null,
+      "error": "http: HTTP 503; playwright: HTTP 503"
     },
     {
       "ods_code": "QJM",
@@ -179,10 +179,10 @@
     {
       "ods_code": "D7T5G",
       "name": "Essex ICB",
-      "url": "https://www.essex.icb.nhs.uk/about/board/",
+      "url": "https://www.essex.icb.nhs.uk/publications/?search=&type=icb-board-meeting-papers&date_from=#filter-summary",
       "ok": true,
       "status": 200,
-      "final_url": "https://www.essex.icb.nhs.uk/about/board/",
+      "final_url": "https://www.essex.icb.nhs.uk/publications/?search=&type=icb-board-meeting-papers&date_from=#filter-summary",
       "error": null
     },
     {
@@ -323,11 +323,11 @@
     {
       "ods_code": "QJK",
       "name": "Devon ICB",
-      "url": "https://swpboard.nhs.uk/board-meetings/",
+      "url": "https://onedevon.org.uk/nhs-devon/nhs-devon-board/meeting-papers-and-minutes/",
       "ok": true,
-      "status": 403,
-      "final_url": "https://swpboard.nhs.uk/board-meetings/",
-      "error": "(rescued by playwright fallback)"
+      "status": 200,
+      "final_url": "https://onedevon.org.uk/nhs-devon/nhs-devon-board/meeting-papers-and-minutes/",
+      "error": null
     }
   ]
 }

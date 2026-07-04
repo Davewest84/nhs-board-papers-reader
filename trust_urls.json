@@ -35,9 +35,9 @@
       "strategies-plans",
       "quality-account"
     ],
-    "last_validated": "2026-06-27",
-    "validation_status": "papers_found",
-    "validation_notes": "Confirmed via Playwright: '27 November 2025 board paper (15.59 MB)' combined PDF at /documents/434-27-november-2025-board-paper; next meeting 28 May 2026."
+    "last_validated": "2026-07-04",
+    "validation_status": "needs_playwright",
+    "validation_notes": "Landing correct but whole sussexcommunity.nhs.uk domain behind reCAPTCHA WAF (403/socket-closed to automated fetch); Playwright required."
   },
   {
     "ods_code": "RN7",
@@ -89,9 +89,9 @@
       "/for-members/public-meetings/ (members' AGM, not board)",
       "'Minutes:' dropdown when seeking full packs"
     ],
-    "last_validated": "2026-06-27",
-    "validation_status": "papers_found",
-    "validation_notes": "Confirmed a valid 7.8MB 'Papers-PUBLIC-Board-14-May-2026' bundle PDF; a 2025 example resolves via the /download/ permalink to /wp-content/uploads/2025/09/."
+    "last_validated": "2026-07-04",
+    "validation_status": "needs_playwright",
+    "validation_notes": "QVH meetings-in-public page live; papers behind JS dropdown selectors back to 2014 - needs browser; PDFs Papers-PUBLIC-Board-{date}.pdf under /wp-content/uploads."
   },
   {
     "ods_code": "RTK",
@@ -708,9 +708,9 @@
       "Confidential",
       "Part 2"
     ],
-    "last_validated": "2026-06-20",
-    "validation_status": "papers_found",
-    "validation_notes": "JS-rendered meeting list; browser render shows the 14 May 2026 meeting with combined papers/public information pack/public agenda and a dropdown back to 2015."
+    "last_validated": "2026-07-04",
+    "validation_status": "needs_playwright",
+    "validation_notes": "Confirmed JS-rendered (empty static body); browser crawler uses year/month dropdown 2015-2026. Access notes current."
   },
   {
     "ods_code": "RBK",
@@ -954,9 +954,9 @@
       "private",
       "confidential"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Confirmed live 2026 pack at /wp-content/uploads/2026/01/PUBLIC-TRUST-BOARD-PAPERS-15.01.26.pdf; both upcoming and previous board-meetings pages resolve on-domain."
+    "validation_notes": "Previous-board-meetings archive confirmed live via search (PUBLIC-TRUST-BOARD-PAPERS-15.01.26.pdf present); direct/automated fetch now hits anti-bot (404/connection-reset) though page serves to browsers."
   },
   {
     "ods_code": "RNA",
@@ -1081,9 +1081,9 @@
       "'No files in here' empty-state text from non-JS fetch",
       "privacy-policy and main-site nav links"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "needs_playwright",
-    "validation_notes": "Papers exist (831.6 MB download-all on the Nextcloud share) but the dated PDF list is JS-rendered and the docs host blocks headless WebFetch, so a real browser is needed to enumerate packs."
+    "validation_notes": "Landing correct; papers on external JS-rendered Nextcloud store (docs.uhb.nhs.uk) - needs browser/WebDAV, not inline PDFs."
   },
   {
     "ods_code": "RWP",
@@ -1304,9 +1304,9 @@
       "/about-us/trust-board (board member bios index)",
       "Part 2 / confidential papers"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Page exposes the May 2026 Part 1 pack and a working archive subpage with multiple dated packs, all on the trust's own domain."
+    "validation_notes": "Kingston & Richmond board meetings page live; latest 7 May 2026 Part 1 pack + board paper archive link."
   },
   {
     "ods_code": "RJ1",
@@ -1376,7 +1376,7 @@
     "url": "https://www.stgeorges.nhs.uk/about/our-board/board-meetings/group-board-papers-and-agenda/",
     "validation_status": "papers_found",
     "needs_playwright": false,
-    "validation_notes": "Confirmed live 2026 Group Board packs (8 May 2026, 5 March 2026) linked from the group-board-papers-and-agenda page.",
+    "validation_notes": "GESH Group Board papers/agenda archive live; latest 8 May 2026 pack linked. Automated fetch intermittently hits connection reset (WAF).",
     "access_notes": "URL is current and correct. Since the GESH group formed (St George's + Epsom & St Helier), the joint 'Group Board' replaces the single-trust board, and this page is the canonical Group Board papers/agenda archive. Static WordPress; agendas published the Friday before each meeting. Each meeting date links a combined public pack PDF under /wp-content/uploads/YYYY/MM/ (filenames inconsistent — sometimes a date string, sometimes export-YYYY-MM-DD, sometimes gesh-Group-Board-public). Prefer the largest 'Group Board public' pack per date; Epsom & St Helier mirror the same packs. A sibling /board-papers/ page holds legacy single-trust St George's packs.",
     "pack_pattern_hints": [
       "/wp-content/uploads/",
@@ -1385,7 +1385,7 @@
       "Month-YYYY",
       ".pdf"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "exclude_patterns": [
       "council-of-governors",
       "private",
@@ -1543,9 +1543,9 @@
       "Part 2 / confidential papers",
       "separate HRCH board archive (does not exist post-merger)"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "No standalone HRCH board page post-merger (1 Nov 2024); board papers for RY9 are the combined Kingston and Richmond packs verified live on the trust's own domain."
+    "validation_notes": "HRCH merged into Kingston & Richmond (RAX) 1 Nov 2024; same combined board/URL as RAX (dedupe). Latest 7 May 2026."
   },
   {
     "ods_code": "RYX",
@@ -1590,9 +1590,9 @@
       "private",
       "Part B"
     ],
-    "last_validated": "2026-06-20",
-    "validation_status": "papers_partial",
-    "validation_notes": "JS-rendered schedule; papers post 3 working days before each open board, so the latest pack may not be up between meetings. Follow per-year archive links. Needs Playwright."
+    "last_validated": "2026-07-04",
+    "validation_status": "needs_playwright",
+    "validation_notes": "Confirmed JS-rendered; browser sees open board dates + per-year archives 2017-2026. Access notes current."
   },
   {
     "ods_code": "RCB",
@@ -1962,9 +1962,9 @@
       "meetings showing 'No papers linked'",
       "prior-year sections (2025 and earlier)"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "2026 combined public board PDFs (15 Jan, 12 Mar, 14 May) are live large files on cht.nhs.uk."
+    "validation_notes": "Calderdale & Huddersfield board dates/papers page live; combined Agenda and Papers PDFs under /fileadmin (latest shown 15 Jan 2026). Validator PDF-detection miss."
   },
   {
     "ods_code": "RXE",
@@ -2274,9 +2274,9 @@
       "statement-of-purpose",
       "council-of-governors"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Live 2026 archive sub-page lists four 2026 meetings and June 2026 full pack PDF confirmed on media subdomain."
+    "validation_notes": "CUH board meetings page live; links to per-year archive sub-pages 2017-2026 (packs on media.cuh.nhs.uk). Step-1 error was transient WAF."
   },
   {
     "ods_code": "RM1",
@@ -2484,7 +2484,16 @@
     "region": "South West",
     "ics": "Bath and North East Somerset, Swindon and Wiltshire",
     "correspondent": "Joe",
-    "url": "https://www.ruh.nhs.uk/about/trustboard/index.asp"
+    "url": "https://www.ruh.nhs.uk/about/trustboard/index.asp",
+    "validation_status": "papers_found",
+    "last_validated": "2026-07-04",
+    "pack_pattern_hints": [
+      "Combined_paper_pack",
+      "Public Board of Directors",
+      "Bundle Public Board"
+    ],
+    "validation_notes": "RUH Bath .asp board index lists meeting dates linking to per-meeting sub-pages holding Combined_paper_pack.pdf; latest 3 June 2026 confirmed. Index has no inline PDFs (validator miss).",
+    "access_notes": "RUH Bath uses a classic .asp CMS. The stored /about/trustboard/index.asp is the dates INDEX listing each Board of Directors meeting; each meeting links to a per-meeting sub-page /about/trustboard/{YYYY_MM}/index.asp whose /documents/ folder holds a single Combined_paper_pack.pdf (e.g. /about/trustboard/2026_06/documents/Combined_paper_pack.pdf for 3 June 2026). The index page itself has no inline PDFs (hence 'no papers visible' from validators) - follow the dated sub-pages. Static fetch works; prefer Combined_paper_pack.pdf over individual item PDFs. Public questions to ruh-tr.trustboard@nhs.net."
   },
   {
     "ods_code": "RDY",
@@ -3129,9 +3138,9 @@
       "members-council",
       "publication-scheme"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Live page shows the 18 June 2026 combined papers pack (6.1MB) plus Jan/Mar/May 2026 papers and minutes; WebFetch read it successfully."
+    "validation_notes": "GOSH trust board meetings page live; latest 18 June 2026 'Download meeting papers' pack linked. Step-1 error was transient connection reset."
   },
   {
     "ods_code": "RRU",
@@ -3200,8 +3209,8 @@
     "region": "London",
     "ics": "North Central London",
     "correspondent": "Matt D",
-    "url": "https://tavistockandportman.nhs.uk/publications/?publication-types=board-papers",
-    "access_notes": "Pattern C/F (per-meeting sub-pages; wrong-url-fixed). Old URL was the /about-us/our-board/ profile page which only links out and has no dated papers. New URL is the publications listing filtered to board-papers, which lists per-meeting entries 'Board papers - {Month Year}' each linking to a sub-page (e.g. /publications/board-papers-march-2026/) that holds the combined pack PDF. Most recent entries: March 2026, January 2026 (plus an Extraordinary board papers - January 2026), November 2025. IMPORTANT QUIRK: Tavistock and Portman NHS FT merged into North London NHS Foundation Trust on 1 April 2026 and this website is now archived (banner: 'This website has been archived'); historical board papers remain accessible here but future packs will move to the North London FT site. A crawler should follow the latest 'Board papers' entry to its sub-page and take the combined pack; skip 'Extraordinary' unless that is the only recent meeting.",
+    "url": "https://www.northlondonmentalhealth.nhs.uk/meetings-and-papers/",
+    "access_notes": "MERGER: Tavistock and Portman NHS FT dissolved into North London NHS Foundation Trust (ODS G6V2S) on 1 April 2026; the old tavistockandportman.nhs.uk site is retired and 301-redirects to the successor homepage. URL repointed 2026-07-04 to the successor's board papers at northlondonmentalhealth.nhs.uk/meetings-and-papers/ (current packs; archive at /board-papers-archive/). NOTE: this now duplicates the North London NHS FT row (G6V2S) - this legacy Tavistock ODS code should be reconciled/removed by hand. Board meets bi-monthly; click a meeting date to open the combined agenda/papers PDF. Static fetch works.",
     "needs_playwright": false,
     "pack_pattern_hints": [
       "Board papers - {Month Year}",
@@ -3211,9 +3220,9 @@
       "Extraordinary board papers",
       "archived website"
     ],
-    "last_validated": "2026-06-04",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Publications board-papers filter lists dated meeting sub-pages through March 2026 (site archived post-merger but papers still live)."
+    "validation_notes": "MERGER: Tavistock & Portman dissolved into North London NHS FT (ODS G6V2S) on 1 Apr 2026; old site retired (301 to successor). URL repointed to successor board papers. Duplicates row G6V2S - flag for reconciliation."
   },
   {
     "ods_code": "RV3",
@@ -3282,9 +3291,9 @@
       "executive-directors",
       "non-executive-directors"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Most recent 2026/27 meetings (4 June, 2 April) each link to agenda and papers via download_file/view endpoints."
+    "validation_notes": "South Tyneside & Sunderland board papers page live; Agenda and papers by financial year (latest 5 Feb 2026) via download_file endpoints. Validator miss was transient/WAF."
   },
   {
     "ods_code": "RNN",
@@ -3753,9 +3762,9 @@
       "annual-reports",
       "quality-accounts"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Completed 2026 meetings (6 May, 4 March) each link to meeting papers via download_file/view endpoints."
+    "validation_notes": "Northern Care Alliance board dates & papers live; meeting papers by FY (upcoming 8 July 2026) via download_file endpoints. Validator miss was transient/WAF."
   },
   {
     "ods_code": "RMC",
@@ -3840,9 +3849,9 @@
       "upcoming meetings with agenda not yet published",
       "Company.Secretary contact text"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "2026 public board bundles (04 Feb, 01 Apr, 17 Jun) present as live large PDFs on the wwl.nhs.uk domain."
+    "validation_notes": "WWL /board-papers live; combined public bundles under /media/board/Papers (latest 17 June 2026). Validator PDF-detection miss."
   },
   {
     "ods_code": "RT2",
@@ -4034,9 +4043,9 @@
     "exclude_patterns": [
       "Previous board papers (archive folder, older years)"
     ],
-    "last_validated": "2026-06-04",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "The /board-papers child page lists dated combined packs for May 2026, March 2026 and January 2026 via /download_file/{uuid}/368 endpoints."
+    "validation_notes": "West Herts board-papers archive live; per-meeting combined packs via download_file (latest July 2026). Validator weak-signal was thin static body."
   },
   {
     "ods_code": "RWH",
@@ -4179,9 +4188,9 @@
       "/resources/download/ items not labelled as board meeting papers",
       "external group-website links (uhlg)"
     ],
-    "last_validated": "2026-06-27",
-    "validation_status": "papers_found",
-    "validation_notes": "Page lists 5 meetings for 2025 and 7 for 2024 each with a working agenda/papers download link on the trust's own domain; watch for 2026 migration to UHLG group site."
+    "last_validated": "2026-07-04",
+    "validation_status": "papers_partial",
+    "validation_notes": "LHCH board meetings page live; per-meeting bundles (latest 23 Sept 2025). 2026 meetings moving to UHL Group site - watch for migration."
   },
   {
     "ods_code": "RBS",
@@ -4206,9 +4215,9 @@
       "non-board publication types (quality reports, annual reports)",
       "mailto:"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Latest meeting (5 Feb 2026) on page 1 and a 12-page back-catalogue of board PDFs confirmed on the trust's own domain."
+    "validation_notes": "Alder Hey board papers archive live (paginated newest-first); combined PDFs under wp-content (latest 2 April 2026)."
   },
   {
     "ods_code": "RBT",
@@ -4464,9 +4473,9 @@
       "years prior to current (2024/2023/2022/2021/2020 sections)",
       "'Back to Board of Directors' nav link"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "2026 monthly public board packs (Feb-Jun) present as live /download_file/ PDFs on lscft.nhs.uk."
+    "validation_notes": "Lancashire & South Cumbria board papers live; public packs by year via opaque download_file links (latest 5 Feb 2026). Validator PDF-detection miss."
   },
   {
     "ods_code": "RWW",
@@ -4538,9 +4547,9 @@
       "private",
       "Part 2"
     ],
-    "last_validated": "2026-06-20",
-    "validation_status": "papers_partial",
-    "validation_notes": "JS-rendered landing hub; dated packs sit one level down via 'Agendas and Reports by Year'. Needs Playwright."
+    "last_validated": "2026-07-04",
+    "validation_status": "needs_playwright",
+    "validation_notes": "Confirmed JS-rendered hub; browser follows 'Agendas and Reports by Year'. Access notes current."
   },
   {
     "ods_code": "RXN",
@@ -4581,9 +4590,9 @@
       "Part 2",
       "Closed"
     ],
-    "last_validated": "2026-06-20",
-    "validation_status": "papers_found",
-    "validation_notes": "JS-rendered; browser render shows dated public Trust Board packs (latest May 2026) plus the 2026-27 schedule. Needs Playwright."
+    "last_validated": "2026-07-04",
+    "validation_status": "needs_playwright",
+    "validation_notes": "Confirmed JS-rendered; dated public board packs (e.g. 'Trust Board (Public) Papers - May 2026'). Access notes current."
   },
   {
     "ods_code": "RY2",
@@ -4836,9 +4845,9 @@
       "/council-of-governors/",
       "/news/"
     ],
-    "last_validated": "2026-06-27",
-    "validation_status": "papers_found",
-    "validation_notes": "Confirmed a valid 7.5MB public board papers bundle PDF (2 April 2026) downloads from the /wp-content/uploads/ path containing 2025-2026 BAF documents."
+    "last_validated": "2026-07-04",
+    "validation_status": "needs_playwright",
+    "validation_notes": "SCAS board meetings page live (schedule to Mar 2027); paper archive table JS-rendered/invisible to static fetch - needs browser; PDFs under /wp-content/uploads."
   },
   {
     "ods_code": "RYF",

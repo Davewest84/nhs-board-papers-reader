@@ -95,9 +95,9 @@
       "Joint Committee",
       "exec-cttee minutes (when standalone)"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Upgraded from papers_partial: the 31 March 2026 ICB Board sub-page exposes the full agenda plus ~20 dated board paper PDFs on-domain."
+    "validation_notes": "NENC ICB meetings hub live; latest 16 June 2026 extraordinary + previous meetings index; per-item PDFs under /media. Validator saw hub only."
   },
   {
     "ods_code": "QOQ",
@@ -302,9 +302,9 @@
       "Joint Committee",
       "Committee minutes"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Current page lists nine dated 20 May 2026 ICB Board documents and the past-papers page lists ICB Board agendas back to 2022."
+    "validation_notes": "H&W ICB board-papers page live (latest public meeting 20 May 2026); past-board-papers archive back to 2022."
   },
   {
     "ods_code": "QJ2",
@@ -336,9 +336,9 @@
       "committee-minutes",
       "ratified-minutes"
     ],
-    "last_validated": "2026-06-06",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Sibling 'meeting-papers' page lists full 2025-2026 DLN/DDICB board packs via /download/ redirects to PDFs on the same domain."
+    "validation_notes": "Derby & Derbyshire ICB meeting-papers archive confirmed live via search (papers 2020-2026, DLN meets-in-common); 503 to automated fetch is WAF."
   },
   {
     "ods_code": "QJM",
@@ -593,9 +593,9 @@
       "Joint Committee",
       "Committee meeting papers"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Filtered publications listing shows dated 2026 board packs, each resolving to a downloadable combined PDF (8MB confirmed for 23 April 2026)."
+    "validation_notes": "Essex ICB publications filtered to ICB board meeting papers; latest 'Essex ICB Board Meeting Pack' 23 April 2026."
   },
   {
     "ods_code": "T6Y0W",
@@ -664,9 +664,9 @@
       "Primary Care Contracts",
       "Health and Care Board"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Landing page lists ICB Board meetings; individual meeting page (20 May 2026) serves a 3MB combined board pack PDF."
+    "validation_notes": "NE London ICB board meetings & papers page live; per-meeting packs via /download-attachment; papers publish 5 working days before meeting."
   },
   {
     "ods_code": "QKK",
@@ -752,9 +752,9 @@
       "Primary Care and Medicines Optimisation Committee",
       "Committee"
     ],
-    "last_validated": "2026-06-27",
-    "validation_status": "papers_found",
-    "validation_notes": "Document library 'Board meetings in public' > 1 April 2026 folder contains the ICB Board agenda, appointments paper, constitution, governance and SFI PDFs (download_file links)."
+    "last_validated": "2026-07-04",
+    "validation_status": "needs_playwright",
+    "validation_notes": "W&NL ICB board meetings page live (dates to Mar 2027); papers in JS-rendered document library - needs browser."
   },
   {
     "ods_code": "QRL",
@@ -852,9 +852,9 @@
       "Committee",
       "Joint Committee"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Page lists the May 2026 Thames Valley ICB Board pack (2.81MB PDF) for the 20 May 2026 public board meeting."
+    "validation_notes": "Thames Valley ICB board papers listing live; latest 20 May 2026 combined public board pack."
   },
   {
     "ods_code": "S9B9J",

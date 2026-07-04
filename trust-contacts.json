@@ -1005,11 +1005,11 @@
     "ods_code": "RWF",
     "press_email": "mtw-tr.communications@nhs.net",
     "press_email_alt": null,
-    "press_source_url": "https://www.mtw.nhs.uk/contact/",
+    "press_source_url": "https://www.mtw.nhs.uk/news/media-enquiries-and-contacts/",
     "foi_email": "mtw-tr.FOIadmin@nhs.net",
     "foi_email_alt": null,
-    "foi_source_url": "https://www.mtw.nhs.uk/contact/",
-    "notes": null
+    "foi_source_url": "https://www.mtw.nhs.uk/freedom-of-information/",
+    "notes": "2026-07-04: source URLs refreshed (old /contact/ now 404); FOI mtw-tr.foiadmin@nhs.net confirmed live, press email unchanged (media page blocks automated fetch)."
   },
   {
     "trust_name": "Manchester University NHS Foundation Trust",
@@ -1247,11 +1247,11 @@
     "ods_code": "RNS",
     "press_email": "ngh-tr.communications@nhs.net",
     "press_email_alt": null,
-    "press_source_url": "https://www.northamptongeneral.nhs.uk/News/Communications-team.aspx",
+    "press_source_url": "https://www.northamptongeneral.nhs.uk/Services/Our-Non-Clinical-Services-and-Departments/Communications.aspx",
     "foi_email": "ngh-tr.foi@nhs.net",
     "foi_email_alt": "foi@ngh.nhs.uk",
     "foi_source_url": "https://www.northamptongeneral.nhs.uk/About/Information-and-Data-Protection/Freedom-of-Information-Act/Freedom-of-Information-Act-2000/Publication-Scheme/Publication-Scheme.aspx",
-    "notes": "FOI email retrieved via Wayback snapshot of publication scheme page"
+    "notes": "FOI email retrieved via Wayback snapshot of publication scheme page 2026-07-04: press source URL refreshed (old News/Communications-team.aspx 404); ngh-tr.communications@nhs.net re-confirmed."
   },
   {
     "trust_name": "Northamptonshire Healthcare NHS Foundation Trust",
@@ -1833,8 +1833,8 @@
     "press_source_url": "https://thh.nhs.uk/contact-us/",
     "foi_email": "thh@infreemation.co.uk",
     "foi_email_alt": "thh-tr.freedomofinfo@nhs.net",
-    "foi_source_url": "https://www.thh.nhs.uk/about-us/freedom-of-information",
-    "notes": "Trust directs FOI requests to online form at thh.disclosure-log.co.uk; no published email; Hillingdon Hospitals FOI page directs all requests via online form (thh.disclosure-log.co.uk); states attachments and links rejected; no FOI email published.; Hillingdon use the Infreemation portal — confirmed via WhatDoTheyKnow request thread, May 2026."
+    "foi_source_url": "https://thh.nhs.uk/freedom-of-information/",
+    "notes": "Trust directs FOI requests to online form at thh.disclosure-log.co.uk; no published email; Hillingdon Hospitals FOI page directs all requests via online form (thh.disclosure-log.co.uk); states attachments and links rejected; no FOI email published.; Hillingdon use the Infreemation portal — confirmed via WhatDoTheyKnow request thread, May 2026. 2026-07-04: FOI source URL refreshed (old /about-us/ page 404); still online-form only (thh.disclosure-log.co.uk), no email published."
   },
   {
     "trust_name": "The Newcastle upon Tyne Hospitals NHS Foundation Trust",
