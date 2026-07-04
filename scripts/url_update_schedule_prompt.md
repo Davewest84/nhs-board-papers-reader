@@ -246,15 +246,26 @@ Steps:
       doesn't appear in the visible page text (mailto: link or plain text),
       treat it as a miss and escalate.
 
-   c. Fall back to Playwright when WebFetch hits any of:
+   c. When WebFetch shows "[email protected]" placeholders or no email where
+      one should exist, the page is using Cloudflare's cfemail XOR obfuscation
+      (the address is present but encoded in a `data-cfemail=` / `email-protection#`
+      token). Do NOT leave the value as-is and do NOT reach for Playwright — just
+      decode it:
+          py scripts/decode_cfemail.py <the_source_url>
+      This fetches the raw HTML and prints every real address on the page. Feed
+      those into the alt-column rules in (e) exactly as if WebFetch had read them.
+      (Known cfemail cases: Alder Hey RBS, Harrogate RCD, GSTT RJ1 FOI, NWAS RX7,
+      UH Sussex RYR, SE London ICB QKK, Mersey Care, Ashford & St Peter's,
+      Hertfordshire Partnership.) If the decoder itself errors or the page is
+      genuinely JS-rendered (no cfemail token in the HTML), THEN fall back to (d).
+
+   d. Fall back to Playwright when WebFetch hits any of:
       - HTTP 403 / Cloudflare "checking your browser" interstitial
       - captcha or bot-protection wall
-      - page loads but shows no email where one should exist (Cloudflare's
-        cfemail XOR obfuscation hides addresses from non-JS fetchers — known
-        cases: Mersey Care, Ashford & St Peter's, Hertfordshire Partnership)
+      - a decoder run in (c) that returned no tokens yet an address should exist
       - WhatDoTheyKnow.com pages (block WebFetch entirely)
 
-   d. Apply the alt-column rules:
+   e. Apply the alt-column rules:
       - If the page shows an email matching the existing primary, do nothing.
       - If it matches the existing _alt, do nothing.
       - If it's an entirely new address: move the existing primary into the
@@ -265,7 +276,7 @@ Steps:
         the page may show a personal/director's address.
       - NEVER touch `notes` except to add a dated provenance line.
 
-   e. After processing all batches, update the state file:
+   f. After processing all batches, update the state file:
       - last_batch_completed = (last_batch_completed + batches_to_do) % 10
       - last_run_date = old_last_run_date + batches_to_do * 7 days
         (NOT today — see catch-up rule above)
