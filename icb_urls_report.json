@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-04T04:30:47.619300+00:00",
+  "generated_at": "2026-07-11T04:12:17.097097+00:00",
   "label": "ICB",
   "total": 36,
-  "ok": 35,
-  "broken": 1,
+  "ok": 36,
+  "broken": 0,
   "results": [
     {
       "ods_code": "QYG",
@@ -93,7 +93,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.happyhealthylives.uk/integrated-care-board/about-us/icb-board-meetings/",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "QGH",
@@ -108,10 +108,10 @@
       "ods_code": "QJ2",
       "name": "Derby and Derbyshire ICB",
       "url": "https://joinedupcarederbyshire.co.uk/derbyshire-integrated-care-board/integrated-care-board-meeting-papers/",
-      "ok": false,
-      "status": 503,
-      "final_url": null,
-      "error": "http: HTTP 503; playwright: HTTP 503"
+      "ok": true,
+      "status": 200,
+      "final_url": "https://joinedupcarederbyshire.co.uk/derbyshire-integrated-care-board/integrated-care-board-meeting-papers/",
+      "error": null
     },
     {
       "ods_code": "QJM",
@@ -173,7 +173,7 @@
       "url": "https://www.hertsandwestessex.ics.nhs.uk/documents/?location=all&type=board-papers&cat=all&date=",
       "ok": true,
       "status": 200,
-      "final_url": "https://www.hertsandwestessex.ics.nhs.uk/documents/?location=all&type=board-papers&cat=all&date=",
+      "final_url": "https://www.centraleast.icb.nhs.uk/?location=all&type=board-papers&cat=all&date=",
       "error": null
     },
     {
@@ -300,7 +300,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://bnssghealthiertogether.org.uk/events/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "QR1",

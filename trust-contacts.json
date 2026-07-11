@@ -106,7 +106,7 @@
     "press_source_url": "https://www.bhamcommunity.nhs.uk/contact-us/",
     "foi_email": "foi.bchc@nhs.net",
     "foi_email_alt": null,
-    "foi_source_url": "https://www.bhamcommunity.nhs.uk/freedom-of-information/",
+    "foi_source_url": "https://www.bhamcommunity.nhs.uk/foi/",
     "notes": null
   },
   {
@@ -1481,7 +1481,7 @@
     "press_source_url": "https://www.ruh.nhs.uk/media/index.asp",
     "foi_email": "ruh-tr.FOIRequests@nhs.net",
     "foi_email_alt": null,
-    "foi_source_url": "Temp/Comms contacts.xlsx (May 2026)",
+    "foi_source_url": "https://www.ruh.nhs.uk/foi/overview_obtain_information.asp?menu_id=1",
     "notes": "FOI page references comms team but no dedicated FOI email surfaced; Royal United Bath FOI URL not retrieved (legacy .asp paths)."
   },
   {
@@ -1987,7 +1987,7 @@
     "press_source_url": "https://www.uhs.nhs.uk/whats-new/procedure-for-media-enquiries",
     "foi_email": "freedomofinformation@uhs.nhs.uk",
     "foi_email_alt": null,
-    "foi_source_url": "Temp/Comms contacts.xlsx (May 2026)",
+    "foi_source_url": "https://www.uhs.nhs.uk/about-the-trust/privacy/requesting-information-about-university-hospital-southampton",
     "notes": "Trust website returned 404 to direct page fetches; FOI email not confirmed; UH Southampton FOI sub-pages all 404 across tested paths."
   },
   {
