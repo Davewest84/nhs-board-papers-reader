@@ -1,37 +1,28 @@
 {
-  "generated_at": "2026-07-04T06:28:35",
-  "last_ods_sync_date_used": "2026-06-27",
+  "generated_at": "2026-07-11T04:39:43.546232+00:00",
+  "last_ods_sync_date_used": "2026-07-04",
   "add_candidates": [
     {
       "ods": "RQF",
-      "name": "Velindre NHS Trust",
+      "name": "VELINDRE NHS TRUST",
       "role": "RO197",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh NHS trust, live in ORD but permanently out of scope for HSJ England coverage. No action."
+      "note": "Welsh NHS trust, permanently out of scope for the England trust/ICB DB - no action needed."
     },
     {
       "ods": "RT4",
-      "name": "Welsh Ambulance Services NHS Trust",
+      "name": "WELSH AMBULANCE SERVICES NHS TRUST",
       "role": "RO197",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh NHS trust, live in ORD but permanently out of scope for HSJ England coverage. No action."
+      "note": "Welsh NHS trust, permanently out of scope for the England trust/ICB DB - no action needed."
     },
     {
       "ods": "RYT",
-      "name": "Public Health Wales NHS Trust",
+      "name": "PUBLIC HEALTH WALES NHS TRUST",
       "role": "RO197",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh NHS trust, live in ORD but permanently out of scope for HSJ England coverage. No action."
+      "note": "Welsh NHS trust, permanently out of scope for the England trust/ICB DB - no action needed."
     }
   ],
-  "remove_candidates": [
-    {
-      "ods": "RVJ",
-      "name": "North Bristol NHS Trust",
-      "successor_ods": "RA7",
-      "successor_name": "Bristol NHS Foundation Trust",
-      "legal_end": "2026-06-30",
-      "note": "North Bristol NHS Trust legally dissolved 30 June 2026; succeeded 1 July 2026 by Bristol NHS Foundation Trust (RA7, formerly University Hospitals Bristol and Weston). In-scope English acute trust. ACTION: remove RVJ from trust_urls.json and trust-contacts.json, and ensure the RA7 row reflects the merged entity (ORD has renamed RA7 to 'Bristol NHS Foundation Trust'). NOTE: RVJ contacts were refreshed in this run's batch 7 before the dissolution was detected via the ODS change feed."
-    }
-  ]
+  "remove_candidates": []
 }
