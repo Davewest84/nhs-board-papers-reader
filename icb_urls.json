@@ -82,23 +82,23 @@
     "cluster_meeting_url": null,
     "notes": null,
     "url": "https://northeastnorthcumbria.nhs.uk/about-us/corporate-information/governance/meetings-and-agendas/integrated-care-board/",
-    "access_notes": "Static WebFetch works - no JS. The landing lists upcoming ICB Board dates and links the current/most-recent public board pack as a single PDF under /media/, plus a 'Previous Board meetings' sub-page (/about-us/corporate-information/governance/meetings-and-agendas/previous-board-meetings/) for the historical archive. This is the ICB Board (not ICP). Read the main page for the latest pack and follow the previous-meetings link for prior packs. Deep validator flagged it because only one PDF is exposed on the top page at a time.",
+    "access_notes": "The dedicated 'Integrated Care Board meetings' sub-page is ICB-Board-specific (the parent /meetings-and-agendas/ hub fans out to ICB / ICP / AGM categories -- prefer this ICB sub-page). It lists the next/most-recent meeting with a combined board PDF pack and a link to '.../previous-board-meetings/' for the archive. Fully static HTML -- WebFetch resolves everything, no Playwright. Each historic meeting has its own dated sub-page (slug 'board-meeting-held-in-public-on-<weekday>-<d-month-yyyy>') listing individual item PDFs on media.nhs.net; recent meetings also expose a single combined 'YYYYMMDD-public-board-pdf-pack.pdf' on the org /media/ path. Filter to the ICB Board -- skip the Integrated Care Partnership and AGM categories and committee minutes appearing as agenda items within a pack.",
     "needs_playwright": false,
     "pack_pattern_hints": [
-      "/media/ path",
-      "filename YYYYMMDD-public-board-pdf-pack.pdf",
-      "'public board'",
-      "'Board Papers'"
+      "combined 'YYYYMMDD-public-board-pdf-pack.pdf' on northeastnorthcumbria.nhs.uk/media/<hash>/",
+      "historic per-date sub-pages under /previous-board-meetings/",
+      "individual item PDFs on media.nhs.net/media/<hash>/item-NN-...pdf",
+      "meetings bi-monthly"
     ],
     "exclude_patterns": [
-      "integrated care partnership",
-      "ICP",
-      "committee",
-      "sub-committee"
+      "Integrated Care Partnership meetings",
+      "Annual General Meeting",
+      "committee minutes within pack (Audit, Finance/FPIC, Quality & Safety/QSC, Executive)",
+      "ICP Board"
     ],
-    "last_validated": "2026-07-11",
+    "last_validated": "2026-07-18",
     "validation_status": "papers_found",
-    "validation_notes": "Page hosts a dated ICB board pack (16 June 2026) plus a 'Previous Board meetings' archive link, so the current URL is live and correct."
+    "validation_notes": "Landing verified on own domain (heading 'Integrated Care Board meetings'), links dated 2025-2026 meetings and a confirmed 16 Jun 2026 public board PDF pack."
   },
   {
     "ods_code": "QOQ",
@@ -290,25 +290,22 @@
     "cluster_meeting_url": "https://www.happyhealthylives.uk/integrated-care-board/about-us/icb-board-meetings/",
     "notes": "Joint Board Meeting in Common with Coventry and Warwickshire (QWU); papers hosted on both happyhealthylives.uk and hwics.org.uk",
     "url": "https://herefordshireandworcestershire.icb.nhs.uk/meetings/board-papers",
-    "access_notes": "Static WebFetch works. The landing (herefordshireandworcestershire.icb.nhs.uk/meetings/board-papers) renders the itemised agenda for the next/most-recent public board meeting, but the individual document files are hosted on the cluster/partner domain www.hwics.org.uk via /download_file/{id} URLs (H&W is clustered with Coventry & Warwickshire; the 15 July 2026 pack is a joint 'in common' board carrying both CW and HW annual reports). This is acceptable and is the ICB Board (not ICP). Scrape the .icb.nhs.uk/meetings/board-papers page for agenda item links, which resolve to hwics.org.uk download URLs. Coverage 2026; prior meetings reachable from the same meetings area. Prefer this H&W ICB page as the entry point.",
+    "access_notes": "The ICB site is a static server-rendered front-end; WebFetch works, no Playwright. /meetings/board-papers holds the NEXT meeting's pack; /meetings/past-board-papers is the dated archive (back to 2022, each date a heading with its PDF list). Board meets bi-monthly (odd months). All PDF hrefs point at the sister domain www.hwics.org.uk via /download_file/<id>/<collection> -- collection 414 = current pack, 463 = past-papers archive (numeric endpoints, not .pdf-suffixed). Single-ICB board, no ICP/Joint pages intermixed on these two pages; AGM material is bundled into the July board pack -- treat as ICB Board. Prefer /meetings/board-papers for the imminent pack and /meetings/past-board-papers to backfill.",
     "needs_playwright": false,
     "pack_pattern_hints": [
-      "'Public Board'",
-      "'Agenda 0x'",
-      "hwics.org.uk/download_file/",
-      "'CEO report'",
-      "'BAF'",
-      "'Financial Report'"
+      "landing heading 'Board papers' with meeting date e.g. 'Wednesday 15 July 2026'",
+      "past archive groups PDFs under date headings",
+      "PDF links www.hwics.org.uk/download_file/<id>/<collection> (414 current, 463 archive)",
+      "agenda-item filenames like 'Agenda 09 CEO report','Agenda 14 BAF'"
     ],
     "exclude_patterns": [
-      "integrated care partnership",
-      "ICP",
-      "committee escalation-only",
-      "place-based"
+      "/download_file/force/<id>/463 pre-2023 forced-download links",
+      "committee/ICP/Joint content (not on these pages)",
+      "XLSX governance-log attachments"
     ],
-    "last_validated": "2026-07-11",
+    "last_validated": "2026-07-18",
     "validation_status": "papers_found",
-    "validation_notes": "Page lists a full dated agenda for the 15 July 2026 public ICB Board (CEO report, finance, BAF, annual reports), confirming a live board-papers archive at the current URL."
+    "validation_notes": "Current board-papers page (15 Jul 2026 AGM+Board pack) and past-papers archive (May 2026 back to 2022) resolve with dated 2025-2026 packs on hwics.org.uk."
   },
   {
     "ods_code": "QJ2",
@@ -653,24 +650,23 @@
     "cluster_meeting_url": null,
     "notes": "Single combined papers pack per board meeting",
     "url": "https://northeastlondon.icb.nhs.uk/about-us/about-nhs-north-east-london/our-board/board-meetings-and-papers/",
-    "access_notes": "This is the correct ICB Board landing (explicitly the ICB, not ICP). The main page lists dated board meetings (roughly every other month) but the PDFs are not on the landing itself - each date links to an individual event page under /events/board-meetings-and-papers-<n>/ which hosts the dated board-pack PDF. Scrape the landing for dated meeting links, follow each into its event page, then grab the PDF pack. Static fetch of the event pages does expose the PDF, so Playwright is not strictly required, though the landing's date links must be followed. Exclude the many borough Partnership Board / ICP / sub-committee pages on the same domain. Coverage ~2022 through current 2026 meetings.",
+    "access_notes": "Static HTML landing renders fine via WebFetch (no Playwright). Lists ICB Board meeting dates every two months; each date links to a per-meeting event page at /board-meetings/north-east-london-icb-board-meeting-NN/ holding papers as /download-attachment/NNNNN links (the main board pack plus separate minutes/questions-log); underlying files live at /wp-content/uploads/YYYY/MM/. Papers publish at least 5 working days before each meeting, so the newest future date shows no PDFs until then. Filter to the NHS North East London ICB Board -- skip the ICP packs, borough Partnership Boards, Health & Wellbeing boards, and named sub-committees.",
     "needs_playwright": false,
     "pack_pattern_hints": [
-      "'NHS North East London ICB Board'",
-      "/events/board-meetings-and-papers-",
-      "'papers pack'",
-      "wp-content/uploads/<year>/ PDF packs"
+      "/wp-content/uploads/YYYY/MM/NHS-North-East-London-ICB-Board-DD.MM.YYYY*.pdf main pack",
+      "/download-attachment/NNNNN links on each event page",
+      "event pages /board-meetings/north-east-london-icb-board-meeting-NN/",
+      "supporting YYYY-MM-ICB-Board-questions-log.pdf"
     ],
     "exclude_patterns": [
-      "Integrated Care Partnership / ICP papers pack",
-      "Partnership Board",
-      "Primary Care Contracts Sub-committee",
-      "borough boards (Newham/Waltham Forest/Tower Hamlets/Barking & Dagenham)",
-      "Health & Wellbeing Board"
+      "Integrated-Care-Partnership / NEL-ICP packs (ICP not ICB)",
+      "partnership-board-meetings-and-papers (borough boards)",
+      "*-icb-sub-committee",
+      "Health-Wellbeing / Health-Care-Partnership boards"
     ],
-    "last_validated": "2026-07-11",
-    "validation_status": "papers_partial",
-    "validation_notes": "Confirmed canonical 'Board meetings and papers' page for NHS North East London ICB; per-meeting event pages carry the actual board-pack PDFs (verified an event page exposing a dated 'NHS North East London ICB Board' PDF pack)."
+    "last_validated": "2026-07-18",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing verified on own domain with ICB name in title and dated 2025-2026 ICB Board entries; multiple full 2025 board packs downloaded and confirmed."
   },
   {
     "ods_code": "QKK",
@@ -740,24 +736,24 @@
     "cluster_meeting_url": null,
     "notes": "Formed 1 April 2026 from merger of North Central London (QMJ, nclhealthandcare.org.uk) and North West London (QRV, nwlondonicb.nhs.uk). Predecessor sites still host historical 'Boards in Common' packs from late 2025/early 2026.",
     "url": "https://www.westandnorthlondon.icb.nhs.uk/how-we-are-run/meetings/w-plus-nl-board-meetings",
-    "access_notes": "This is the correct ICB Board landing (not ICP). It lists upcoming/recent dated board meetings and points to the 'policies-and-publications' document library at /how-we-are-run/policies-and-publications/navigate/479/2410#document-library-2410 where each meeting has a dated folder ('Board meetings in public' then 1 April 2026, 17 June 2026, 22 July 2026, 21 October 2026). Open the meetings landing, follow the document-library link, then expand each dated folder to reach PDFs. Static fetch renders folder titles but NOT the PDF hrefs, so Playwright is needed. New post-April-2026 ICB, so it also carries legacy archives for predecessor bodies (North Central London ICB, North West London ICB) - prefer the 'West and North London ICB' 2026 dated folders. Coverage 2026 onward on the new-body archive.",
-    "needs_playwright": true,
+    "access_notes": "Newly merged ICB (April 2026, ex-North West London / Z9B2Z). The board-meetings landing (/how-we-are-run/meetings/w-plus-nl-board-meetings) is static HTML and lists upcoming ICB Board-of-Members dates plus a section linking into the document library at /how-we-are-run/policies-and-publications/navigate/{id}/2410. That library groups papers into per-meeting folders (1 Apr 2026, 17 Jun 2026, 22 Jul 2026, ...); each folder lists individual /download_file/{uuid}/{n} PDFs. Filter to the ICB Board of Members -- SKIP the PCCG folder, the ICP pages, and the Primary Care Commissioning Committee. First packs already fully populated (22 Jul 2026 pack has 13 papers). Static WebFetch is sufficient.",
+    "needs_playwright": false,
     "pack_pattern_hints": [
-      "'board meetings in public'",
-      "dated folder names (e.g. '17 June 2026')",
-      "document-library-2410",
-      "'W+NL Board'",
-      "navigate/479/2410"
+      "/download_file/{uuid}/{n} PDF endpoints",
+      "per-meeting folders under /how-we-are-run/policies-and-publications/navigate/{id}/2410",
+      "document titles prefixed with agenda-order numbers e.g. '00) 2026.07.22 WNL Board meeting in public agenda'",
+      "papers published ~1 week before each meeting"
     ],
     "exclude_patterns": [
-      "North Central London ICB previous meetings",
-      "North West London ICB previous meetings",
-      "ICP / Integrated Care Partnership",
-      "AGM-only entries"
+      "PCCG / Primary Care Commissioning & Contracting Group folders",
+      "Primary Care Commissioning Committee",
+      "ICP pages (/how-we-are-run/about-icp)",
+      "legacy NCL/NWL pre-merger links",
+      "watch-live / YouTube recording links"
     ],
-    "last_validated": "2026-07-11",
-    "validation_status": "papers_partial",
-    "validation_notes": "Page lists dated W&NL ICB Board meetings (1 Apr, 17 Jun, 22 Jul, 21 Oct 2026) and links to a document library with dated board-pack folders, but the actual PDFs sit behind a JS-rendered doc library so static fetch shows folders not PDF links."
+    "last_validated": "2026-07-18",
+    "validation_status": "papers_found",
+    "validation_notes": "Full 13-document 22 July 2026 ICB Board pack is live on the org domain via /download_file links."
   },
   {
     "ods_code": "QRL",
@@ -843,22 +839,22 @@
     "cluster_meeting_url": null,
     "notes": "Formed 1 April 2026 from BOB (Buckinghamshire, Oxfordshire and Berkshire West, QU9, bucksoxonberksw.icb.nhs.uk) plus largest share of former Frimley footprint (QNQ, frimleyhealthandcare.org.uk). Predecessor sites still host historical packs.",
     "url": "https://www.thamesvalley.icb.nhs.uk/policies-and-documents/how-we-make-decisions/board-papers/nhs-thames-valley-icb",
-    "access_notes": "This is the correct NHS Thames Valley (new post-April-2026 ICB) board-papers archive and it is the ICB Board (not ICP). The page renders dated board-pack entries with direct downloadable PDFs server-side, so static fetch works and no Playwright is needed. A crawler reads this page and collects the 'Thames Valley ICB Board papers <date>' PDF links. Brand-new ICB so coverage starts 2026 (currently 20 May 2026 and 15 July 2026), growing as meetings occur; the newest pack is flagged 'New'.",
+    "access_notes": "Newly merged ICB (established 1 April 2026 from Frimley + BOB). Static Joomla site (numeric-ID /file links) -- no Playwright. The board-papers category index links to two sub-pages: 'NHS Thames Valley ICB' (current, dated packs) and 'Pre-NHS Thames Valley archive' (legacy BOB/Frimley). This URL points straight to the current-ICB sub-page where the live 2026 packs are listed as single consolidated PDFs. Prefer this sub-page; skip the pre-TV archive and Joint Committee / ICP items. Packs are genuinely sparse -- this is the merged board's first months (first public meeting 20 May 2026, then 15 July 2026), so only two packs exist so far, which is expected not a scan failure.",
     "needs_playwright": false,
     "pack_pattern_hints": [
-      "'Thames Valley ICB Board papers <date>'",
-      "/board-papers/nhs-thames-valley-icb",
-      "MB file-size + download-count annotations",
-      "'New' badge on latest"
+      "sub-page /nhs-thames-valley-icb lists packs as single consolidated PDFs",
+      "URL pattern <sub-page>/<numericID>-thames-valley-icb-board-papers-<DD-month-YYYY>/file",
+      "titles 'Thames Valley ICB Board papers <date>'",
+      "meeting dates so far: 20 May 2026, 15 July 2026"
     ],
     "exclude_patterns": [
-      "ICP / Integrated Care Partnership",
-      "predecessor BOB ICB (Buckinghamshire Oxfordshire Berkshire West) legacy papers",
-      "committee papers"
+      "pre-nhs-thames-valley-archive (legacy BOB/Frimley 2022-2025)",
+      "nhs-bob-icb-board-meetings-* and nhs-frimley-icb-* paths",
+      "ICP / Joint Committee items"
     ],
-    "last_validated": "2026-07-11",
+    "last_validated": "2026-07-18",
     "validation_status": "papers_found",
-    "validation_notes": "Static fetch returned two dated 2026 ICB board-pack PDFs directly on the page ('Thames Valley ICB Board papers 15 July 2026', 10.50 MB, marked New; and '20 May 2026', 2.81 MB)."
+    "validation_notes": "Two consolidated 2026 board packs (15 July 2026, 20 May 2026) confirmed on the current-ICB sub-page."
   },
   {
     "ods_code": "S9B9J",

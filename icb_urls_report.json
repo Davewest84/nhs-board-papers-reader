@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-11T04:12:17.097097+00:00",
+  "generated_at": "2026-07-18T04:12:18.260547+00:00",
   "label": "ICB",
   "total": 36,
   "ok": 36,
@@ -93,7 +93,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.happyhealthylives.uk/integrated-care-board/about-us/icb-board-meetings/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "QGH",
@@ -170,10 +170,10 @@
     {
       "ods_code": "S1Y5D",
       "name": "Central East ICB",
-      "url": "https://www.hertsandwestessex.ics.nhs.uk/documents/?location=all&type=board-papers&cat=all&date=",
+      "url": "https://www.centraleast.icb.nhs.uk/documents/?location=all&type=board-papers&cat=all&date=",
       "ok": true,
       "status": 200,
-      "final_url": "https://www.centraleast.icb.nhs.uk/?location=all&type=board-papers&cat=all&date=",
+      "final_url": "https://www.centraleast.icb.nhs.uk/documents/?location=all&type=board-papers&cat=all&date=",
       "error": null
     },
     {
@@ -300,7 +300,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://bnssghealthiertogether.org.uk/events/",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "QR1",
