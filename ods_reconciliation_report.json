@@ -1,6 +1,12 @@
 {
-  "generated_at": "2026-07-11T04:39:43.546232+00:00",
-  "last_ods_sync_date_used": "2026-07-04",
+  "generated_at": "2026-07-18",
+  "last_ods_sync_date_used": "2026-07-11",
+  "set_sizes": {
+    "A_trust": 251,
+    "A_icb": 48,
+    "B_trust": 207,
+    "B_icb": 36
+  },
   "add_candidates": [
     {
       "ods": "RQF",
