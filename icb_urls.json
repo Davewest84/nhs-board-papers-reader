@@ -82,23 +82,23 @@
     "cluster_meeting_url": null,
     "notes": null,
     "url": "https://northeastnorthcumbria.nhs.uk/about-us/corporate-information/governance/meetings-and-agendas/integrated-care-board/",
-    "access_notes": "The dedicated 'Integrated Care Board meetings' sub-page is ICB-Board-specific (the parent /meetings-and-agendas/ hub fans out to ICB / ICP / AGM categories -- prefer this ICB sub-page). It lists the next/most-recent meeting with a combined board PDF pack and a link to '.../previous-board-meetings/' for the archive. Fully static HTML -- WebFetch resolves everything, no Playwright. Each historic meeting has its own dated sub-page (slug 'board-meeting-held-in-public-on-<weekday>-<d-month-yyyy>') listing individual item PDFs on media.nhs.net; recent meetings also expose a single combined 'YYYYMMDD-public-board-pdf-pack.pdf' on the org /media/ path. Filter to the ICB Board -- skip the Integrated Care Partnership and AGM categories and committee minutes appearing as agenda items within a pack.",
+    "access_notes": "KEEP this URL - it holds no PDFs itself but it is the only page carrying BOTH the forward meeting schedule AND a link to the current/next meeting's own page where the pack lands, so it works as a one-hop hub. Repointing to /previous-board-meetings/ would blind a crawler to upcoming packs. Strategy: fetch the landing, follow any href matching board-meeting-held-in-public-* for the current pack, and separately follow /previous-board-meetings/ (24 dated links, July 2022 to March 2026) for backfill. Each per-meeting page carries 23-46 SEPARATE /media/{8-char-hash}/item-NN-*.pdf files - there is NO consolidated board pack, so a pack analyser must pull them all. Slugs are unguessable: the weekday is embedded inconsistently (...on-wednesday-29-july-2026, ...on-tuesday-31-march-2026, ...tuesday-25-march-2025 with no 'on', ...28-november-2023 with no weekday) - always scrape hrefs, never construct them. Filter on the board-meeting-held-in-public- prefix to isolate the ICB Board: the ICP lives under /previous-integrated-care-partnership-icp-meetings/ and AGMs under /annual-general-meetings/, and the 29 July 2026 AGM ran immediately before the Board on the same day. Beware: extraordinary board meetings (16 June 2026, 12 February 2026) are never archived - they surface only as draft-minutes items inside the next ordinary pack. Umbraco CMS, plain server-rendered HTML, no JS and no anti-bot; sitemap.xml 404s.",
     "needs_playwright": false,
     "pack_pattern_hints": [
-      "combined 'YYYYMMDD-public-board-pdf-pack.pdf' on northeastnorthcumbria.nhs.uk/media/<hash>/",
-      "historic per-date sub-pages under /previous-board-meetings/",
-      "individual item PDFs on media.nhs.net/media/<hash>/item-NN-...pdf",
-      "meetings bi-monthly"
+      "item-NN numbered agenda PDFs",
+      "CEO Board Report",
+      "Finance update",
+      "BAF",
+      "board-meeting-held-in-public- slug"
     ],
     "exclude_patterns": [
-      "Integrated Care Partnership meetings",
-      "Annual General Meeting",
-      "committee minutes within pack (Audit, Finance/FPIC, Quality & Safety/QSC, Executive)",
-      "ICP Board"
+      "ICP / Integrated Care Partnership meetings",
+      "Annual General Meeting papers",
+      "draft minutes of prior meetings"
     ],
-    "last_validated": "2026-07-18",
+    "last_validated": "2026-07-30",
     "validation_status": "papers_found",
-    "validation_notes": "Landing verified on own domain (heading 'Integrated Care Board meetings'), links dated 2025-2026 meetings and a confirmed 16 Jun 2026 public board PDF pack."
+    "validation_notes": "Landing confirmed live as a hub; the 29 July 2026 meeting page is live with 23+ item PDFs, and 31 March 2026 (33 PDFs) and 25 November 2025 (46 PDFs) are archived. Individual 2026 item PDFs verified as application/pdf."
   },
   {
     "ods_code": "QOQ",
@@ -303,9 +303,9 @@
       "committee/ICP/Joint content (not on these pages)",
       "XLSX governance-log attachments"
     ],
-    "last_validated": "2026-07-18",
+    "last_validated": "2026-07-30",
     "validation_status": "papers_found",
-    "validation_notes": "Current board-papers page (15 Jul 2026 AGM+Board pack) and past-papers archive (May 2026 back to 2022) resolve with dated 2025-2026 packs on hwics.org.uk."
+    "validation_notes": "Board-papers page live with the full 15 July 2026 AGM and ICB Board pack (14 numbered agenda documents including CEO report, BAF, finance and quality)."
   },
   {
     "ods_code": "QJ2",
@@ -664,9 +664,9 @@
       "*-icb-sub-committee",
       "Health-Wellbeing / Health-Care-Partnership boards"
     ],
-    "last_validated": "2026-07-18",
+    "last_validated": "2026-07-30",
     "validation_status": "papers_found",
-    "validation_notes": "Landing verified on own domain with ICB name in title and dated 2025-2026 ICB Board entries; multiple full 2025 board packs downloaded and confirmed."
+    "validation_notes": "Landing live listing bi-monthly ICB Board dates with per-meeting event pages holding the packs; papers stated to publish a minimum of five working days before each meeting."
   },
   {
     "ods_code": "QKK",
@@ -751,9 +751,9 @@
       "legacy NCL/NWL pre-merger links",
       "watch-live / YouTube recording links"
     ],
-    "last_validated": "2026-07-18",
+    "last_validated": "2026-07-30",
     "validation_status": "papers_found",
-    "validation_notes": "Full 13-document 22 July 2026 ICB Board pack is live on the org domain via /download_file links."
+    "validation_notes": "Landing live listing the 22 July 2026 board meeting with agenda papers (document library at /how-we-are-run/policies-and-publications/navigate/486/2410) and recording, plus 17 June 2026 and forward dates through March 2027."
   },
   {
     "ods_code": "QRL",
@@ -852,9 +852,9 @@
       "nhs-bob-icb-board-meetings-* and nhs-frimley-icb-* paths",
       "ICP / Joint Committee items"
     ],
-    "last_validated": "2026-07-18",
+    "last_validated": "2026-07-30",
     "validation_status": "papers_found",
-    "validation_notes": "Two consolidated 2026 board packs (15 July 2026, 20 May 2026) confirmed on the current-ICB sub-page."
+    "validation_notes": "Current-ICB sub-page live with two consolidated 2026 packs: 15 July 2026 (10.5MB) and 20 May 2026 (2.8MB)."
   },
   {
     "ods_code": "S9B9J",
