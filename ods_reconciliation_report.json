@@ -1,33 +1,27 @@
 {
-  "generated_at": "2026-07-18",
-  "last_ods_sync_date_used": "2026-07-11",
-  "set_sizes": {
-    "A_trust": 251,
-    "A_icb": 48,
-    "B_trust": 207,
-    "B_icb": 36
-  },
+  "generated_at": "2026-07-30T16:07:22.664123+00:00",
+  "last_ods_sync_date_used": "2026-07-18",
   "add_candidates": [
     {
       "ods": "RQF",
       "name": "VELINDRE NHS TRUST",
-      "role": "RO197",
+      "role": "trust",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh NHS trust, permanently out of scope for the England trust/ICB DB - no action needed."
+      "note": "No action needed - Welsh / non-England org, permanently out of scope."
     },
     {
       "ods": "RT4",
       "name": "WELSH AMBULANCE SERVICES NHS TRUST",
-      "role": "RO197",
+      "role": "trust",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh NHS trust, permanently out of scope for the England trust/ICB DB - no action needed."
+      "note": "No action needed - Welsh / non-England org, permanently out of scope."
     },
     {
       "ods": "RYT",
       "name": "PUBLIC HEALTH WALES NHS TRUST",
-      "role": "RO197",
+      "role": "trust",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh NHS trust, permanently out of scope for the England trust/ICB DB - no action needed."
+      "note": "No action needed - Welsh / non-England org, permanently out of scope."
     }
   ],
   "remove_candidates": []
