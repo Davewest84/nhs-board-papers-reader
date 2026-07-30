@@ -196,6 +196,52 @@ Write-Log "Using claude.exe: $claudeExe"
 $headBefore = & git rev-parse HEAD 2>$null
 Write-Log "HEAD before: $headBefore"
 
+# --- Pre-Claude scans (moved out of the Claude session, July 2026) -----------
+# The two long URL scans used to run INSIDE the headless Claude session, where
+# an accidental `run_in_background` call could orphan them and the session would
+# exit before committing (the 2026-06-20 and 2026-07-25 no-commit failures).
+# They now run HERE — foreground, blocking — BEFORE Claude is launched, so their
+# completion no longer depends on model behaviour. Claude only reads the reports
+# they produce (prompt step 2 onward). If either scan fails, we abort before
+# spending a Claude session on stale/absent inputs.
+if (-not $pyExe) {
+    Write-Log "ERROR: no python launcher found — cannot run pre-Claude scans."
+    "$(Get-Date -Format 'o') FAIL no-python-for-scans (log=$logFile)" | Out-File -FilePath $statusFile -Encoding utf8
+    Send-Summary "FAIL no-python-for-scans"
+    exit 1
+}
+$savedEAPscan = $ErrorActionPreference
+$ErrorActionPreference = 'Continue'
+foreach ($scan in @(
+    @{ name = 'check_urls';       script = 'scripts\check_urls.py' },
+    @{ name = 'validate_landing'; script = 'scripts\validate_landing.py' }
+)) {
+    Write-Log "Pre-Claude scan starting (foreground, blocking): $($scan.name)"
+    & $pyExe (Join-Path $repo $scan.script) 2>&1 | Out-File -FilePath $logFile -Append -Encoding utf8
+    $scanExit = $LASTEXITCODE
+    Write-Log "Pre-Claude scan $($scan.name) exit code: $scanExit"
+    if ($scanExit -ne 0) {
+        $ErrorActionPreference = $savedEAPscan
+        Write-Log "ERROR: scan $($scan.name) failed (exit $scanExit) — aborting before Claude."
+        "$(Get-Date -Format 'o') FAIL scan-$($scan.name) (exit=$scanExit, log=$logFile)" | Out-File -FilePath $statusFile -Encoding utf8
+        Send-Summary "FAIL scan-$($scan.name)"
+        exit 1
+    }
+}
+# Gate: all four report JSONs must exist now, else don't spend a Claude session.
+$missingReports = @('trust_urls_report.json','icb_urls_report.json',
+                    'trust_urls_validation.json','icb_urls_validation.json') |
+    Where-Object { -not (Test-Path (Join-Path $repo $_)) }
+if ($missingReports) {
+    $ErrorActionPreference = $savedEAPscan
+    Write-Log "ERROR: scans exited 0 but expected reports missing: $($missingReports -join ', ') — aborting."
+    "$(Get-Date -Format 'o') FAIL scan-reports-missing (log=$logFile)" | Out-File -FilePath $statusFile -Encoding utf8
+    Send-Summary "FAIL scan-reports-missing"
+    exit 1
+}
+$ErrorActionPreference = $savedEAPscan
+Write-Log "Pre-Claude scans complete; all four report JSONs present. Handing off to Claude."
+
 $prompt = "Read scripts/url_update_schedule_prompt.md and execute the instructions in that file's 'Prompt to paste' block. Stay strictly within the 'Safety rules' section. The working directory is the current directory."
 
 Write-Log "Invoking Claude via Start-Process (prompt piped via stdin)"

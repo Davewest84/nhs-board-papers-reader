@@ -31,38 +31,37 @@ Plus:
 IMPORTANT — headless execution model (read before step 1):
 You are running as a non-interactive `claude -p` session launched by
 scripts/_run_claude_patch.ps1. When you end a turn with no pending FOREGROUND
-tool call, the process exits immediately and the whole run dies. The long scans
-in steps 1 and 1b therefore MUST be run as foreground, blocking Bash calls —
-one call each, with `timeout` set to the maximum 600000 ms (each takes ~9-10
-min, comfortably inside that ceiling). Do NOT launch them with
-`run_in_background`, and NEVER end your turn to "wait for them to finish" or
-"wait for completion notifications" — there is no interactive loop to wake you,
-so the session terminates before the scans write anything. (This exact mistake
-caused the 2026-06-20 run to exit after ~90s with FAIL no-commit.) Stay in-turn
-until both report JSONs exist on disk, then continue.
+tool call, the process exits immediately and the whole run dies. So NEVER end a
+turn to "wait" for a background job or a completion notification — there is no
+interactive loop to wake you. Any long operation you do run (web fetches,
+escalation sub-agents in step 3a, git) must be foreground/awaited within the turn.
+
+The two long URL scans have been MOVED OUT of this session: the wrapper
+(_run_claude_patch.ps1) now runs check_urls.py and validate_landing.py
+foreground, to completion, BEFORE launching you. This removes the failure mode
+where the scans got orphaned by an accidental background call (the 2026-06-20
+and 2026-07-25 no-commit runs). Do NOT run the scans yourself — the four report
+JSONs already exist on disk when you start. Your job begins at step 2.
 
 Steps:
 
-1. URL health check (shallow — HTTP 200). Walks both URL JSONs. Run in the
-   FOREGROUND, blocking, with timeout=600000 ms (see headless note above):
-       py scripts/check_urls.py
-   Produces trust_urls_report.json + icb_urls_report.json at the repo root.
-   Takes ~9-10 minutes. Do not background it; do not yield the turn waiting.
+1. Confirm the wrapper's scans landed (it runs them before you). Verify these
+   four files exist at the repo root and were written today:
+       trust_urls_report.json      icb_urls_report.json          (shallow health check)
+       trust_urls_validation.json  icb_urls_validation.json      (deep landing validation)
+   Do NOT run check_urls.py or validate_landing.py yourself — the wrapper
+   already did, foreground, before launching you. If any of the four is missing
+   or stale (generated_at not today), STOP and report — do not attempt to
+   re-run the scans or fix them; the wrapper gates on scan success, so a missing
+   report means the wrapper would already have aborted.
 
-1b. Deep landing validation (NEW, May 2026). Confirms each landing page
-    actually exposes dated board papers — catches the "200 OK but the URL
-    points at the wrong sub-page" case that step 1 misses. Run in the
-    FOREGROUND, blocking, with timeout=600000 ms (see headless note above —
-    do not background it; do not yield the turn waiting):
-       py scripts/validate_landing.py
-    Produces trust_urls_validation.json + icb_urls_validation.json at the
-    repo root. Each entry's `classification` is one of:
+1b. The deep landing validation (validate_landing.py, run by the wrapper)
+    classifies each landing page. Each entry's `classification` is one of:
       papers_found      — clearly surfacing board-paper links
       papers_partial    — weak signal (1 dated PDF, 1 year archive); review
       no_papers_visible — 200 but no board-paper evidence (URL likely stale)
       needs_playwright  — near-empty body, suggests JS-rendered content
       broken            — HTTP error
-    Takes ~9-10 minutes.
 
 2. Read all four reports (shallow + deep, both DBs). Collect entries that
    are either:
@@ -460,12 +459,13 @@ Safety rules:
   threshold isn't tripped.)
 - If you cannot push to GitHub (auth issues, merge conflicts), leave the
   commit local and report. Do not force-push. Do not reset.
-- If the health-check script fails to run (dependency missing, network
-  down), stop and report — do not attempt a fix.
-- NEVER run steps 1 or 1b in the background, and never end a turn to "wait"
-  for a background job — in this headless `claude -p` session that exits the
-  whole run before the scans complete (the 2026-06-20 failure). Both scans are
-  foreground, blocking calls with timeout=600000 ms.
+- The scans are run by the wrapper BEFORE you start — you do not run them.
+  If the four report JSONs are missing or not dated today, stop and report;
+  do not try to run or fix the scans (the wrapper gates on their success).
+- NEVER end a turn to "wait" for a background job or completion notification —
+  in this headless `claude -p` session that exits the whole run before the work
+  lands (the 2026-06-20 and 2026-07-25 no-commit failures). Any long operation
+  you do run (web fetches, step 3a sub-agents, git) must be foreground/awaited.
 - Step 7 (local Lookup mirror) is best-effort. If it fails, report but do
   NOT roll back the canonical commit from step 6.
 - The ICB DB schema differs slightly from the trust DB — it has additional
