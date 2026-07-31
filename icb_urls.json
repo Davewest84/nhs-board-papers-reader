@@ -680,9 +680,9 @@
     "correspondent": null,
     "url": "https://www.selondonics.org/icb/meetings-board-papers-reports/icb-meetings/",
     "url_root": "https://www.selondonics.org",
-    "cluster_id": null,
+    "cluster_id": "SEL-SWL",
     "cluster_meeting_url": null,
-    "notes": "Six borough place committees (Lambeth, Southwark, Lewisham, Greenwich, Bromley, Bexley) publish separately"
+    "notes": "Six borough place committees (Lambeth, Southwark, Lewisham, Greenwich, Bromley, Bexley) publish separately | Clustered with the other London ICB under joint chair Sir Richard Douglas and shared chief executive Andrew Bland; formal clustering agreed December 2025, appointments February 2026. Source: SWL ICB Annual Report 2025-26 and SWL board papers 15 July 2026."
   },
   {
     "ods_code": "QWE",
@@ -696,9 +696,9 @@
     "correspondent": null,
     "url": "https://www.southwestlondon.icb.nhs.uk/publications/",
     "url_root": "https://www.southwestlondon.icb.nhs.uk",
-    "cluster_id": null,
+    "cluster_id": "SEL-SWL",
     "cluster_meeting_url": null,
-    "notes": null,
+    "notes": "Clustered with the other London ICB under joint chair Sir Richard Douglas and shared chief executive Andrew Bland; formal clustering agreed December 2025, appointments February 2026. Source: SWL ICB Annual Report 2025-26 and SWL board papers 15 July 2026.",
     "access_notes": "Strategy: landing lists year archives (3 year links this run, e.g. 'Board papers 2025'). Follow each year link to dated PDF listings; main packs typically 5-30MB. Static fetch works. Pattern B.",
     "needs_playwright": false,
     "pack_pattern_hints": [
