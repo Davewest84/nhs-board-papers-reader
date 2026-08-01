@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-30T15:31:30.401385+00:00",
+  "generated_at": "2026-08-01T04:09:34.061781+00:00",
   "label": "trust",
   "total": 206,
-  "ok": 204,
-  "broken": 2,
+  "ok": 201,
+  "broken": 5,
   "results": [
     {
       "ods_code": "RA2",
@@ -18,10 +18,10 @@
       "ods_code": "RDR",
       "name": "Sussex Community NHS Foundation Trust",
       "url": "https://www.sussexcommunity.nhs.uk/about-us/how-we-are-run/board-of-directors/board-meetings-and-papers",
-      "ok": true,
-      "status": 200,
-      "final_url": "https://www.sussexcommunity.nhs.uk/about-us/how-we-are-run/board-of-directors/board-meetings-and-papers",
-      "error": null
+      "ok": false,
+      "status": null,
+      "final_url": null,
+      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.sussexcommunity.nhs.uk/about-us/how-we-are-run/board-of-directors/board-meetin"
     },
     {
       "ods_code": "RN7",
@@ -99,10 +99,10 @@
       "ods_code": "RXC",
       "name": "East Sussex Healthcare NHS Trust",
       "url": "https://www.esht.nhs.uk/about-us/trust-board/meetings-in-public/",
-      "ok": true,
-      "status": 200,
-      "final_url": "https://www.esht.nhs.uk/about-us/trust-board/meetings-in-public/",
-      "error": null
+      "ok": false,
+      "status": null,
+      "final_url": null,
+      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.esht.nhs.uk/about-us/trust-board/meetings-in-public/\nCall log:\n  - navigating "
     },
     {
       "ods_code": "RXX",
@@ -327,7 +327,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.uhcw.nhs.uk/our-organisation/trust-board-meetings/",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RL1",
@@ -368,11 +368,11 @@
     {
       "ods_code": "RLY",
       "name": "North Staffordshire Combined Healthcare NHS Trust",
-      "url": "https://www.combined.nhs.uk/about-us/our-board/previous-board-meetings/",
+      "url": "https://www.combined.nhs.uk/about/our-board/board-meetings/",
       "ok": false,
       "status": null,
       "final_url": null,
-      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.combined.nhs.uk/about-us/our-board/previous-board-meetings/\nCall log:\n  - navi"
+      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.combined.nhs.uk/about/our-board/board-meetings/\nCall log:\n  - navigating to \"h"
     },
     {
       "ods_code": "RNA",
@@ -660,7 +660,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.sth.nhs.uk/about-us/board-meetings/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RJL",
@@ -739,9 +739,9 @@
       "name": "South West Yorkshire Partnership NHS Foundation Trust",
       "url": "https://www.southwestyorkshire.nhs.uk/about-us-2/how-were-run/our-trust-board/meeting-papers/",
       "ok": true,
-      "status": 403,
+      "status": 200,
       "final_url": "https://www.southwestyorkshire.nhs.uk/about-us-2/how-were-run/our-trust-board/meeting-papers/",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RY6",
@@ -828,10 +828,10 @@
       "ods_code": "RGT",
       "name": "Cambridge University Hospitals NHS Foundation Trust",
       "url": "https://www.cuh.nhs.uk/about-us/board-directors/board-of-directors-meetings/",
-      "ok": true,
-      "status": 200,
-      "final_url": "https://www.cuh.nhs.uk/about-us/board-directors/board-of-directors-meetings/",
-      "error": null
+      "ok": false,
+      "status": null,
+      "final_url": null,
+      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.cuh.nhs.uk/about-us/board-directors/board-of-directors-meetings/\nCall log:\n  -"
     },
     {
       "ods_code": "RM1",
@@ -1601,10 +1601,10 @@
     {
       "ods_code": "RBQ",
       "name": "Liverpool Heart and Chest Hospital NHS Foundation Trust",
-      "url": "https://www.lhch.nhs.uk/board-of-directors-meetings",
+      "url": "https://www.uhliverpool.nhs.uk/about-us/meet-our-board/trust-board-meetings",
       "ok": true,
       "status": 200,
-      "final_url": "https://www.lhch.nhs.uk/board-of-directors-meetings",
+      "final_url": "https://www.uhliverpool.nhs.uk/about-us/meet-our-board/trust-board-meetings",
       "error": null
     },
     {

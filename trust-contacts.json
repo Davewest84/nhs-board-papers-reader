@@ -588,10 +588,10 @@
     "press_email": "communications@geh.nhs.uk",
     "press_email_alt": null,
     "press_source_url": "https://www.geh.nhs.uk/contact-us/media-enquiries",
-    "foi_email": "freedom.ofinformation@geh.nhs.uk",
-    "foi_email_alt": "foi@geh.nhs.uk",
+    "foi_email": "geh@infreemation.co.uk",
+    "foi_email_alt": "freedom.ofinformation@geh.nhs.uk",
     "foi_source_url": "https://www.geh.nhs.uk/about-us/governance/freedom-information",
-    "notes": "in progress"
+    "notes": "in progress [2026-08-01] foi_email primary updated 2026-08-01 from https://www.geh.nhs.uk/about-us/governance/freedom-information — the page now routes requests to the Infreemation portal address geh@infreemation.co.uk and keeps freedom.ofinformation@geh.nhs.uk only for complaints/appeals, so that prior primary moved to _alt; the previous _alt foi@geh.nhs.uk is no longer published."
   },
   {
     "trust_name": "Gloucestershire Health and Care NHS Foundation Trust",
@@ -929,10 +929,10 @@
     "press_email": "ulth.lchscommunications@nhs.net",
     "press_email_alt": "lchsecomms@lincs-chs.nhs.uk",
     "press_source_url": "https://lincolnshirecommunityhealthservices.nhs.uk/contact-us",
-    "foi_email": "agcsu.foi.lchs@nhs.net",
-    "foi_email_alt": null,
+    "foi_email": "lhnt.foi.lchs@nhs.net",
+    "foi_email_alt": "agcsu.foi.lchs@nhs.net",
     "foi_source_url": "https://lincolnshirecommunityhealthservices.nhs.uk/about-us/freedom-of-information",
-    "notes": "FOI handled via shared CSU inbox"
+    "notes": "FOI handled via shared CSU inbox [2026-08-01] foi_email primary updated 2026-08-01 from https://lincolnshirecommunityhealthservices.nhs.uk/about-us/freedom-of-information; prior value agcsu.foi.lchs@nhs.net moved to _alt."
   },
   {
     "trust_name": "Lincolnshire Partnership NHS Foundation Trust",
