@@ -440,12 +440,35 @@ Safety rules:
   ods_reconciliation_report.json, _run_summary.txt (step 9, gitignored), plus
   the Data/Lookup copies in steps 7-8. Do not touch any other file in any repo.
 - Within trust_urls.json and icb_urls.json, only these fields are
+  PRESERVE-ONLY (added 5 Aug 2026 — carry forward verbatim, never drop):
+  `retrieval_route` (e.g. `archive_org_save_page_now` — a tested non-browser
+  route that works where local fetches are blocked; RJ1 Guy's and St Thomas'
+  and RH8 Royal Devon both depend on it), `group_board` and `group_board_url`
+  (the joint/group board where a trust's papers actually live — 15 trusts have
+  no separate public board of their own, so a crawler that ignores this records
+  a false "publishes nothing").
+
   write-allowed: `url`, `access_notes`, `needs_playwright`,
   `pack_pattern_hints`, `exclude_patterns`, `last_validated`,
   `validation_status`, `validation_notes`. NEVER touch existing
   governance/identification fields: `ods_code`, `names`, `type`, `region`,
   `ics`, `correspondent`, `predecessor_codes`, `merger_date`, `url_root`,
   `cluster_id`, `cluster_meeting_url`, `notes`. Those need manual review.
+- **Never downgrade a recorded "reachable by another route" finding.** Your
+  probes run from Dave's machine — plain `requests` plus LOCAL headless
+  Playwright. A block you observe is a block on THAT path, not proof the site
+  is unreachable. If an entry's existing `access_notes` records that some other
+  route works (server-side WebFetch, a named crawler, an allowlisted IP), you
+  may refresh the evidence and the date, but you MUST carry that finding
+  forward into the rewritten paragraph. Rewriting it to a flat "automated
+  access is blocked" is a regression: downstream crawlers read these notes to
+  decide which fetcher to try, and telling them a working route is dead makes
+  them skip it. RDU (Frimley), RXL (Blackpool Teaching) and RXR (East Lancs)
+  are the standing examples — all three sit behind Imperva/Incapsula for local
+  fetches while the board-paper-machine pulls their packs fine via WebFetch.
+  Same rule for the flags: on such an org, `needs_playwright` means "the local
+  static path fails", NOT "skip the cheap fetchers", and `validation_status`
+  should reflect the best confirmed outcome across all routes.
 - Step 8 (ODS reconciliation) is READ-ONLY with respect to trust_urls.json,
   icb_urls.json and the contacts files — it must NEVER add, remove, or edit
   entries in them. It only writes ods_reconciliation_report.json and the
@@ -540,6 +563,17 @@ actual board papers. Write ONE clear paragraph following the patterns below.
 > challenge in front of the site. Even Playwright may be blocked. Best
 > approach: fetch the archive via the org's RSS feed at {URL} / press contact /
 > manual download. Flag for human refresh if needed.
+
+**Pattern E2 — blocked locally, reachable server-side**
+> Strategy: the domain sits behind Imperva/Incapsula (or similar) bot
+> mitigation that scores THIS machine's traffic as automated — plain requests
+> and local headless Playwright both get a ~212-byte `_Incapsula_Resource`
+> hCaptcha shell, browser User-Agent included. Server-side WebFetch is not
+> blocked and reaches the page normally; pack PDFs on the domain download
+> through it. So try WebFetch FIRST and only escalate if it fails — do not read
+> `needs_playwright:true` here as "skip the cheap fetchers". Then describe the
+> archive layout as normal. Fallback if WebFetch also fails: captcha-solving /
+> residential session, or an allowlisted IP.
 
 **Pattern F — wrong-URL needs fixing**
 > The DB landing URL appears stale. Live archive moved to {new URL after

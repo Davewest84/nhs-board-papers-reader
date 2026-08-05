@@ -575,8 +575,8 @@
     "ics": "Nottingham and Nottinghamshire",
     "correspondent": "Annabelle",
     "url": "https://www.nuh.nhs.uk/board-papers",
-    "access_notes": "The registered URL /board-and-board-papers/ is only an info page (meeting dates + governance contact) and correctly shows no PDFs. The actual papers live one level down at /board-papers (linked in that page's sidebar). That index lists year folders as query-string links: /board-papers?media_folder=1422&root_folder=2025/26 and /board-papers?media_folder=1466&root_folder=2026/27. A crawler must follow the media_folder query params to reach per-meeting PDFs (folder contents load dynamically, so render or fetch the folder URLs). Coverage current to 2026/27. Prefer the full board pack/'supporting documents' bundle per meeting; filter out minutes-only and agenda-only files and pre-2025 folders. Point the crawler at root_folder=2026/27 for the latest papers.",
-    "needs_playwright": true,
+    "access_notes": "The registered URL /board-and-board-papers/ is only an info page (meeting dates + governance contact) and correctly shows no PDFs. The actual papers live one level down at /board-papers (linked in that page's sidebar). That index lists year folders as query-string links: /board-papers?media_folder=1422&root_folder=2025/26 and /board-papers?media_folder=1466&root_folder=2026/27. A crawler must follow the media_folder query params to reach per-meeting PDFs (folder contents load dynamically, so render or fetch the folder URLs). Coverage current to 2026/27. Prefer the full board pack/'supporting documents' bundle per meeting; filter out minutes-only and agenda-only files and pre-2025 folders. Point the crawler at root_folder=2026/27 for the latest papers. RETRIEVAL 5 Aug 2026: papers live at /board-papers in a MEDIA BROWSER, not as direct links. Navigate /board-papers?media_folder=<id>&root_folder=<year> to a financial-year folder, then one sub-folder PER MEETING, each containing the pack. 2026/27 = media_folder=1466. Plain requests reads it fine - Playwright not needed.",
+    "needs_playwright": false,
     "pack_pattern_hints": [
       "/board-papers?media_folder=",
       "root_folder=2026/27",
@@ -588,7 +588,7 @@
       "2024/25",
       "2023/24"
     ],
-    "last_validated": "2026-06-06",
+    "last_validated": "2026-08-05",
     "validation_status": "needs_playwright",
     "validation_notes": "Papers are present in dynamically-loaded year folders (2025/26 and 2026/27) reached via media_folder query params off /board-papers; individual PDFs require rendering the folder view to enumerate."
   },
@@ -1342,7 +1342,21 @@
     "region": "London",
     "ics": "South East London",
     "correspondent": "Ella",
-    "url": "https://www.guysandstthomas.nhs.uk/about-us/our-board/agenda-and-papers"
+    "url": "https://www.guysandstthomas.nhs.uk/about-us/our-board/agenda-and-papers",
+    "access_notes": "HARDEST KNOWN CASE - two separate problems, both solved. (1) The whole host sits behind a WAF that returns HTTP 403 (a ~784KB error page) to curl, requests, WebFetch, real-Chrome-headful AND the full anti-automation recipe (stealth init script, disable-blink-features, site-root-first for cookies, ctx.request.get with Referer); after a few attempts it escalates to resetting the TLS connection outright, i.e. an IP-level block. (2) Documents are served from /media/<id>/<url-encoded title> with NO FILE EXTENSION, so any crawler keying on '.pdf' or '/download' finds zero links even on a page it can read. WHAT WORKS: fetch through Archive.org Save Page Now - GET https://web.archive.org/save/<url>. Archive.org crawls from its own infrastructure so the IP block does not apply. This works for BOTH the landing page (returns 31 document links incl. the full back-archive) and for the document URLs themselves (the response body is the PDF bytes - check for %PDF and strip any prefix). Verified 5 Aug 2026 on the 22 July 2026 board pack (8MB) and agenda (163KB). Match documents with the pattern guysandstthomas.nhs.uk/media/<digits>/ - NOT a .pdf extension.",
+    "needs_playwright": false,
+    "retrieval_route": "archive_org_save_page_now",
+    "pack_pattern_hints": [
+      "/media/{id}/Board+of+Directors+meeting+papers+-+{Weekday}+{D}+{Month}+{YYYY}",
+      "/media/{id}/Board+of+Directors+meeting+agenda+-+{Weekday}+{D}+{Month}+{YYYY}"
+    ],
+    "exclude_patterns": [
+      "minutes",
+      "register-of-interests"
+    ],
+    "last_validated": "2026-08-05",
+    "validation_status": "papers_found",
+    "validation_notes": "Board meets quarterly. 22 July 2026 pack (97pp) and agenda retrieved via Archive.org Save Page Now on 5 Aug 2026; landing page also lists packs back to January 2024. Next meeting 21 October 2026."
   },
   {
     "ods_code": "RJ2",
@@ -1954,7 +1968,9 @@
     ],
     "last_validated": "2026-06-04",
     "validation_status": "papers_found",
-    "validation_notes": "NLG board-papers year page lists six 2025 Boards-in-Common combined PDFs (Feb-Dec 2025) plus a 'Board papers 2026' archive, explicitly covering Hull University Teaching Hospitals under the group structure."
+    "validation_notes": "NLG board-papers year page lists six 2025 Boards-in-Common combined PDFs (Feb-Dec 2025) plus a 'Board papers 2026' archive, explicitly covering Hull University Teaching Hospitals under the group structure.",
+    "group_board": "Humber Health Partnership board - packs hosted on the NLaG domain",
+    "group_board_url": "https://www.nlg.nhs.uk/resources/?resources_type=board-papers"
   },
   {
     "ods_code": "RWY",
@@ -2142,7 +2158,9 @@
     "region": "East of England",
     "ics": "Norfolk and Waveney",
     "correspondent": "James",
-    "url": "https://www.qehkl.nhs.uk/about-us/meetings-of-the-board-of-directors/"
+    "url": "https://www.qehkl.nhs.uk/about-us/meetings-of-the-board-of-directors/",
+    "group_board": "Norfolk and Waveney University Hospitals Group",
+    "group_board_url": "https://nw-uhg.org.uk/p/about-us/meetings-and-agendas"
   },
   {
     "ods_code": "RDE",
@@ -2247,7 +2265,9 @@
     ],
     "last_validated": "2026-06-04",
     "validation_status": "papers_found",
-    "validation_notes": "Confirmed dated combined public board packs for 26 September 2025 and 25 July 2025 on the board-and-governors-meetings page, with a noted transition to Norfolk and Waveney Group Board meetings from April 2026."
+    "validation_notes": "Confirmed dated combined public board packs for 26 September 2025 and 25 July 2025 on the board-and-governors-meetings page, with a noted transition to Norfolk and Waveney Group Board meetings from April 2026.",
+    "group_board": "Norfolk and Waveney University Hospitals Group",
+    "group_board_url": "https://nw-uhg.org.uk/p/about-us/meetings-and-agendas"
   },
   {
     "ods_code": "RGR",
@@ -2304,7 +2324,9 @@
     "region": "East of England",
     "ics": "Norfolk and Waveney",
     "correspondent": "James",
-    "url": "https://www.nnuh.nhs.uk/about-us/trust-board-meetings/"
+    "url": "https://www.nnuh.nhs.uk/about-us/trust-board-meetings/",
+    "group_board": "Norfolk and Waveney University Hospitals Group",
+    "group_board_url": "https://nw-uhg.org.uk/p/about-us/meetings-and-agendas"
   },
   {
     "ods_code": "RMY",
@@ -2442,7 +2464,9 @@
     ],
     "last_validated": "2026-08-01",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: the site-wide ASP.NET runtime error seen on 2026-07-30 has cleared. /p/about-us/trust-board-meetings loads, shows papers plus a recording for 12 May 2026 and forward dates 14 Jul, 8 Sep, 10 Nov 2026, and states papers appear about a week before each meeting under press embargo until the meeting."
+    "validation_notes": "Re-verified 2026-08-01 via WebFetch: the site-wide ASP.NET runtime error seen on 2026-07-30 has cleared. /p/about-us/trust-board-meetings loads, shows papers plus a recording for 12 May 2026 and forward dates 14 Jul, 8 Sep, 10 Nov 2026, and states papers appear about a week before each meeting under press embargo until the meeting.",
+    "group_board": "Bristol group board - NBT and UHBW meet in common; NBT hosts the year pages",
+    "group_board_url": "https://www.nbt.nhs.uk/about-us/meet-our-board/trust-board-meetings-20262027"
   },
   {
     "ods_code": "RA9",
@@ -2601,8 +2625,8 @@
     "ics": "Devon",
     "correspondent": "Joe",
     "url": "https://www.royaldevon.nhs.uk/about-us/board-of-directors/board-meetings-papers-minutes/",
-    "access_notes": "Landing page is live and current but the site sits behind a WAF that returns HTTP 403 to WebFetch; use Playwright/headless browser, which loads it cleanly. The page lists the current calendar year's meetings inline with a 'Board papers and minutes' section giving, per meeting date, a meeting-pack PDF link plus a separate 'Minutes' PDF link, all served from the /media/{hash}/ path on the org domain. Older years live at .../board-meetings-papers-minutes/archive/. Match the meeting-pack PDF (filenames contain 'pack' or 'meeting-book' or 'meeting-pack'), not the minutes.",
-    "needs_playwright": true,
+    "access_notes": "Landing page is live and current but the site sits behind a WAF that returns HTTP 403 to WebFetch; use Playwright/headless browser, which loads it cleanly. The page lists the current calendar year's meetings inline with a 'Board papers and minutes' section giving, per meeting date, a meeting-pack PDF link plus a separate 'Minutes' PDF link, all served from the /media/{hash}/ path on the org domain. Older years live at .../board-meetings-papers-minutes/archive/. Match the meeting-pack PDF (filenames contain 'pack' or 'meeting-book' or 'meeting-pack'), not the minutes. UPDATE 5 Aug 2026: Playwright is no longer required. Archive.org Save Page Now (GET https://web.archive.org/save/<landing>) returns the live page with document links (direct fetch 403s with a 473-byte body; SPN returned 200 / 88KB / 8 doc links). SPN is much cheaper than a browser launch - try it first, keep Playwright as the backstop.",
+    "needs_playwright": false,
     "pack_pattern_hints": [
       "/media/{hash}/rduh-*-pack*.pdf",
       "/media/{hash}/*meeting-pack*.pdf",
@@ -2615,9 +2639,10 @@
       "glossary_of_acronyms",
       "/archive/"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-08-05",
     "validation_status": "papers_found",
-    "validation_notes": "Three 2026 meeting packs (27 May, 25 Mar, 28 Jan) plus minutes listed inline on the live page, last updated June 2026."
+    "validation_notes": "Three 2026 meeting packs (27 May, 25 Mar, 28 Jan) plus minutes listed inline on the live page, last updated June 2026.",
+    "retrieval_route": "archive_org_save_page_now"
   },
   {
     "ods_code": "RJ8",
@@ -2743,7 +2768,9 @@
     "region": "South West",
     "ics": "Bristol, North Somerset and South Gloucestershire",
     "correspondent": "Joe",
-    "url": "https://www.nbt.nhs.uk/about-us/meet-our-board/trust-board-meetings-20252026"
+    "url": "https://www.nbt.nhs.uk/about-us/meet-our-board/trust-board-meetings-20252026",
+    "group_board": "Bristol group board - NBT and UHBW meet in common; NBT hosts the year pages",
+    "group_board_url": "https://www.nbt.nhs.uk/about-us/meet-our-board/trust-board-meetings-20262027"
   },
   {
     "ods_code": "RVN",
@@ -2881,7 +2908,9 @@
     "region": "London",
     "ics": "North West London",
     "correspondent": "Matt D",
-    "url": "https://www.nwl-acute-provider-group.nhs.uk/publications"
+    "url": "https://www.nwl-acute-provider-group.nhs.uk/publications",
+    "group_board": "NW London Acute Provider Collaborative Board in Common",
+    "group_board_url": "https://www.nwl-acute-provider-group.nhs.uk/publications"
   },
   {
     "ods_code": "RAL",
@@ -2941,7 +2970,9 @@
     ],
     "last_validated": "2026-06-06",
     "validation_status": "papers_found",
-    "validation_notes": "Board-in-Common full-pack PDFs for 20 Jan 2026 and 28 Apr 2026 (covering Hillingdon) are published on the NWL Acute Provider Collaborative site."
+    "validation_notes": "Board-in-Common full-pack PDFs for 20 Jan 2026 and 28 Apr 2026 (covering Hillingdon) are published on the NWL Acute Provider Collaborative site.",
+    "group_board": "NW London Acute Provider Collaborative Board in Common",
+    "group_board_url": "https://www.nwl-acute-provider-group.nhs.uk/publications"
   },
   {
     "ods_code": "RF4",
@@ -3026,7 +3057,9 @@
     ],
     "last_validated": "2026-05-29",
     "validation_status": "papers_found",
-    "validation_notes": "Validator (static) found dated_pdfs=0, year_archives=5, meeting_subpages=2."
+    "validation_notes": "Validator (static) found dated_pdfs=0, year_archives=5, meeting_subpages=2.",
+    "group_board": "NW London Acute Provider Collaborative Board in Common",
+    "group_board_url": "https://www.nwl-acute-provider-group.nhs.uk/publications"
   },
   {
     "ods_code": "RQX",
@@ -3097,7 +3130,9 @@
     "region": "London",
     "ics": "North West London",
     "correspondent": "Matt D",
-    "url": "https://www.imperial.nhs.uk/about-us/board-papers/"
+    "url": "https://www.imperial.nhs.uk/about-us/board-papers/",
+    "group_board": "NW London Acute Provider Collaborative Board in Common",
+    "group_board_url": "https://www.nwl-acute-provider-group.nhs.uk/publications"
   },
   {
     "ods_code": "RAN",
@@ -3446,7 +3481,9 @@
     ],
     "last_validated": "2026-06-06",
     "validation_status": "papers_found",
-    "validation_notes": "Same UHT group board as South Tees; dated 2026 group packs confirmed on the shared southtees.nhs.uk domain."
+    "validation_notes": "Same UHT group board as South Tees; dated 2026 group packs confirmed on the shared southtees.nhs.uk domain.",
+    "group_board": "University Hospitals Tees group board - packs hosted on the SOUTH Tees domain",
+    "group_board_url": "https://www.southtees.nhs.uk/resources/?topic=board-of-directors"
   },
   {
     "ods_code": "RX3",
@@ -3855,7 +3892,9 @@
     ],
     "last_validated": "2026-06-04",
     "validation_status": "papers_found",
-    "validation_notes": "Minutes/agendas child page has combined public Trust Board paper PDFs for every 2025 and 2026 meeting (Jan-Nov 2025, Jan and Mar 2026)."
+    "validation_notes": "Minutes/agendas child page has combined public Trust Board paper PDFs for every 2025 and 2026 meeting (Jan-Nov 2025, Jan and Mar 2026).",
+    "group_board": "South East Sector Health Care Partnership joint board (from 1 April 2026)",
+    "group_board_url": "https://www.southeastsector-hcp.nhs.uk/"
   },
   {
     "ods_code": "RRF",
@@ -3925,7 +3964,9 @@
     ],
     "last_validated": "2026-06-06",
     "validation_status": "papers_found",
-    "validation_notes": "2025 single-trust public packs on the Stockport page and a live June 2026 Joint Public Board Meeting Pack on the partnership site confirmed."
+    "validation_notes": "2025 single-trust public packs on the Stockport page and a live June 2026 Joint Public Board Meeting Pack on the partnership site confirmed.",
+    "group_board": "South East Sector Health Care Partnership joint board (from 1 April 2026)",
+    "group_board_url": "https://www.southeastsector-hcp.nhs.uk/"
   },
   {
     "ods_code": "RXV",
@@ -4231,7 +4272,9 @@
     ],
     "last_validated": "2026-07-30",
     "validation_status": "papers_found",
-    "validation_notes": "Group board landing confirmed HTTP 200 (title 'Group Board meetings :: NHS University Hospitals of Liverpool Group'); 16 Jul 2026, 14 May 2026, 12 Mar 2026 and 15 Jan 2026 UHLG public packs verified as live PDFs, the July pack agenda naming LHCH explicitly."
+    "validation_notes": "Group board landing confirmed HTTP 200 (title 'Group Board meetings :: NHS University Hospitals of Liverpool Group'); 16 Jul 2026, 14 May 2026, 12 Mar 2026 and 15 Jan 2026 UHLG public packs verified as live PDFs, the July pack agenda naming LHCH explicitly.",
+    "group_board": "University Hospitals of Liverpool Group joint board (LUHFT + LWH + LHCH)",
+    "group_board_url": "https://www.uhliverpool.nhs.uk/about-us/meet-our-board/trust-board-meetings"
   },
   {
     "ods_code": "RBS",
@@ -4381,7 +4424,9 @@
     ],
     "last_validated": "2026-06-04",
     "validation_status": "needs_playwright",
-    "validation_notes": "Group Board meetings page (Playwright-confirmed) shows a Board papers table with 2024/2025/2026 year folders and a Liverpool Women's archive folder, plus 2025-2026 meeting recordings."
+    "validation_notes": "Group Board meetings page (Playwright-confirmed) shows a Board papers table with 2024/2025/2026 year folders and a Liverpool Women's archive folder, plus 2025-2026 meeting recordings.",
+    "group_board": "University Hospitals of Liverpool Group joint board (LUHFT + LWH + LHCH)",
+    "group_board_url": "https://www.uhliverpool.nhs.uk/about-us/meet-our-board/trust-board-meetings"
   },
   {
     "ods_code": "RET",
