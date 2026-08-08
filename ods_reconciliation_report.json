@@ -1,34 +1,312 @@
 {
-  "generated_at": "2026-08-01T04:36:25.193656+00:00",
-  "last_ods_sync_date_used": "2026-07-30",
-  "live_counts": {
-    "ord_trusts": 251,
-    "ord_icbs": 48,
-    "db_trusts": 207,
-    "db_icbs": 36
-  },
+  "generated_at": "2026-08-08T04:34:53.790633+00:00",
+  "last_ods_sync_date_used": "2026-08-01",
   "add_candidates": [
     {
       "ods": "RQF",
       "name": "VELINDRE NHS TRUST",
       "role": "trust",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh / non-England organisation - permanently out of scope, no action needed."
+      "note": "Welsh / non-England organisation - permanently out of scope, no action needed"
     },
     {
       "ods": "RT4",
       "name": "WELSH AMBULANCE SERVICES NHS TRUST",
       "role": "trust",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh / non-England organisation - permanently out of scope, no action needed."
+      "note": "Welsh / non-England organisation - permanently out of scope, no action needed"
     },
     {
       "ods": "RYT",
       "name": "PUBLIC HEALTH WALES NHS TRUST",
       "role": "trust",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh / non-England organisation - permanently out of scope, no action needed."
+      "note": "Welsh / non-England organisation - permanently out of scope, no action needed"
     }
   ],
-  "remove_candidates": []
+  "remove_candidates": [
+    {
+      "ods": "RY9",
+      "name": "HOUNSLOW AND RICHMOND COMMUNITY HEALTHCARE NHS TRUST",
+      "successor_ods": "RAX",
+      "successor_name": "KINGSTON AND RICHMOND NHS FOUNDATION TRUST",
+      "legal_end": "2024-10-31",
+      "note": "Legal End date has passed while still in the curated trust DB; found by full-member sweep, not the change feed"
+    },
+    {
+      "ods": "RVJ",
+      "name": "NORTH BRISTOL NHS TRUST",
+      "successor_ods": "RA7",
+      "successor_name": "BRISTOL NHS FOUNDATION TRUST",
+      "legal_end": "2026-06-30",
+      "note": "Legal End date has passed while still in the curated trust DB; found by full-member sweep, not the change feed"
+    },
+    {
+      "ods": "RNK",
+      "name": "TAVISTOCK AND PORTMAN NHS FOUNDATION TRUST",
+      "successor_ods": "G6V2S",
+      "successor_name": "NORTH LONDON NHS FOUNDATION TRUST",
+      "legal_end": "2026-03-31",
+      "note": "Legal End date has passed while still in the curated trust DB; found by full-member sweep, not the change feed"
+    },
+    {
+      "ods": "R1C",
+      "name": "SOLENT NHS TRUST",
+      "successor_ods": "RW1",
+      "successor_name": "HAMPSHIRE AND ISLE OF WIGHT HEALTHCARE NHS FOUNDATION TRUST",
+      "legal_end": "2024-09-30",
+      "note": "Legal End date has passed while still in the curated trust DB; found by full-member sweep, not the change feed"
+    },
+    {
+      "ods": "RY2",
+      "name": "BRIDGEWATER COMMUNITY HEALTHCARE NHS FOUNDATION TRUST",
+      "successor_ods": "RWW",
+      "successor_name": "NORTH CHESHIRE AND MERSEY NHS FOUNDATION TRUST",
+      "legal_end": "2026-03-31",
+      "note": "Legal End date has passed while still in the curated trust DB; found by full-member sweep, not the change feed"
+    }
+  ],
+  "name_drift": [
+    {
+      "ods": "RA2",
+      "db_name": "Royal Surrey County Hospital NHS Foundation Trust",
+      "ord_name": "ROYAL SURREY NHS FOUNDATION TRUST"
+    },
+    {
+      "ods": "RXY",
+      "db_name": "Kent and Medway NHS and Social Care Partnership Trust",
+      "ord_name": "KENT AND MEDWAY MENTAL HEALTH NHS TRUST"
+    },
+    {
+      "ods": "RWD",
+      "db_name": "United Lincolnshire Hospitals NHS Trust",
+      "ord_name": "UNITED LINCOLNSHIRE TEACHING HOSPITALS NHS TRUST"
+    },
+    {
+      "ods": "RAX",
+      "db_name": "Kingston Hospital NHS Foundation Trust",
+      "ord_name": "KINGSTON AND RICHMOND NHS FOUNDATION TRUST"
+    },
+    {
+      "ods": "RXG",
+      "db_name": "South West Yorkshire Partnership NHS Foundation Trust",
+      "ord_name": "SOUTH WEST YORKSHIRE PARTNERSHIP TEACHING NHS FOUNDATION TRUST"
+    },
+    {
+      "ods": "TAH",
+      "db_name": "Sheffield Health and Social Care NHS Foundation Trust",
+      "ord_name": "SHEFFIELD HEALTH PARTNERSHIP UNIVERSITY NHS FOUNDATION TRUST"
+    },
+    {
+      "ods": "RA7",
+      "db_name": "University Hospitals Bristol and Weston NHS Foundation Trust",
+      "ord_name": "BRISTOL NHS FOUNDATION TRUST"
+    },
+    {
+      "ods": "RHU",
+      "db_name": "Portsmouth Hospitals University National Health Service Trust",
+      "ord_name": "PORTSMOUTH HOSPITALS UNIVERSITY NHS TRUST"
+    },
+    {
+      "ods": "RW1",
+      "db_name": "Southern Health NHS Foundation Trust",
+      "ord_name": "HAMPSHIRE AND ISLE OF WIGHT HEALTHCARE NHS FOUNDATION TRUST"
+    },
+    {
+      "ods": "RWH",
+      "db_name": "East and North Hertfordshire NHS Trust",
+      "ord_name": "EAST AND NORTH HERTFORDSHIRE TEACHING NHS TRUST"
+    },
+    {
+      "ods": "RW5",
+      "db_name": "Lancashire and South Cumbria NHS Foundation Trust",
+      "ord_name": "LANCASHIRE & SOUTH CUMBRIA NHS FOUNDATION TRUST"
+    },
+    {
+      "ods": "RWW",
+      "db_name": "Warrington and Halton Teaching Hospitals NHS Foundation Trust",
+      "ord_name": "NORTH CHESHIRE AND MERSEY NHS FOUNDATION TRUST"
+    },
+    {
+      "ods": "QYG",
+      "db_name": "Cheshire and Merseyside ICB",
+      "ord_name": "NHS CHESHIRE AND MERSEYSIDE INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QOP",
+      "db_name": "Greater Manchester ICB",
+      "ord_name": "NHS GREATER MANCHESTER INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QE1",
+      "db_name": "Lancashire and South Cumbria ICB",
+      "ord_name": "NHS LANCASHIRE AND SOUTH CUMBRIA INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QHM",
+      "db_name": "North East and North Cumbria ICB",
+      "ord_name": "NHS NORTH EAST AND NORTH CUMBRIA INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QOQ",
+      "db_name": "Humber and North Yorkshire ICB",
+      "ord_name": "NHS HUMBER AND NORTH YORKSHIRE INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QF7",
+      "db_name": "South Yorkshire ICB",
+      "ord_name": "NHS SOUTH YORKSHIRE INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QWO",
+      "db_name": "West Yorkshire ICB",
+      "ord_name": "NHS WEST YORKSHIRE INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QHL",
+      "db_name": "Birmingham and Solihull ICB",
+      "ord_name": "NHS BIRMINGHAM AND SOLIHULL INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QUA",
+      "db_name": "Black Country ICB",
+      "ord_name": "NHS BLACK COUNTRY INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QWU",
+      "db_name": "Coventry and Warwickshire ICB",
+      "ord_name": "NHS COVENTRY AND WARWICKSHIRE INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QGH",
+      "db_name": "Herefordshire and Worcestershire ICB",
+      "ord_name": "NHS HEREFORDSHIRE AND WORCESTERSHIRE INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QJ2",
+      "db_name": "Derby and Derbyshire ICB",
+      "ord_name": "NHS DERBY AND DERBYSHIRE INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QJM",
+      "db_name": "Lincolnshire ICB",
+      "ord_name": "NHS LINCOLNSHIRE INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QT1",
+      "db_name": "Nottingham and Nottinghamshire ICB",
+      "ord_name": "NHS NOTTINGHAM AND NOTTINGHAMSHIRE INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QK1",
+      "db_name": "Leicester, Leicestershire and Rutland ICB",
+      "ord_name": "NHS LEICESTER, LEICESTERSHIRE AND RUTLAND INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QPM",
+      "db_name": "Northamptonshire ICB",
+      "ord_name": "NHS NORTHAMPTONSHIRE INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QOC",
+      "db_name": "Shropshire, Telford and Wrekin ICB",
+      "ord_name": "NHS SHROPSHIRE, TELFORD AND WREKIN INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QNC",
+      "db_name": "Staffordshire and Stoke-on-Trent ICB",
+      "ord_name": "NHS STAFFORDSHIRE AND STOKE-ON-TRENT INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "S1Y5D",
+      "db_name": "Central East ICB",
+      "ord_name": "NHS CENTRAL EAST INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "D7T5G",
+      "db_name": "Essex ICB",
+      "ord_name": "NHS ESSEX INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "T6Y0W",
+      "db_name": "Norfolk and Suffolk ICB",
+      "ord_name": "NHS NORFOLK AND SUFFOLK INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QMF",
+      "db_name": "North East London ICB",
+      "ord_name": "NHS NORTH EAST LONDON INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QKK",
+      "db_name": "South East London ICB",
+      "ord_name": "NHS SOUTH EAST LONDON INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QWE",
+      "db_name": "South West London ICB",
+      "ord_name": "NHS SOUTH WEST LONDON INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "Z9B2Z",
+      "db_name": "West and North London ICB",
+      "ord_name": "NHS WEST AND NORTH LONDON INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QRL",
+      "db_name": "Hampshire and Isle of Wight ICB",
+      "ord_name": "NHS HAMPSHIRE AND ISLE OF WIGHT INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QKS",
+      "db_name": "Kent and Medway ICB",
+      "ord_name": "NHS KENT AND MEDWAY INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "S0E4D",
+      "db_name": "Thames Valley ICB",
+      "ord_name": "NHS THAMES VALLEY INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "S9B9J",
+      "db_name": "Surrey and Sussex ICB",
+      "ord_name": "NHS SURREY AND SUSSEX INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QOX",
+      "db_name": "Bath and North East Somerset, Swindon and Wiltshire ICB",
+      "ord_name": "NHS BATH AND NORTH EAST SOMERSET, SWINDON AND WILTSHIRE INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QVV",
+      "db_name": "Dorset ICB",
+      "ord_name": "NHS DORSET INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QSL",
+      "db_name": "Somerset ICB",
+      "ord_name": "NHS SOMERSET INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QUY",
+      "db_name": "Bristol, North Somerset and South Gloucestershire ICB",
+      "ord_name": "NHS BRISTOL, NORTH SOMERSET AND SOUTH GLOUCESTERSHIRE INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QR1",
+      "db_name": "Gloucestershire ICB",
+      "ord_name": "NHS GLOUCESTERSHIRE INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QT6",
+      "db_name": "Cornwall and the Isles of Scilly ICB",
+      "ord_name": "NHS CORNWALL AND THE ISLES OF SCILLY INTEGRATED CARE BOARD"
+    },
+    {
+      "ods": "QJK",
+      "db_name": "Devon ICB",
+      "ord_name": "NHS DEVON INTEGRATED CARE BOARD"
+    }
+  ],
+  "sweep_note": "Full Legal-End sweep of all 243 DB members run 2026-08-08 in addition to the change feed, because the feed window (from 2026-08-01) cannot see mergers recorded earlier. Detail-fetch failures: none"
 }
