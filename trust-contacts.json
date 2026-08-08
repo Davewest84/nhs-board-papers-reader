@@ -420,13 +420,13 @@
   {
     "trust_name": "Dorset County Hospital NHS Foundation Trust",
     "ods_code": "RBD",
-    "press_email": "communications@dchft.nhs.uk",
-    "press_email_alt": null,
+    "press_email": "dch.communications@nhs.net",
+    "press_email_alt": "communications@dchft.nhs.uk",
     "press_source_url": "https://www.dchft.nhs.uk/about-us/contact-us/",
     "foi_email": "dhc.dch.foi.enquiries@nhs.net",
     "foi_email_alt": "FOI@dchft.nhs.uk",
     "foi_source_url": "https://www.dchft.nhs.uk/about-us/contact-us/",
-    "notes": "FOI inbox is shared with Dorset HealthCare (dhc prefix)"
+    "notes": "FOI inbox is shared with Dorset HealthCare (dhc prefix); press primary updated 2026-08-08 from https://www.dchft.nhs.uk/about-us/contact-us/ (page lists dch.communications@nhs.net as the media/communications contact); prior value communications@dchft.nhs.uk moved to press_email_alt"
   },
   {
     "trust_name": "Dorset Healthcare University NHS Foundation Trust",
@@ -1124,13 +1124,13 @@
   {
     "trust_name": "East of England Community Health and Care NHS Trust",
     "ods_code": "RY3",
-    "press_email": "ccs.communications@nhs.net",
-    "press_email_alt": "Communications@nchc.nhs.uk",
+    "press_email": "eec.communications@nhs.net",
+    "press_email_alt": "ccs.communications@nhs.net",
     "press_source_url": "https://eastofenglandcommunityhealthandcare.nhs.uk/contact-us",
-    "foi_email": "ccs.accesstoinfo@nhs.net",
-    "foi_email_alt": "FreedomOfInformationProvider@nchc.nhs.uk",
+    "foi_email": "eec.accesstoinfo@nhs.net",
+    "foi_email_alt": "ccs.accesstoinfo@nhs.net",
     "foi_source_url": "https://eastofenglandcommunityhealthandcare.nhs.uk/contact-us",
-    "notes": "Norfolk Community merged into East of England Community Health & Care; shared CCS inbox; renamed from 'Norfolk Community Health and Care NHS Trust' on 2026-05-16 after April 2026 merger with Cambridgeshire Community Services (RYV)"
+    "notes": "Norfolk Community merged into East of England Community Health & Care; shared CCS inbox; renamed from 'Norfolk Community Health and Care NHS Trust' on 2026-05-16 after April 2026 merger with Cambridgeshire Community Services (RYV); press and FOI primaries updated 2026-08-08 from https://eastofenglandcommunityhealthandcare.nhs.uk/contact-us — the merged trust now publishes eec.communications@nhs.net (media) and eec.accesstoinfo@nhs.net (FOI); prior values ccs.communications@nhs.net and ccs.accesstoinfo@nhs.net moved to the _alt fields, displacing the legacy Norfolk Community addresses Communications@nchc.nhs.uk and FreedomOfInformationProvider@nchc.nhs.uk, which are recorded here so they are not lost"
   },
   {
     "trust_name": "Norfolk and Norwich University Hospitals NHS Foundation Trust",

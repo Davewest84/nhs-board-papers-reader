@@ -96,9 +96,9 @@
       "Annual General Meeting papers",
       "draft minutes of prior meetings"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: the hub lists the 29 July 2026 AGM/Board with its own 'Board meeting held in public on Wednesday 29 July 2026' page, forward dates 30 Sep 2026, 27 Jan and 31 Mar 2027, and the 'Previous Board meetings' archive. papers_partial is expected -- the hub holds no PDFs itself, by design."
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: the hub still works as recorded - forward schedule (29 Jul 2026 AGM+board, 30 Sep 2026, 27 Jan and 31 Mar 2027) plus a link to the current meeting's own agenda-and-documentation page. It holds no PDFs itself, hence papers_partial; keep the URL as the one-hop hub."
   },
   {
     "ods_code": "QOQ",
@@ -303,9 +303,9 @@
       "committee/ICP/Joint content (not on these pages)",
       "XLSX governance-log attachments"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: /meetings/board-papers carries the 15 July 2026 AGM + Board pack as ~15 separate documents (agenda, CEO report, governance log, quality/performance, finance, maternity, annual reports) with 'Past Board Papers' linked in the Meetings menu. no_papers_visible is a false negative from the /download_file/<id>/<collection> handler on the hwics.org.uk sister domain."
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: /meetings/board-papers holds the current 15 July 2026 AGM + ICB Board set (15 documents) and the nav links the dated archive at /meetings/past-board-papers. The no_papers_visible classification is a false negative - the landing carries only the current meeting."
   },
   {
     "ods_code": "QJ2",
@@ -664,9 +664,9 @@
       "*-icb-sub-committee",
       "Health-Wellbeing / Health-Care-Partnership boards"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_partial",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: the landing is live and per-meeting event pages still resolve with their packs, but the meeting list rendered no date later than 31 March 2026 on this run, so the published schedule appears not to have been updated for the current year. URL correct; the staleness is on the ICB's side and is worth a human look."
+    "validation_notes": "Re-verified 2026-08-08: the landing is live and remains the correct hub - the search index confirms a 15 July 2026 ICB board meeting and per-meeting pages under /board-meetings/ and /events/. Note a render quirk worth knowing: the 'upcoming meetings' block as fetched still shows the Sep 2024-Mar 2025 cycle, so a crawler should follow the per-meeting event pages rather than trusting that list."
   },
   {
     "ods_code": "QKK",
@@ -751,9 +751,9 @@
       "legacy NCL/NWL pre-merger links",
       "watch-live / YouTube recording links"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: landing links the 22 July 2026 board agenda and papers via the policies-and-publications document library and lists forward dates 23 Sep 2026 (AGM), 21 Oct 2026, 27 Jan and 24 Mar 2027; papers publish about a week ahead. no_papers_visible is a false negative -- the packs live in the document library one hop on."
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: landing is live with forward dates 23 Sep (AGM), 21 Oct 2026, 27 Jan and 24 Mar 2027, recent 22 Jul and 17 Jun 2026 meetings linked, and pointers into the document library plus the NCL/NWL predecessor archives. Papers sit in the library rather than on the landing, which is what produced no_papers_visible."
   },
   {
     "ods_code": "QRL",
@@ -852,9 +852,9 @@
       "nhs-bob-icb-board-meetings-* and nhs-frimley-icb-* paths",
       "ICP / Joint Committee items"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: the current-ICB sub-page lists consolidated packs 'Thames Valley ICB Board papers 15 July 2026' (10.5MB) and '20 May 2026' (2.8MB). papers_partial is a false negative from the numeric Joomla /file links."
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: the current-ICB sub-page lists consolidated packs for 15 July 2026 (10.50 MB) and 20 May 2026 (2.81 MB); papers_partial reflects only the small number of packs published since the 1 April 2026 merger."
   },
   {
     "ods_code": "S9B9J",
@@ -1035,9 +1035,9 @@
       "Joint Committee",
       "Cluster governance committee"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Live page lists 2022-23 through 2025-26 board packs with direct PDF agenda/DOI/report links on the official docs subdomain."
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: page is live (last reviewed 27 May 2026) with the 28 May 2026 extraordinary-meeting agenda and papers PDF plus fiscal-year archives back to 2022, all hosted on docs.cios.icb.nhs.uk. The validator's 'broken' classification did not reproduce - a fetch artefact."
   },
   {
     "ods_code": "QJK",

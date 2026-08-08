@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-01T04:09:34.061781+00:00",
+  "generated_at": "2026-08-08T04:09:18.823581+00:00",
   "label": "trust",
   "total": 206,
-  "ok": 201,
-  "broken": 5,
+  "ok": 203,
+  "broken": 3,
   "results": [
     {
       "ods_code": "RA2",
@@ -37,9 +37,9 @@
       "name": "Medway NHS Foundation Trust",
       "url": "https://www.medway.nhs.uk/about-us/board-meetings/",
       "ok": true,
-      "status": 200,
+      "status": 403,
       "final_url": "https://www.medway.nhs.uk/about-us/board-meetings/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RPC",
@@ -99,10 +99,10 @@
       "ods_code": "RXC",
       "name": "East Sussex Healthcare NHS Trust",
       "url": "https://www.esht.nhs.uk/about-us/trust-board/meetings-in-public/",
-      "ok": false,
-      "status": null,
-      "final_url": null,
-      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.esht.nhs.uk/about-us/trust-board/meetings-in-public/\nCall log:\n  - navigating "
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.esht.nhs.uk/about-us/trust-board/meetings-in-public/",
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RXX",
@@ -201,7 +201,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.lpft.nhs.uk/get-involved/meeting-dates-and-minutes/board-directors-meetings",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RT5",
@@ -327,7 +327,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.uhcw.nhs.uk/our-organisation/trust-board-meetings/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RL1",
@@ -525,7 +525,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.stgeorges.nhs.uk/about/our-board/board-meetings/group-board-papers-and-agenda/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RJZ",
@@ -660,7 +660,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.sth.nhs.uk/about-us/board-meetings/",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RJL",
@@ -828,10 +828,10 @@
       "ods_code": "RGT",
       "name": "Cambridge University Hospitals NHS Foundation Trust",
       "url": "https://www.cuh.nhs.uk/about-us/board-directors/board-of-directors-meetings/",
-      "ok": false,
-      "status": null,
-      "final_url": null,
-      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.cuh.nhs.uk/about-us/board-directors/board-of-directors-meetings/\nCall log:\n  -"
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.cuh.nhs.uk/about-us/board-directors/board-of-directors-meetings/",
+      "error": null
     },
     {
       "ods_code": "RM1",
@@ -1161,10 +1161,10 @@
       "ods_code": "RP4",
       "name": "Great Ormond Street Hospital for Children NHS Foundation Trust",
       "url": "https://www.gosh.nhs.uk/about-us/who-we-are/organisational-structure/trust-board/trust-board-meetings/",
-      "ok": false,
-      "status": null,
-      "final_url": null,
-      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.gosh.nhs.uk/about-us/who-we-are/organisational-structure/trust-board/trust-boa"
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.gosh.nhs.uk/about-us/who-we-are/organisational-structure/trust-board/trust-board-meetings/",
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RRU",
@@ -1173,7 +1173,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.londonambulance.nhs.uk/about-us/how-we-are-run/trust-board/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RAT",
@@ -1191,7 +1191,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.westlondon.nhs.uk/about-us/trust-board/board-papers",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RNK",
@@ -1632,7 +1632,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.uhliverpool.nhs.uk/about-us/meet-our-board/trust-board-meetings",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "REN",
@@ -1719,10 +1719,10 @@
       "ods_code": "RXA",
       "name": "Cheshire and Wirral Partnership NHS Foundation Trust",
       "url": "https://www.cwp.nhs.uk/board",
-      "ok": true,
-      "status": 200,
-      "final_url": "https://www.cwp.nhs.uk/board",
-      "error": "(rescued by playwright fallback)"
+      "ok": false,
+      "status": null,
+      "final_url": null,
+      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.cwp.nhs.uk/board\nCall log:\n  - navigating to \"https://www.cwp.nhs.uk/board\", w"
     },
     {
       "ods_code": "RXL",
@@ -1829,7 +1829,7 @@
       "url": "https://www.secamb.nhs.uk/what-we-do/about-us/trust-board-meeting-dates-and-papers/",
       "ok": true,
       "status": 200,
-      "final_url": "https://www.secamb.nhs.uk/what-we-do/about-us/trust-board-meeting-dates-and-papers/",
+      "final_url": "https://www.secamb.nhs.uk/what-we-do/about-us/trust-board-meeting-dates-papers-and-recordings/",
       "error": null
     },
     {

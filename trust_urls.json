@@ -37,9 +37,9 @@
       "mailto:",
       "slugs with extra descriptors (strategic-improvement-report, appendix, supplementary, register-of-interests)"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01: plain curl with a browser User-Agent returns HTTP 200 and the landing lists the current pack 'Board paper 30th July 2026' (/documents/512-board-paper-30th-july-2026) plus a /board-papers sub-page. Server-side WebFetch was refused 403 on this run and the scanner saw a connection reset, so the block is route-specific, not a dead page."
+    "validation_notes": "Re-checked 2026-08-08: URL unchanged and confirmed live - the search index still returns this exact path as the trust's 'Board Meetings and Papers' page, with a /board-papers child listing dated packs. All fetch routes tried today failed at the network layer (requests and local headless Playwright both ERR_CONNECTION_RESET, server-side WebFetch also reset, and the browser-User-Agent retry that worked on 2026-08-01 was reset too), so the WAF is currently more aggressive than last week. Treated as a fetch block, not a stale URL; no change made."
   },
   {
     "ods_code": "RN7",
@@ -94,9 +94,9 @@
       "Agenda only",
       "private/confidential board"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: 'Meetings in public' lists 'Meeting papers: 23 July 2026' and '9 July 2026' newest-first plus forward dates to March 2027. The papers_partial classification is a false negative -- packs sit one hop down on the per-meeting sub-pages, so the landing itself carries no dated PDF links."
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: flat 'Meeting papers: <date>' list current through 23 July 2026 (also 9 Jul, 14 May, 12 Mar, 12 Feb 2026) with the archive reaching back to April 2014. The papers_partial classification is a false negative - each date is a sub-page, so few PDFs are linked directly on the landing."
   },
   {
     "ods_code": "RTK",
@@ -726,9 +726,9 @@
       "public questions / submission-procedure text",
       "governance boilerplate"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: the July 2026 'Board in Common' set is present as three direct PDFs (content/doclib/14558-14560.pdf: agenda, meeting papers, public information pack) with the year dropdown back ~5 years. Static fetch reaches the current pack; Playwright is only needed to enumerate the historic archive."
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: the August 2026 'Board in Common' triplet is served statically on the landing (content/doclib/14565-14567.pdf: public agenda, meeting papers, information pack). Only the historic-year dropdown needs JS, so the needs_playwright classification is a false positive for current packs."
   },
   {
     "ods_code": "RBK",
@@ -973,9 +973,9 @@
       "superseded -V1 where a -V2 exists",
       "OPEN TRUST BOARD (pre-2020 naming)"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "2026-08-01: no fetch route reached the board path this run -- local requests, local Playwright, browser-UA curl and server-side WebFetch all got a connection reset, while the site root answered 200 intermittently (www.combined.nhs.uk is fronted by ddosx.com). Google's index still carries the landing plus a /board-meetings/board-meeting-archive/trust-board-meeting-july-2026/ page and a January 2026 pack PDF, so the page is live and the URL correct; treat the resets as DDoSX bot mitigation, not rot."
+    "validation_notes": "Re-checked 2026-08-08: URL unchanged and confirmed live - search index returns /about/our-board/board-meetings/ as the current page plus a board-meeting-archive child holding the July 2026 meeting, and a Jan 2026 pack at /wp-content/uploads/2026/01/. Every fetch route reset at the network layer today (requests, local Playwright, WebFetch), so this is a fetch block, not a stale URL; no change made."
   },
   {
     "ods_code": "RNA",
@@ -1102,9 +1102,9 @@
       "council of governors",
       "'No files in here' static-render placeholder"
     ],
-    "last_validated": "2026-07-30",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Human landing uhb.nhs.uk/about/trust-management/bod/papers/ re-confirmed as still pointing at the docs.uhb.nhs.uk/index.php/s/prTEizKrRnYnjaD Nextcloud share; the share itself remains JS-rendered so static scans see nothing."
+    "validation_notes": "Re-verified 2026-08-08: the Nextcloud public share returns HTTP 200 but its static HTML carries no file listing or dates, exactly as recorded - the file tree is JS-rendered, which is what produces the no_papers_visible classification. URL correct; Playwright still required to enumerate the year/month folders."
   },
   {
     "ods_code": "RWP",
@@ -1622,9 +1622,9 @@
       "confirmed minutes PDFs (not the board pack)",
       "bthft.nhs.uk contact/email links"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: 23 July 2026 boardbook linked (/wp-content/uploads/2026/07/Public-BOD-23.7.26-Boardbook-v1.pdf) with forward dates 24 Sep, 25 Nov 2026, 28 Jan and 24 Mar 2027. Server-rendered -- no Playwright needed for the landing."
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: landing is server-rendered with the 23 July 2026 boardbook live at /wp-content/uploads/2026/07/Public-BOD-23.7.26-Boardbook-v1.pdf and forward dates 24 Sep, 25 Nov 2026, 28 Jan and 24 Mar 2027, plus per-year 'previous meetings' links back to 2017. needs_playwright is a false positive."
   },
   {
     "ods_code": "RCB",
@@ -1996,9 +1996,9 @@
       "pre-2020 BoardPapers/BOD_2017/",
       "Annual Reports under Publications/Annual_Reports/"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: the 2026 table carries 'Agenda and Papers' links for 15 Jan, 12 Mar, 14 May and 9 Jul 2026, with 10 Sep and 12 Nov 2026 pending. no_papers_visible is a false negative -- the links are CMS handlers without a .pdf suffix and the historic years sit in client-side accordions."
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: landing lists the 2026 Board of Directors dates with 'Agenda & Papers' live for 15 Jan, 12 Mar, 14 May and 9 Jul 2026 (10 Sep and 12 Nov pending), plus year accordions back to 2015. The no_papers_visible classification is a false negative from the collapsed accordions."
   },
   {
     "ods_code": "RXE",
@@ -2446,25 +2446,24 @@
     "region": "South West",
     "ics": "Bristol, North Somerset and South Gloucestershire",
     "correspondent": "Joe",
-    "url": "https://www.uhbw.nhs.uk/p/about-us/trust-board-meetings",
-    "access_notes": "The registered URL /about-us/board-papers/ is wrong and 500s; the real landing is /p/about-us/trust-board-meetings (older archive at /p/historic-meeting-papers-1). At scan time the entire uhbw.nhs.uk site returned an ASP.NET 'Runtime Error' (transient site-wide outage, not a moved page, since /assets/1/ still served PDFs with HTTP 200). UHBW now meets jointly with North Bristol NHS Trust, so packs are titled 'Public Group Board Meeting' or 'meeting in common (UHBW & NBT)'. Board meets in public every other month; papers published ~1 week before. PDFs sit flat in /assets/1/ with free-text filenames (e.g. public_group_board_meeting_13012026_papers.pdf). Needs render: the landing is ASP.NET/JS, so a crawler should retry the landing when the site recovers and scrape /assets/1/ links, or discover PDFs via site-search. Prefer the single combined '...papers' bundle per meeting; filter out Council of Governors packs, separate agendas, and minutes-only files. Update 2026-08-01: the site-wide ASP.NET 'Runtime Error' seen on 2026-07-30 has cleared and the landing serves normally again.",
+    "url": "https://www.bristolft.nhs.uk/about-us/our-board/board-meetings",
+    "access_notes": "URL PATCHED 2026-08-08: UHBW and North Bristol NHS Trust legally combined on 1 July 2026 to form Bristol NHS Foundation Trust, and the old landing /p/about-us/trust-board-meetings on uhbw.nhs.uk now serves only a redirect notice (\"We're moving content to our new website\") pointing at www.bristolft.nhs.uk/about-us/our-board/board-meetings. That new page is the live board archive: static server-rendered, no Playwright, listing each dated public board meeting with a 'Board papers published' link to a single combined PDF under /sites/default/files/<yyyy-mm>/ plus a YouTube recording link. Board meets roughly every other month (14 Jul 2026 papers live; forward dates 8 Sep, 10 Nov 2026, 12 Jan, 9 Mar 2027) and papers publish about a week before, under press embargo until the meeting. Months with no public meeting may still post a standalone Integrated Quality Performance Report - that is not a board pack. The legacy UHBW archive (uhbw.nhs.uk /p/historic-meeting-papers-1 and the flat /assets/1/ PDF store, filenames like public_group_board_meeting_13012026_papers.pdf) still resolves and remains the only source for pre-July-2026 UHBW/group packs, so keep it for backfill. Note the sibling entry RVJ (North Bristol) still points at nbt.nhs.uk, which was still serving papers at this scan - both entries will need repointing to the single Bristol FT board once NBT's pages retire; flagged for manual review.",
     "needs_playwright": false,
     "pack_pattern_hints": [
-      "public_group_board_meeting",
-      "board_meeting_in_common_uhbw",
-      "agenda_and_papers",
-      "_papers.pdf",
-      "/assets/1/"
+      "'Board papers published' link on each dated meeting",
+      "/sites/default/files/<yyyy-mm>/*Board*Meeting*.pdf",
+      "legacy UHBW backfill: /assets/1/public_group_board_meeting_<ddmmyyyy>_papers.pdf"
     ],
     "exclude_patterns": [
+      "Integrated Quality Performance Report (standalone, non-meeting months)",
       "council_of_governors",
       "minutes",
-      "error.aspx",
+      "meeting recording / YouTube links",
       "attending-board-meetings"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: the site-wide ASP.NET runtime error seen on 2026-07-30 has cleared. /p/about-us/trust-board-meetings loads, shows papers plus a recording for 12 May 2026 and forward dates 14 Jul, 8 Sep, 10 Nov 2026, and states papers appear about a week before each meeting under press embargo until the meeting.",
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: the old uhbw.nhs.uk landing now returns only a migration notice, so the URL was repointed to www.bristolft.nhs.uk/about-us/our-board/board-meetings, which confirms the 1 July 2026 NBT+UHBW merger into Bristol NHS Foundation Trust and lists the 14 Jul 2026 pack plus forward dates to 9 Mar 2027.",
     "group_board": "Bristol group board - NBT and UHBW meet in common; NBT hosts the year pages",
     "group_board_url": "https://www.nbt.nhs.uk/about-us/meet-our-board/trust-board-meetings-20262027"
   },
@@ -2524,13 +2523,13 @@
     "correspondent": "Joe",
     "url": "https://www.ruh.nhs.uk/about/trustboard/index.asp",
     "validation_status": "papers_found",
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "pack_pattern_hints": [
       "/about/trustboard/YYYY_MM/index.asp per-meeting page",
       "/about/trustboard/YYYY_MM/documents/Combined_paper_pack.pdf single combined pack",
       "month dropdown enumerates all meetings"
     ],
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: forthcoming meetings 2 Jul, 3 Sep, 5 Nov 2026 and 7 Jan 2027 listed, archive dropdown runs from Jan 2020 to June 2026. no_papers_visible is a false negative -- packs live on the per-month /about/trustboard/YYYY_MM/ pages, not the index.",
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: legacy ASP landing is current - forward dates 2 Jul, 3 Sep, 5 Nov 2026 and 7 Jan, 4 Mar 2027, with the July 2026 agenda-and-papers link live and the month dropdown reaching back to January 2020.",
     "access_notes": "Legacy ASP CMS but fully live and current. The landing /about/trustboard/index.asp lists forthcoming meetings and a month dropdown (Jan 2020 through the latest 2026 meeting). Each meeting has its own month page /about/trustboard/YYYY_MM/index.asp linking a single combined PDF at /about/trustboard/YYYY_MM/documents/Combined_paper_pack.pdf. All pages render statically -- no Playwright. To find the newest pack, read the landing for the latest YYYY_MM then hit that month's Combined_paper_pack.pdf. Papers carry a press embargo until after the meeting.",
     "needs_playwright": false,
     "exclude_patterns": [
@@ -3346,9 +3345,9 @@
       "sunderland legacy CHSFT governor pages",
       "council-of-governors pages"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: fiscal-year sections from 2026/27 back to 2019/20, with 'Agenda and papers' links for 4 June 2026 and 2 April 2026. no_papers_visible is a false negative caused by the extension-less /download_file/view/<uuid>/668 handler."
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: fiscal-year archive current, with '6 August 2026 - Agenda', '4 June 2026 - Agenda and papers' and '2 April 2026 - Agenda and papers' at the top and coverage back to May 2019 via the /download_file/view/<uuid>/668 handler."
   },
   {
     "ods_code": "RNN",
@@ -3622,7 +3621,7 @@
       "Imperva/hCaptcha challenge shell"
     ],
     "validation_status": "papers_found",
-    "validation_notes": "Re-probed 2026-07-30: local static fetch and local headless Playwright both return the 212-byte Imperva/Incapsula interstitial, browser User-Agent included. Cross-checked 2026-07-31 against the board-paper-machine state: the scanner holds 5 forward dates (Aug-Dec 2026) and downloaded + analysed the 3 Jul 2026 pack straight from fhft.nhs.uk/application/files/, so the site IS reachable server-side. Landing URL correct.",
+    "validation_notes": "Re-probed 2026-07-30: local static fetch and local headless Playwright both return the 212-byte Imperva/Incapsula interstitial, browser User-Agent included. Cross-checked 2026-07-31 against the board-paper-machine state: the scanner holds 5 forward dates (Aug-Dec 2026) and downloaded + analysed the 3 Jul 2026 pack straight from fhft.nhs.uk/application/files/, so the site IS reachable server-side. Landing URL correct. || Re-probed 2026-08-08: server-side WebFetch also returned the empty Imperva/Incapsula shell today, so the challenge is currently being served to that route as well. This does NOT retire the recorded server-side route - the board-paper-machine's confirmed pulls from fhft.nhs.uk/application/files/ stand as the last positive evidence. Landing URL correct; keep trying WebFetch first.",
     "last_validated": "2026-07-31"
   },
   {
@@ -3832,9 +3831,9 @@
       "Committee in Common (legacy 2019-2021 folders)",
       "watch the meeting video links"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01: browser-UA curl returns the full 292KB page with meetings 14 Jan, 4 Mar, 6 May, 8 Jul, 2 Sep and 4 Nov 2026 plus the 2025/26 archive. Server-side WebFetch was still answered with a synthetic HTTP 502 -- the edge's ClaudeBot block is unchanged, so use curl/requests rather than WebFetch here."
+    "validation_notes": "Re-verified 2026-08-08: plain fetch with a browser User-Agent returns HTTP 200 (292KB) with meetings listed through August 2026, while server-side WebFetch again got the synthetic HTTP 502 the edge serves to ClaudeBot - the recorded User-Agent quirk reproduces exactly. URL correct; use curl/requests with a browser UA, not WebFetch."
   },
   {
     "ods_code": "RMC",
@@ -3921,9 +3920,9 @@
       "pre-2020 archive under /2019/",
       "upcoming dates without a linked PDF"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: combined public bundles linked for 4 Feb, 1 Apr, 17 Jun and 5 Aug 2026 under /media/board/Papers/2026/. no_papers_visible is a false negative -- the hrefs are space-encoded .pdf paths the classifier missed."
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: 2026 public meetings listed with 'Meeting papers' PDFs live for 04 Feb, 01 Apr, 17 Jun and 05 Aug 2026 (07 Oct and 02 Dec pending), plus a separate prior-year archive section."
   },
   {
     "ods_code": "RT2",
@@ -4121,9 +4120,9 @@
       "legacy /about/board_meetings/*/default.asp",
       "acronyms glossary download"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: landing shows the current 'July 2026 Board Papers' combined pack (21.09 MB) plus the 'Previous board papers' folder link."
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: landing carries the current combined pack ('July 2026 Board Papers', 21.09 MB) plus the 'Previous board papers' folder for earlier meetings. papers_partial simply reflects that only the latest pack sits on the landing."
   },
   {
     "ods_code": "RWH",
@@ -4302,9 +4301,9 @@
       "legacy Concrete5 publications listing",
       "FOI disclosure-log PDFs"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_partial",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch and curl: the archive is live but thin -- page 1 holds only 'Trust Board Meeting - 2nd April 2026' (26MB) and page 2 jumps straight back to 5 June 2025, so no pack has been published for four months and the intervening meetings are absent. URL is correct; the gap is on the trust's side."
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: the publications_type archive is live and pagination works (page 2 of 12 renders). The most recent pack on the landing is still Trust Board Meeting 2 April 2026 (26MB) - unchanged from last week, so no pack appears to have been published for the May-July 2026 meetings. URL is correct; the gap is a publishing question for the trust, not a data error."
   },
   {
     "ods_code": "RBT",
@@ -4565,9 +4564,9 @@
       "/publications-reports-policies/",
       "/corporate-registers"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: dated packs listed for 05.02.26, 05.03.26, 02.04.26, 07.05.26, 04.06.26 and 02.07.26. no_papers_visible is a false negative from the numeric /download_file/<id>/1439 handler carrying no .pdf suffix."
+    "validation_notes": "Re-verified 2026-08-08 via WebFetch: newest-first pack list current through 'Board of Directors Meeting Papers - 02.07.2026', with six 2026 packs (05.02, 05.03, 02.04, 07.05, 04.06, 02.07) and year grouping back to 2020."
   },
   {
     "ods_code": "RWW",
@@ -4609,9 +4608,9 @@
       "/events",
       "publication-scheme"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "27 May 2026 board summary links to a live full agenda-pack PDF (PUBLIC_BoD_Agenda_Pack_Final_27_05_2026.pdf)."
+    "validation_notes": "Re-checked 2026-08-08: URL unchanged. WebFetch returned HTTP 403 and local requests/Playwright were connection-reset, consistent with the recorded Cloudflare block; the search index still shows the board summaries index and per-meeting summary pages live under cwp.nhs.uk. Fetch block, not a stale URL."
   },
   {
     "ods_code": "RXL",
@@ -4639,7 +4638,7 @@
     ],
     "last_validated": "2026-07-31",
     "validation_status": "papers_found",
-    "validation_notes": "Re-probed 2026-07-30: local static fetch and local headless Playwright both return the 212-byte Imperva/Incapsula interstitial, browser User-Agent included. Cross-checked 2026-07-31 against the board-paper-machine state: WebFetch logged OK on 2026-07-13 (6 forward dates), the scanner holds 9 forward dates (Aug 2026-Mar 2027), and it downloaded + analysed the 2 Jul 2026 pack via /download_file/12115/2316. Landing URL correct."
+    "validation_notes": "Re-probed 2026-07-30: local static fetch and local headless Playwright both return the 212-byte Imperva/Incapsula interstitial, browser User-Agent included. Cross-checked 2026-07-31 against the board-paper-machine state: WebFetch logged OK on 2026-07-13 (6 forward dates), the scanner holds 9 forward dates (Aug 2026-Mar 2027), and it downloaded + analysed the 2 Jul 2026 pack via /download_file/12115/2316. Landing URL correct. || Re-probed 2026-08-08: server-side WebFetch also returned the empty Imperva/Incapsula shell today. The recorded working route stands - the board-paper-machine's 2 Jul 2026 pack pull via /download_file/12115/2316 remains the last positive evidence. Landing URL correct; keep trying WebFetch first."
   },
   {
     "ods_code": "RXN",
@@ -4680,7 +4679,7 @@
     ],
     "last_validated": "2026-07-31",
     "validation_status": "papers_found",
-    "validation_notes": "Re-probed 2026-07-30: local static fetch and local headless Playwright both return the 212-byte Imperva/Incapsula interstitial, browser User-Agent included. Cross-checked 2026-07-31 against the board-paper-machine state: WebFetch logged OK on 2026-07-13 (earlier 404 no longer occurs), the scanner holds 4 forward dates (Sep 2026-Mar 2027), and it downloaded + analysed the 8 Jul 2026 pack via /download_file/30649/191. Landing URL correct. Note the path was corrected to /about-us/our-trust-board/... — the older /about-us/board-meetings-... path 404s."
+    "validation_notes": "Re-probed 2026-07-30: local static fetch and local headless Playwright both return the 212-byte Imperva/Incapsula interstitial, browser User-Agent included. Cross-checked 2026-07-31 against the board-paper-machine state: WebFetch logged OK on 2026-07-13 (earlier 404 no longer occurs), the scanner holds 4 forward dates (Sep 2026-Mar 2027), and it downloaded + analysed the 8 Jul 2026 pack via /download_file/30649/191. Landing URL correct. Note the path was corrected to /about-us/our-trust-board/... — the older /about-us/board-meetings-... path 404s. || Re-probed 2026-08-08: server-side WebFetch also returned the empty Imperva/Incapsula shell today. The recorded working route stands - the board-paper-machine's 8 Jul 2026 pack pull via /download_file/30649/191 remains the last positive evidence. Landing URL correct; keep trying WebFetch first."
   },
   {
     "ods_code": "RY2",
@@ -4931,9 +4930,9 @@
       "constitution and committee terms of reference (table _3)",
       "superseded duplicate uploads of the same meeting"
     ],
-    "last_validated": "2026-08-01",
+    "last_validated": "2026-08-08",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-01 via WebFetch: the board page lists the 2026/27 meeting schedule (2 Apr, 3 Jun, 3 Sep, 28 Oct AGM, 5 Nov 2026, 4 Mar 2027) but the paper tables render empty, exactly as expected -- they are serverSide Document Library Pro widgets whose rows arrive by AJAX and never exist in the HTML source. Landing URL correct."
+    "validation_notes": "Re-verified 2026-08-08 via direct fetch: /about-scas/our-board/ returns HTTP 200 with the 2026 board meeting schedule (Apr, Jun, Sep, Oct, Nov 2026) in the HTML. The paper tables remain serverSide AJAX widgets whose rows never appear in source, which is what drives the no_papers_visible classification. URL correct."
   },
   {
     "ods_code": "RYF",
