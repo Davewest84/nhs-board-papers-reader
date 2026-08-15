@@ -180,11 +180,11 @@
     "ods_code": "RAE",
     "press_email": "communications@bthft.nhs.uk",
     "press_email_alt": null,
-    "press_source_url": "Temp/Comms contacts.xlsx (May 2026)",
+    "press_source_url": "https://www.bradfordhospitals.nhs.uk/media-enquiries/",
     "foi_email": "foi@bthft.nhs.uk",
     "foi_email_alt": null,
     "foi_source_url": "https://www.bradfordhospitals.nhs.uk/freedom-of-information/",
-    "notes": "No press/comms email found on news-and-media page; switchboard 01274 542200 the only contact route; No dedicated press email surfaced on news/media or contact-us pages."
+    "notes": "No press/comms email found on news-and-media page; switchboard 01274 542200 the only contact route; No dedicated press email surfaced on news/media or contact-us pages. 2026-08-15: press address re-confirmed unchanged; press_source_url repointed from the May 2026 spreadsheet placeholder to the live page [https://www.bradfordhospitals.nhs.uk/media-enquiries/]."
   },
   {
     "trust_name": "Bridgewater Community Healthcare NHS Foundation Trust",
@@ -532,11 +532,11 @@
     "ods_code": "RYC",
     "press_email": "media@eastamb.nhs.uk",
     "press_email_alt": null,
-    "press_source_url": "Temp/Comms contacts.xlsx (May 2026)",
+    "press_source_url": "https://www.eastamb.nhs.uk/media-team",
     "foi_email": "FOI@eastamb.nhs.uk",
     "foi_email_alt": null,
     "foi_source_url": "https://www.eastamb.nhs.uk/about-us/freedom-of-information",
-    "notes": "EEAST: no press/media email visible on contact, newsroom, in-the-news, or about-us pages; site is Next.js app with limited static contact info; East of England Ambulance contact page lists feedback@ and charity@ only; no dedicated press email published."
+    "notes": "EEAST: no press/media email visible on contact, newsroom, in-the-news, or about-us pages; site is Next.js app with limited static contact info; East of England Ambulance contact page lists feedback@ and charity@ only; no dedicated press email published. 2026-08-15: press address re-confirmed unchanged; press_source_url repointed from the May 2026 spreadsheet placeholder to the live page [https://www.eastamb.nhs.uk/media-team]."
   },
   {
     "trust_name": "Epsom and St Helier University Hospitals NHS Trust",
@@ -1709,11 +1709,11 @@
     "ods_code": "RWJ",
     "press_email": "communications@stockport.nhs.uk",
     "press_email_alt": null,
-    "press_source_url": "Temp/Comms contacts.xlsx (May 2026)",
+    "press_source_url": "https://www.stockport.nhs.uk/pressoffice/",
     "foi_email": "foi@stockport.nhs.uk",
     "foi_email_alt": null,
     "foi_source_url": "https://www.stockport.nhs.uk/about/trust/freedom-of-information/",
-    "notes": "Contact page lists no media or FOI emails; FOI page not yet checked; Stockport FOI email decoded from Cloudflare cfemail. Contact-us page 404; no press email surfaced."
+    "notes": "Contact page lists no media or FOI emails; FOI page not yet checked; Stockport FOI email decoded from Cloudflare cfemail. Contact-us page 404; no press email surfaced. 2026-08-15: press address re-confirmed unchanged; press_source_url repointed from the May 2026 spreadsheet placeholder to the live page [https://www.stockport.nhs.uk/pressoffice/]."
   },
   {
     "trust_name": "Surrey and Borders Partnership NHS Foundation Trust",
@@ -1773,13 +1773,13 @@
   {
     "trust_name": "Tavistock and Portman NHS Foundation Trust",
     "ods_code": "RNK",
-    "press_email": "media@tavi-port.nhs.uk",
-    "press_email_alt": "communications@tavi-port.nhs.uk",
-    "press_source_url": "https://tavistockandportman.nhs.uk/contact-us/media/",
-    "foi_email": "foi@tavi-port.nhs.uk",
-    "foi_email_alt": null,
-    "foi_source_url": "https://tavistockandportman.nhs.uk/about-us/freedom-information/",
-    "notes": "Trust merged into North London FT April 2026; archived site; Note: Tavistock & Portman merged into North London NHS FT on 1 April 2026 - site archived."
+    "press_email": "nlft.communications@nhs.net",
+    "press_email_alt": "media@tavi-port.nhs.uk",
+    "press_source_url": "https://www.northlondonmentalhealth.nhs.uk/contact-us",
+    "foi_email": "nlft.freedom.information@nhs.net",
+    "foi_email_alt": "foi@tavi-port.nhs.uk",
+    "foi_source_url": "https://www.northlondonmentalhealth.nhs.uk/contact-us",
+    "notes": "Trust merged into North London FT April 2026; archived site; Note: Tavistock & Portman merged into North London NHS FT on 1 April 2026 - site archived. 2026-08-15: tavistockandportman.nhs.uk now 301-redirects to northlondonmentalhealth.nhs.uk (North London NHS Foundation Trust); both prior source URLs are dead. press + foi primaries updated from [https://www.northlondonmentalhealth.nhs.uk/contact-us]; prior values moved to _alt (displaced prior press _alt was communications@tavi-port.nhs.uk)."
   },
   {
     "trust_name": "Tees, Esk and Wear Valleys NHS Foundation Trust",
@@ -2174,19 +2174,19 @@
     "press_source_url": "https://www.whittington.nhs.uk/default.asp?c=23363",
     "foi_email": "foi.whitthealth@nhs.net",
     "foi_email_alt": null,
-    "foi_source_url": "Temp/Comms contacts.xlsx (May 2026)",
-    "notes": "FOI email not located; Whittington FOI sub-pages (default.asp ?c= numeric IDs) all 404 in tests."
+    "foi_source_url": "https://www.whittington.nhs.uk/default.asp?c=1631",
+    "notes": "FOI email not located; Whittington FOI sub-pages (default.asp ?c= numeric IDs) all 404 in tests. 2026-08-15: foi address re-confirmed unchanged; foi_source_url repointed from the May 2026 spreadsheet placeholder to the live page [https://www.whittington.nhs.uk/default.asp?c=1631]."
   },
   {
     "trust_name": "Wirral Community Health and Care NHS Foundation Trust",
     "ods_code": "RY7",
     "press_email": "wcnt.communications@nhs.net",
     "press_email_alt": null,
-    "press_source_url": "Temp/Comms contacts.xlsx (May 2026)",
+    "press_source_url": "https://www.wchc.nhs.uk/about/corporate-services/communications-marketing/",
     "foi_email": "wcnt.foi@nhs.net",
     "foi_email_alt": null,
-    "foi_source_url": "Temp/Comms contacts.xlsx (May 2026)",
-    "notes": "no listed emails on either page; phone-only contact; Wirral Community: contact page lists media phone numbers but no email; FOI page lists no email; sub-paths 404."
+    "foi_source_url": "https://www.wchc.nhs.uk/about/freedom-information/act/",
+    "notes": "no listed emails on either page; phone-only contact; Wirral Community: contact page lists media phone numbers but no email; FOI page lists no email; sub-paths 404. 2026-08-15: press address re-confirmed unchanged; press_source_url repointed from the May 2026 spreadsheet placeholder to the live page [https://www.wchc.nhs.uk/about/corporate-services/communications-marketing/]. 2026-08-15: foi address re-confirmed unchanged; foi_source_url repointed from the May 2026 spreadsheet placeholder to the live page [https://www.wchc.nhs.uk/about/freedom-information/act/]."
   },
   {
     "trust_name": "Wirral University Teaching Hospital NHS Foundation Trust",

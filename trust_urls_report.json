@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-08T04:09:18.823581+00:00",
+  "generated_at": "2026-08-15T04:09:43.180607+00:00",
   "label": "trust",
   "total": 206,
-  "ok": 203,
-  "broken": 3,
+  "ok": 206,
+  "broken": 0,
   "results": [
     {
       "ods_code": "RA2",
@@ -18,10 +18,10 @@
       "ods_code": "RDR",
       "name": "Sussex Community NHS Foundation Trust",
       "url": "https://www.sussexcommunity.nhs.uk/about-us/how-we-are-run/board-of-directors/board-meetings-and-papers",
-      "ok": false,
-      "status": null,
-      "final_url": null,
-      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.sussexcommunity.nhs.uk/about-us/how-we-are-run/board-of-directors/board-meetin"
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.sussexcommunity.nhs.uk/about-us/how-we-are-run/board-of-directors/board-meetings-and-papers",
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RN7",
@@ -37,9 +37,9 @@
       "name": "Medway NHS Foundation Trust",
       "url": "https://www.medway.nhs.uk/about-us/board-meetings/",
       "ok": true,
-      "status": 403,
+      "status": 200,
       "final_url": "https://www.medway.nhs.uk/about-us/board-meetings/",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RPC",
@@ -102,7 +102,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.esht.nhs.uk/about-us/trust-board/meetings-in-public/",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RXX",
@@ -327,7 +327,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.uhcw.nhs.uk/our-organisation/trust-board-meetings/",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RL1",
@@ -369,10 +369,10 @@
       "ods_code": "RLY",
       "name": "North Staffordshire Combined Healthcare NHS Trust",
       "url": "https://www.combined.nhs.uk/about/our-board/board-meetings/",
-      "ok": false,
-      "status": null,
-      "final_url": null,
-      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.combined.nhs.uk/about/our-board/board-meetings/\nCall log:\n  - navigating to \"h"
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.combined.nhs.uk/about/our-board/board-meetings/",
+      "error": null
     },
     {
       "ods_code": "RNA",
@@ -525,7 +525,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.stgeorges.nhs.uk/about/our-board/board-meetings/group-board-papers-and-agenda/",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RJZ",
@@ -552,7 +552,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.moorfields.nhs.uk/about-us/our-organisation/corporate-publications/board-reports",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RPY",
@@ -660,7 +660,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.sth.nhs.uk/about-us/board-meetings/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RJL",
@@ -739,9 +739,9 @@
       "name": "South West Yorkshire Partnership NHS Foundation Trust",
       "url": "https://www.southwestyorkshire.nhs.uk/about-us-2/how-were-run/our-trust-board/meeting-papers/",
       "ok": true,
-      "status": 200,
+      "status": 403,
       "final_url": "https://www.southwestyorkshire.nhs.uk/about-us-2/how-were-run/our-trust-board/meeting-papers/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RY6",
@@ -881,10 +881,10 @@
     {
       "ods_code": "RA7",
       "name": "University Hospitals Bristol and Weston NHS Foundation Trust",
-      "url": "https://www.uhbw.nhs.uk/p/about-us/trust-board-meetings",
+      "url": "https://www.bristolft.nhs.uk/about-us/our-board/board-meetings",
       "ok": true,
       "status": 200,
-      "final_url": "https://www.uhbw.nhs.uk/p/about-us/trust-board-meetings",
+      "final_url": "https://www.bristolft.nhs.uk/about-us/our-board/board-meetings",
       "error": null
     },
     {
@@ -1172,8 +1172,8 @@
       "url": "https://www.londonambulance.nhs.uk/about-us/how-we-are-run/trust-board/",
       "ok": true,
       "status": 200,
-      "final_url": "https://www.londonambulance.nhs.uk/about-us/how-we-are-run/trust-board/",
-      "error": "(rescued by playwright fallback)"
+      "final_url": "https://www.londonambulance.nhs.uk/about-us/board-and-members/trust-board/",
+      "error": null
     },
     {
       "ods_code": "RAT",
@@ -1209,7 +1209,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.cnwl.nhs.uk/about/planning-performance-and-reports",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RWK",
@@ -1632,7 +1632,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.uhliverpool.nhs.uk/about-us/meet-our-board/trust-board-meetings",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "REN",
@@ -1719,10 +1719,10 @@
       "ods_code": "RXA",
       "name": "Cheshire and Wirral Partnership NHS Foundation Trust",
       "url": "https://www.cwp.nhs.uk/board",
-      "ok": false,
-      "status": null,
-      "final_url": null,
-      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.cwp.nhs.uk/board\nCall log:\n  - navigating to \"https://www.cwp.nhs.uk/board\", w"
+      "ok": true,
+      "status": 200,
+      "final_url": "https://www.cwp.nhs.uk/board",
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RXL",
