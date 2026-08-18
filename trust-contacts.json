@@ -1405,7 +1405,7 @@
     "foi_email": "foi@royalberkshire.nhs.uk",
     "foi_email_alt": null,
     "foi_source_url": "https://www.royalberkshire.nhs.uk/contact-us/",
-    "notes": "in progress"
+    "notes": "2026-08-18: press and FOI emails both re-verified against the trust's own contact-us page."
   },
   {
     "trust_name": "Royal Cornwall Hospitals NHS Trust",
@@ -1878,7 +1878,7 @@
     "foi_email": "rjah.foi@nhs.net",
     "foi_email_alt": null,
     "foi_source_url": "https://www.rjah.nhs.uk/contact-us",
-    "notes": "in progress"
+    "notes": "2026-08-18: press and FOI emails both re-verified against the trust's own pages. Trust asks media to route all enquiries via the press office rather than contacting staff directly."
   },
   {
     "trust_name": "The Rotherham NHS Foundation Trust",
@@ -1922,7 +1922,7 @@
     "foi_email": "rwh-tr.foi@nhs.net",
     "foi_email_alt": null,
     "foi_source_url": "https://www.royalwolverhampton.nhs.uk/contact-us/",
-    "notes": "in progress"
+    "notes": "2026-08-18: press and FOI emails both re-verified against the trust's own contact-us page. Press address is listed there as 'Website Enquiries / Media / Press', so it is not media-only."
   },
   {
     "trust_name": "The Shrewsbury and Telford Hospital NHS Trust",
@@ -2229,8 +2229,8 @@
     "press_source_url": "https://www.wyevalley.nhs.uk/news-events/press-office.aspx",
     "foi_email": "Freedom.Information@wvt.nhs.uk",
     "foi_email_alt": null,
-    "foi_source_url": "https://www.wyevalley.nhs.uk/about-us/information-requests/freedom-of-information-requests.aspx",
-    "notes": "in progress"
+    "foi_source_url": "https://www.wyevalley.nhs.uk/about-us/information-requests/make-a-freedom-of-information-request.aspx",
+    "notes": "2026-08-18: press and FOI emails both re-verified against the trust's own pages. foi_source_url repointed - the old freedom-of-information-requests.aspx now 404s. Press office page also lists three named comms staff (John Burnett, comms and engagement manager; Amanda Millichip and Fiona Gurney, comms officers) on 01432 372928."
   },
   {
     "trust_name": "York and Scarborough Teaching Hospitals NHS Foundation Trust",
