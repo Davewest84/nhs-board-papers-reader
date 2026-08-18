@@ -1367,12 +1367,12 @@
     "trust_name": "Portsmouth Hospitals University National Health Service Trust",
     "ods_code": "RHU",
     "press_email": "pho-tr.communications@nhs.net",
-    "press_email_alt": "communications@porthosp.nhs.uk",
+    "press_email_alt": null,
     "press_source_url": "https://www.porthosp.nhs.uk/about-us/contact-us",
     "foi_email": "pho-tr.foirequest-portsmouth@nhs.net",
     "foi_email_alt": "Portsmouth.FOIRequests@porthosp.nhs.uk",
     "foi_source_url": "https://www.porthosp.nhs.uk/about-us/information-governance/requesting-information",
-    "notes": "in progress"
+    "notes": "2026-08-18: press_email pho-tr.communications@nhs.net re-verified against the trust's own contact-us page. Stale alt communications@porthosp.nhs.uk removed - reported as wrong. Note: Isle of Wight NHS Trust (R1F) legitimately shares this same comms inbox."
   },
   {
     "trust_name": "Queen Victoria Hospital NHS Foundation Trust",
