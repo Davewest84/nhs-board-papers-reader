@@ -29,7 +29,7 @@ https://raw.githubusercontent.com/Davewest84/nhs-trust-icb-data/main/icb-contact
 ```json
 {
   "ods_code": "RA2",
-  "names": ["Royal Surrey County Hospital NHS Foundation Trust", "Royal Surrey County Hospital"],
+  "names": ["Royal Surrey NHS Foundation Trust", "Royal Surrey"],
   "type": "Acute and Acute & Community Trusts",
   "region": "South East",
   "ics": "Surrey Heartlands",

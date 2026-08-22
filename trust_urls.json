@@ -2,6 +2,8 @@
   {
     "ods_code": "RA2",
     "names": [
+      "Royal Surrey NHS Foundation Trust",
+      "Royal Surrey",
       "Royal Surrey County Hospital NHS Foundation Trust",
       "Royal Surrey County Hospital"
     ],
@@ -294,6 +296,9 @@
   {
     "ods_code": "RXY",
     "names": [
+      "Kent and Medway Mental Health NHS Trust",
+      "Kent and Medway Mental Health",
+      "KMPT",
       "Kent and Medway NHS and Social Care Partnership Trust"
     ],
     "type": "Mental Health & Learning Disability and Mental Health, Learning Disability & Community Trusts",
@@ -538,6 +543,9 @@
   {
     "ods_code": "RWD",
     "names": [
+      "United Lincolnshire Teaching Hospitals NHS Trust",
+      "United Lincolnshire Teaching Hospitals",
+      "ULTH",
       "United Lincolnshire Hospitals NHS Trust",
       "United Lincolnshire Hospitals",
       "ULHT"
@@ -2053,6 +2061,8 @@
   {
     "ods_code": "RXG",
     "names": [
+      "South West Yorkshire Partnership Teaching NHS Foundation Trust",
+      "South West Yorkshire Partnership Teaching",
       "South West Yorkshire Partnership NHS Foundation Trust",
       "South West Yorkshire Partnership",
       "SWYPFT"
@@ -2124,8 +2134,10 @@
   {
     "ods_code": "TAH",
     "names": [
-      "Sheffield Health and Social Care NHS Foundation Trust",
-      "Sheffield Health and Social Care"
+      "Sheffield Health Partnership University NHS Foundation Trust",
+      "Sheffield Health Partnership University",
+      "Sheffield Health and Social Care",
+      "Sheffield Health and Social Care NHS Foundation Trust"
     ],
     "type": "Mental Health & Learning Disability and Mental Health, Learning Disability & Community Trusts",
     "region": "North East and Yorkshire",
@@ -3622,8 +3634,8 @@
   {
     "ods_code": "RHU",
     "names": [
-      "Portsmouth Hospitals University National Health Service Trust",
       "Portsmouth Hospitals University NHS Trust",
+      "Portsmouth Hospitals University National Health Service Trust",
       "Portsmouth Hospitals",
       "PHU"
     ],
@@ -4136,6 +4148,8 @@
   {
     "ods_code": "RWH",
     "names": [
+      "East and North Hertfordshire Teaching NHS Trust",
+      "East and North Hertfordshire Teaching",
       "East and North Hertfordshire NHS Trust",
       "East and North Hertfordshire",
       "East North Hertfordshire",

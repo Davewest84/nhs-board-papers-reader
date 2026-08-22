@@ -506,7 +506,7 @@
     "notes": "press uses web form, no listed email; East Sussex Healthcare media enquiries page closed connection on fetch; no press email retrieved."
   },
   {
-    "trust_name": "East and North Hertfordshire NHS Trust",
+    "trust_name": "East and North Hertfordshire Teaching NHS Trust",
     "ods_code": "RWH",
     "press_email": "pressoffice@enherts-tr.nhs.uk",
     "press_email_alt": "communications.enh-tr@nhs.net",
@@ -781,7 +781,7 @@
     "notes": null
   },
   {
-    "trust_name": "Kent and Medway NHS and Social Care Partnership Trust",
+    "trust_name": "Kent and Medway Mental Health NHS Trust",
     "ods_code": "RXY",
     "press_email": "comms.kentandmedway@nhs.net",
     "press_email_alt": null,
@@ -1331,7 +1331,7 @@
     "notes": null
   },
   {
-    "trust_name": "Portsmouth Hospitals University National Health Service Trust",
+    "trust_name": "Portsmouth Hospitals University NHS Trust",
     "ods_code": "RHU",
     "press_email": "pho-tr.communications@nhs.net",
     "press_email_alt": null,
@@ -1430,7 +1430,7 @@
     "notes": null
   },
   {
-    "trust_name": "Royal Surrey County Hospital NHS Foundation Trust",
+    "trust_name": "Royal Surrey NHS Foundation Trust",
     "ods_code": "RA2",
     "press_email": "rsch.pressoffice@nhs.net",
     "press_email_alt": "rsch.communications@nhs.net",
@@ -1485,7 +1485,7 @@
     "notes": null
   },
   {
-    "trust_name": "Sheffield Health and Social Care NHS Foundation Trust",
+    "trust_name": "Sheffield Health Partnership University NHS Foundation Trust",
     "ods_code": "TAH",
     "press_email": "communications@sheffieldpartnership.nhs.uk",
     "press_email_alt": "communications.shsc@shsc.nhs.uk",
@@ -1617,7 +1617,7 @@
     "notes": null
   },
   {
-    "trust_name": "South West Yorkshire Partnership NHS Foundation Trust",
+    "trust_name": "South West Yorkshire Partnership Teaching NHS Foundation Trust",
     "ods_code": "RXG",
     "press_email": "comms@swyt.nhs.uk",
     "press_email_alt": null,
@@ -1903,7 +1903,7 @@
     "notes": "Press email reconstructed from contact form recipient (tsdft.communicationsteam@nhs.net) | press source URL corrected 2026-06-20 (prior URL 404); address unchanged | 2026-08-22: media-relations page is contact-form only with no address published, so the reconstructed press address is retained unverified; tsdft.foirequests@nhs.net re-confirmed."
   },
   {
-    "trust_name": "United Lincolnshire Hospitals NHS Trust",
+    "trust_name": "United Lincolnshire Teaching Hospitals NHS Trust",
     "ods_code": "RWD",
     "press_email": "ulth.lchscommunications@nhs.net",
     "press_email_alt": "communications@ulh.nhs.uk",
