@@ -1,62 +1,38 @@
 {
-  "generated_at": "2026-08-15T05:40:00+00:00",
-  "last_ods_sync_date_used": "2026-08-08",
-  "method_note": "ADD candidates derived from the live superset (PrimaryRoleId RO197 + RO57 + RO107 for trusts, RO261 name-filtered to \"INTEGRATED CARE BOARD\" for ICBs; RO57 returned an empty set this run) minus DB membership, then filtered by Date[Legal].End. REMOVE candidates come from a FULL Legal-End sweep of all 243 DB members, not just the /sync change feed: the feed only surfaces orgs whose ODS record changed since last_ods_sync_date, so an org that died months ago and has not been touched since is invisible to it (RNK, legal end 2026-03-31, is the standing example). The plain set-difference misses them too because a merged org keeps Status \"Active\".",
+  "generated_at": "2026-08-22T04:36:40.252239+00:00",
+  "last_ods_sync_date_used": "2026-08-15",
+  "method_note": "ADD candidates derived from the live superset (PrimaryRoleId RO197 + RO57 + RO107 for trusts, RO261 name-filtered to \"INTEGRATED CARE BOARD\" for ICBs) minus DB membership, then filtered by Date[Legal].End. REMOVE candidates come from a FULL Legal-End sweep of all 243 DB members, not just the /sync change feed: the feed only surfaces orgs whose ODS record changed since last_ods_sync_date, so an org that died months ago and has not been touched since is invisible to it (R1C, legal end 2024-09-30, is the standing example). The plain set-difference misses them too because a merged org keeps Status \"Active\". This run also ran the change feed (1,162 orgs changed since 2026-08-15, 0 of them in-DB deaths) as a cross-check; the full sweep is the authoritative list. All 243 detail lookups succeeded.",
   "add_candidates": [
     {
       "ods": "RQF",
       "name": "VELINDRE NHS TRUST",
-      "role": "RO197/RO57 NHS Trust",
+      "role": "trust",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh NHS trust - permanently out of scope for this England-only dataset. No action needed."
+      "note": "Welsh / non-England body, permanently out of scope - no action needed."
     },
     {
       "ods": "RT4",
       "name": "WELSH AMBULANCE SERVICES NHS TRUST",
-      "role": "RO197/RO57 NHS Trust",
+      "role": "trust",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh NHS trust - permanently out of scope for this England-only dataset. No action needed."
+      "note": "Welsh / non-England body, permanently out of scope - no action needed."
     },
     {
       "ods": "RYT",
       "name": "PUBLIC HEALTH WALES NHS TRUST",
-      "role": "RO197/RO57 NHS Trust",
+      "role": "trust",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh NHS trust - permanently out of scope for this England-only dataset. No action needed."
+      "note": "Welsh / non-England body, permanently out of scope - no action needed."
     }
   ],
   "remove_candidates": [
-    {
-      "ods": "R1C",
-      "name": "SOLENT NHS TRUST",
-      "successor_ods": "RW1",
-      "successor_name": "HAMPSHIRE AND ISLE OF WIGHT HEALTHCARE NHS FOUNDATION TRUST",
-      "legal_end": "2024-09-30",
-      "note": "ODS Status is still \"Active\" but the Legal date ended 2024-09-30 with a Successor link to RW1. Dead org still present in the DB - needs a manual decision on whether to drop the entry or repoint it at the successor."
-    },
     {
       "ods": "RY9",
       "name": "HOUNSLOW AND RICHMOND COMMUNITY HEALTHCARE NHS TRUST",
       "successor_ods": "RAX",
       "successor_name": "KINGSTON AND RICHMOND NHS FOUNDATION TRUST",
       "legal_end": "2024-10-31",
-      "note": "ODS Status is still \"Active\" but the Legal date ended 2024-10-31 with a Successor link to RAX. Dead org still present in the DB - needs a manual decision on whether to drop the entry or repoint it at the successor."
-    },
-    {
-      "ods": "RNK",
-      "name": "TAVISTOCK AND PORTMAN NHS FOUNDATION TRUST",
-      "successor_ods": "G6V2S",
-      "successor_name": "NORTH LONDON NHS FOUNDATION TRUST",
-      "legal_end": "2026-03-31",
-      "note": "ODS Status is still \"Active\" but the Legal date ended 2026-03-31 with a Successor link to G6V2S. Dead org still present in the DB - needs a manual decision on whether to drop the entry or repoint it at the successor."
-    },
-    {
-      "ods": "RY2",
-      "name": "BRIDGEWATER COMMUNITY HEALTHCARE NHS FOUNDATION TRUST",
-      "successor_ods": "RWW",
-      "successor_name": "NORTH CHESHIRE AND MERSEY NHS FOUNDATION TRUST",
-      "legal_end": "2026-03-31",
-      "note": "ODS Status is still \"Active\" but the Legal date ended 2026-03-31 with a Successor link to RWW. Dead org still present in the DB - needs a manual decision on whether to drop the entry or repoint it at the successor."
+      "note": "ODS Status is still \"Active\" but the Legal date ended 2024-10-31 with a Successor link to RAX. Dead trust still present in the DB - needs a manual decision on whether to drop the entry or repoint it at the successor."
     },
     {
       "ods": "RVJ",
@@ -64,7 +40,31 @@
       "successor_ods": "RA7",
       "successor_name": "BRISTOL NHS FOUNDATION TRUST",
       "legal_end": "2026-06-30",
-      "note": "ODS Status is still \"Active\" but the Legal date ended 2026-06-30 with a Successor link to RA7. Dead org still present in the DB - needs a manual decision on whether to drop the entry or repoint it at the successor."
+      "note": "ODS Status is still \"Active\" but the Legal date ended 2026-06-30 with a Successor link to RA7. Dead trust still present in the DB - needs a manual decision on whether to drop the entry or repoint it at the successor."
+    },
+    {
+      "ods": "RNK",
+      "name": "TAVISTOCK AND PORTMAN NHS FOUNDATION TRUST",
+      "successor_ods": "G6V2S",
+      "successor_name": "NORTH LONDON NHS FOUNDATION TRUST",
+      "legal_end": "2026-03-31",
+      "note": "ODS Status is still \"Active\" but the Legal date ended 2026-03-31 with a Successor link to G6V2S. Dead trust still present in the DB - needs a manual decision on whether to drop the entry or repoint it at the successor."
+    },
+    {
+      "ods": "R1C",
+      "name": "SOLENT NHS TRUST",
+      "successor_ods": "RW1",
+      "successor_name": "HAMPSHIRE AND ISLE OF WIGHT HEALTHCARE NHS FOUNDATION TRUST",
+      "legal_end": "2024-09-30",
+      "note": "ODS Status is still \"Active\" but the Legal date ended 2024-09-30 with a Successor link to RW1. Dead trust still present in the DB - needs a manual decision on whether to drop the entry or repoint it at the successor."
+    },
+    {
+      "ods": "RY2",
+      "name": "BRIDGEWATER COMMUNITY HEALTHCARE NHS FOUNDATION TRUST",
+      "successor_ods": "RWW",
+      "successor_name": "NORTH CHESHIRE AND MERSEY NHS FOUNDATION TRUST",
+      "legal_end": "2026-03-31",
+      "note": "ODS Status is still \"Active\" but the Legal date ended 2026-03-31 with a Successor link to RWW. Dead trust still present in the DB - needs a manual decision on whether to drop the entry or repoint it at the successor."
     }
   ]
 }
