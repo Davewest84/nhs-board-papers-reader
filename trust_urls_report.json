@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-15T04:09:43.180607+00:00",
+  "generated_at": "2026-08-22T04:09:35.619613+00:00",
   "label": "trust",
   "total": 206,
-  "ok": 206,
-  "broken": 0,
+  "ok": 205,
+  "broken": 1,
   "results": [
     {
       "ods_code": "RA2",
@@ -21,7 +21,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.sussexcommunity.nhs.uk/about-us/how-we-are-run/board-of-directors/board-meetings-and-papers",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RN7",
@@ -327,7 +327,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.uhcw.nhs.uk/our-organisation/trust-board-meetings/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RL1",
@@ -480,7 +480,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.blackcountryhealthcare.nhs.uk/about-us/our-board-of-directors",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RAX",
@@ -522,10 +522,10 @@
       "ods_code": "RJ7",
       "name": "St George's University Hospitals NHS Foundation Trust",
       "url": "https://www.stgeorges.nhs.uk/about/our-board/board-meetings/group-board-papers-and-agenda/",
-      "ok": true,
-      "status": 200,
-      "final_url": "https://www.stgeorges.nhs.uk/about/our-board/board-meetings/group-board-papers-and-agenda/",
-      "error": null
+      "ok": false,
+      "status": null,
+      "final_url": null,
+      "error": "http: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)); playwright: Page.goto: net::ERR_CONNECTION_RESET at https://www.stgeorges.nhs.uk/about/our-board/board-meetings/group-board-papers-and-agenda/"
     },
     {
       "ods_code": "RJZ",
@@ -534,7 +534,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.kch.nhs.uk/about/how-we-are-organised/board-of-directors/minutes-and-agendas/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RVR",
@@ -552,7 +552,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.moorfields.nhs.uk/about-us/our-organisation/corporate-publications/board-reports",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RPY",
@@ -660,7 +660,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.sth.nhs.uk/about-us/board-meetings/",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RJL",
@@ -739,9 +739,9 @@
       "name": "South West Yorkshire Partnership NHS Foundation Trust",
       "url": "https://www.southwestyorkshire.nhs.uk/about-us-2/how-were-run/our-trust-board/meeting-papers/",
       "ok": true,
-      "status": 403,
+      "status": 200,
       "final_url": "https://www.southwestyorkshire.nhs.uk/about-us-2/how-were-run/our-trust-board/meeting-papers/",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RY6",
@@ -1083,7 +1083,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.royalfree.nhs.uk/about-us/trust-board/trust-board-meetings",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RAS",
@@ -1137,7 +1137,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.uclh.nhs.uk/about-us/who-we-are/board-directors/board-meetings-and-papers",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RYJ",
@@ -1164,7 +1164,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gosh.nhs.uk/about-us/who-we-are/organisational-structure/trust-board/trust-board-meetings/",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RRU",
@@ -1173,7 +1173,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.londonambulance.nhs.uk/about-us/board-and-members/trust-board/",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RAT",
@@ -1191,7 +1191,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.westlondon.nhs.uk/about-us/trust-board/board-papers",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RNK",
@@ -1209,7 +1209,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.cnwl.nhs.uk/about/planning-performance-and-reports",
-      "error": "(rescued by playwright fallback)"
+      "error": null
     },
     {
       "ods_code": "RWK",
@@ -1407,7 +1407,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.berkshirehealthcare.nhs.uk/about-us/our-board-meetings",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "RXQ",
@@ -1632,7 +1632,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.uhliverpool.nhs.uk/about-us/meet-our-board/trust-board-meetings",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "REN",
@@ -1641,7 +1641,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.clatterbridgecc.nhs.uk/about-us/how-were-run/trust-board/board-meetings",
-      "error": null
+      "error": "(rescued by playwright fallback)"
     },
     {
       "ods_code": "REP",

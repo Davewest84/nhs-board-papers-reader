@@ -94,9 +94,9 @@
       "Agenda only",
       "private/confidential board"
     ],
-    "last_validated": "2026-08-15",
-    "validation_status": "papers_partial",
-    "validation_notes": "Re-verified 2026-08-15 via WebFetch: Meetings in public page live; most recent papers 23 July 2026, forthcoming meetings 16 Sep and 12 Nov 2026. Papers sit behind a dropdown selector, which is why the validator sees only a partial signal."
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Re-verified 2026-08-22 and upgraded from papers_partial: flat list of per-meeting sub-pages back to 2014, newest 'Meeting papers: 23 July 2026'."
   },
   {
     "ods_code": "RTK",
@@ -731,8 +731,8 @@
     "ics": "Shropshire, Telford and Wrekin",
     "correspondent": "Caitlin",
     "url": "https://www.shropscommunityhealth.nhs.uk/board-meetings-and-papers",
-    "access_notes": "Despite the prior needs_playwright flag, the current board pack renders server-side and is reachable by a plain static fetch: the landing shows the latest 'Board in Common' set (agenda, meeting papers, public information pack) as direct PDF links. What static fetch misses is only the historical archive: older meetings (2015 onward) are selected via a JavaScript dropdown/postback that swaps the visible links, so Playwright is only needed to enumerate prior years -- load the page, select a year, wait for the link list to re-render, then harvest the /content/doclib/<id>.pdf links. The most recent packs need no JS. Route check 2026-08-15: server-side WebFetch returned an empty body this run, so the static path that worked previously is intermittent rather than reliably open - retry it first, then fall back to a browser render. The landing URL itself is unchanged (shallow check HTTP 200).",
-    "needs_playwright": false,
+    "access_notes": "Despite the prior needs_playwright flag, the current board pack renders server-side and is reachable by a plain static fetch: the landing shows the latest 'Board in Common' set (agenda, meeting papers, public information pack) as direct PDF links. What static fetch misses is only the historical archive: older meetings (2015 onward) are selected via a JavaScript dropdown/postback that swaps the visible links, so Playwright is only needed to enumerate prior years -- load the page, select a year, wait for the link list to re-render, then harvest the /content/doclib/<id>.pdf links. The most recent packs need no JS. Route check 2026-08-15: server-side WebFetch returned an empty body this run, so the static path that worked previously is intermittent rather than reliably open - retry it first, then fall back to a browser render. The landing URL itself is unchanged (shallow check HTTP 200). ACCESS CHANGE 2026-08-22: shropscommunityhealth.nhs.uk now sits behind Imperva/Incapsula for this machine - plain requests (browser User-Agent included) gets the ~950-byte _Incapsula_Resource iframe shell and local headless Playwright hangs on the challenge. This is an IP/path block, NOT proof the site is down: the static route described above was confirmed working as recently as 2026-08-08, so try server-side WebFetch and a plain static fetch FIRST and only treat the archive as unreachable if those also fail.",
+    "needs_playwright": true,
     "pack_pattern_hints": [
       "/content/doclib/<number>.pdf",
       "'Board in Common' agenda / meeting papers / public information pack triplet",
@@ -742,9 +742,9 @@
       "public questions / submission-procedure text",
       "governance boilerplate"
     ],
-    "last_validated": "2026-08-08",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-08 via WebFetch: the August 2026 'Board in Common' triplet is served statically on the landing (content/doclib/14565-14567.pdf: public agenda, meeting papers, information pack). Only the historic-year dropdown needs JS, so the needs_playwright classification is a false positive for current packs."
+    "validation_notes": "Not re-readable from this machine on 2026-08-22 (Imperva/Incapsula shell on requests and on local Playwright). Status carried forward from the 2026-08-08 confirmation that the current 'Board in Common' pack renders server-side; no evidence the archive has moved or stopped."
   },
   {
     "ods_code": "RBK",
@@ -928,7 +928,10 @@
     "region": "Midlands",
     "ics": "Herefordshire and Worcestershire",
     "correspondent": "Caitlin",
-    "url": "https://www.wyevalley.nhs.uk/about-us/the-trust-board.aspx"
+    "url": "https://www.wyevalley.nhs.uk/about-us/the-trust-board.aspx",
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 1 dated PDFs, 2 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RLT",
@@ -1019,9 +1022,9 @@
       "/2024/",
       "/2023/"
     ],
-    "last_validated": "2026-06-06",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Static page lists dated 2025/2026 board PDFs; confirmed HTTP-200 full public board pack for 20 May 2026 (~22MB)."
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 5 dated PDFs, 1 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RQ3",
@@ -1091,7 +1094,10 @@
     "region": "Midlands",
     "ics": "Birmingham and Solihull",
     "correspondent": "Caitlin",
-    "url": "https://roh.nhs.uk/about-us/corporate-information/statutory-documents"
+    "url": "https://roh.nhs.uk/about-us/corporate-information/statutory-documents",
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 0 dated PDFs, 25 year archives, 188 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RRK",
@@ -1118,9 +1124,9 @@
       "council of governors",
       "'No files in here' static-render placeholder"
     ],
-    "last_validated": "2026-08-08",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-08: the Nextcloud public share returns HTTP 200 but its static HTML carries no file listing or dates, exactly as recorded - the file tree is JS-rendered, which is what produces the no_papers_visible classification. URL correct; Playwright still required to enumerate the year/month folders."
+    "validation_notes": "Playwright re-check 2026-08-22: Nextcloud share renders normally; root lists 18 year folders (2008-2026) and the 2026 folder holds March, June and July month packs (July 31.4MB). The static 'no papers' reading is the known JS false negative."
   },
   {
     "ods_code": "RWP",
@@ -1427,7 +1433,7 @@
     "url": "https://www.stgeorges.nhs.uk/about/our-board/board-meetings/group-board-papers-and-agenda/",
     "validation_status": "papers_found",
     "needs_playwright": false,
-    "validation_notes": "Page titled 'Group Board Papers and Agenda' lists dated group-board PDFs May 2025 through July 2026 as direct hyperlinks; static fetch resolves every href.",
+    "validation_notes": "Re-verified 2026-08-22: page live with group board packs listed to 9 July 2026 (Group-Board-Public-9-July-2026.pdf) and archive back to 2024; the scan's connection reset was transient (succeeded on the 4th retry from this machine).",
     "access_notes": "Static fetch works fully - no JS. Papers grouped by fiscal year (2025-26, 2026-27) with each meeting date linking a single combined board-pack PDF under /wp-content/uploads/YYYY/MM/. Prefer direct .pdf links whose filename encodes the meeting date (e.g. '8-May-2026-2.pdf') or 'Group-Board-Public-{date}.pdf'; this is now a GROUP board (St George's + Epsom & St Helier), so a single group-board pack per date is expected. Coverage back to early 2025. Occasional exported-bundle filenames (export-2026-...pdf) - date by the surrounding label, not the filename.",
     "pack_pattern_hints": [
       "/wp-content/uploads/",
@@ -1435,7 +1441,7 @@
       "Group-Board-Public",
       "single large combined PDF per meeting"
     ],
-    "last_validated": "2026-07-11",
+    "last_validated": "2026-08-22",
     "exclude_patterns": [
       "committee/",
       "council-of-governors",
@@ -1562,9 +1568,9 @@
       "Private",
       "Minutes only"
     ],
-    "last_validated": "2026-06-04",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Via Playwright confirmed dated public board packs incl. 'Public Board papers - 19 Nov 2025' and 'Public Board Pack 26.03.2025'; 2026 meeting dates (Mar/Jul/Sep/Nov 2026) also scheduled."
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 24 dated PDFs, 0 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RY9",
@@ -1626,8 +1632,8 @@
     "ics": "West Yorkshire",
     "correspondent": "Henry",
     "url": "https://www.bradfordhospitals.nhs.uk/our-trust/bod-meetings/",
-    "access_notes": "The board-papers landing /our-trust/bod-meetings/ renders server-side (no JS required): it lists upcoming public board meetings plus 'Previous meetings' links grouped by year (2017-2026). Individual board packs are single combined 'boardbook' PDFs under /wp-content/uploads/<year>/<month>/. A crawler does not need Playwright for the landing page; follow the per-year 'previous meetings' links (or hit the wp-content/uploads path pattern directly) to reach dated packs. Static fetch reaches the index but the actual dated PDFs sit one click deeper on the year sub-pages.",
-    "needs_playwright": false,
+    "access_notes": "The board-papers landing /our-trust/bod-meetings/ renders server-side (no JS required): it lists upcoming public board meetings plus 'Previous meetings' links grouped by year (2017-2026). Individual board packs are single combined 'boardbook' PDFs under /wp-content/uploads/<year>/<month>/. A crawler does not need Playwright for the landing page; follow the per-year 'previous meetings' links (or hit the wp-content/uploads path pattern directly) to reach dated packs. Static fetch reaches the index but the actual dated PDFs sit one click deeper on the year sub-pages. ACCESS CHANGE 2026-08-22: bradfordhospitals.nhs.uk now sits behind Imperva/Incapsula for this machine - plain requests (browser User-Agent included) returns the ~950-byte _Incapsula_Resource iframe shell and local headless Playwright hangs on the challenge. This is an IP/path block, NOT proof the site is down: the server-rendered landing described above was confirmed working on 2026-08-15, so try server-side WebFetch and a plain static fetch FIRST before assuming the archive is gone.",
+    "needs_playwright": true,
     "pack_pattern_hints": [
       "/wp-content/uploads/<yyyy>/<mm>/*Boardbook*.pdf",
       "filenames like 'public-BOD-25.9.25-FINAL-Boardbook.pdf','open-BOD-boardbook-31.3.26.pdf'",
@@ -1638,9 +1644,9 @@
       "confirmed minutes PDFs (not the board pack)",
       "bthft.nhs.uk contact/email links"
     ],
-    "last_validated": "2026-08-15",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "2026-08-15: WebFetch returned an empty body this run while the shallow check returned HTTP 200. The landing is unchanged - retry static fetch or use a browser render."
+    "validation_notes": "Not re-readable from this machine on 2026-08-22 (Imperva/Incapsula shell on requests and on local Playwright). Status carried forward from the 2026-08-15 confirmation of the server-rendered landing plus per-year 'Previous meetings' links; no evidence the archive has moved."
   },
   {
     "ods_code": "RCB",
@@ -2012,9 +2018,9 @@
       "pre-2020 BoardPapers/BOD_2017/",
       "Annual Reports under Publications/Annual_Reports/"
     ],
-    "last_validated": "2026-08-15",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-15 via WebFetch: 2026 Board of Directors table live with Combined Public Board PDFs to 9 July 2026 under /fileadmin/.../BoardPapers/2026/. The no_papers_visible result was a false negative from the collapsed year accordions."
+    "validation_notes": "Re-verified 2026-08-22: 2026 meetings to 9 July each carry an 'Agenda and Papers' link; 10 Sept and 12 Nov 2026 listed without packs yet; 2025 archive accordion intact."
   },
   {
     "ods_code": "RXE",
@@ -2446,9 +2452,9 @@
       "appendix",
       "Council of Governors"
     ],
-    "last_validated": "2026-06-04",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Confirmed combined 'Board of Director Part 1 Meeting Pack 13 May 2026' PDF and supporting agenda/reading-room files on the our-performance page, with 2026 meeting dates listed through November 2026."
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 21 dated PDFs, 1 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RA7",
@@ -2477,9 +2483,9 @@
       "meeting recording / YouTube links",
       "attending-board-meetings"
     ],
-    "last_validated": "2026-08-15",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-15 via WebFetch: Bristol NHS FT board-meetings page live, July 2026 pack published plus an Aug-26 IQPR under /sites/default/files/2026-0X/. Predecessor NBT/UHBW archives are still linked.",
+    "validation_notes": "Re-verified 2026-08-22: 14 July 2026 board pack published on the bristolft.nhs.uk landing; Sept 2026 to Mar 2027 dates listed pending papers.",
     "group_board": "Bristol group board - NBT and UHBW meet in common; NBT hosts the year pages",
     "group_board_url": "https://www.nbt.nhs.uk/about-us/meet-our-board/trust-board-meetings-20262027"
   },
@@ -2493,7 +2499,10 @@
     "region": "South West",
     "ics": "Devon",
     "correspondent": "Joe",
-    "url": "https://www.torbayandsouthdevon.nhs.uk/about-us/board-meetings/"
+    "url": "https://www.torbayandsouthdevon.nhs.uk/about-us/board-meetings/",
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 14 dated PDFs, 0 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RBD",
@@ -2539,13 +2548,13 @@
     "correspondent": "Joe",
     "url": "https://www.ruh.nhs.uk/about/trustboard/index.asp",
     "validation_status": "papers_found",
-    "last_validated": "2026-08-15",
+    "last_validated": "2026-08-22",
     "pack_pattern_hints": [
       "/about/trustboard/YYYY_MM/index.asp per-meeting page",
       "/about/trustboard/YYYY_MM/documents/Combined_paper_pack.pdf single combined pack",
       "month dropdown enumerates all meetings"
     ],
-    "validation_notes": "Re-verified 2026-08-15 via WebFetch: legacy ASP board page live listing meetings to 3 September 2026; the month sub-pages (e.g. /about/trustboard/2026_07/index.asp) carry the packs, so the landing itself holding no PDFs explains the no_papers_visible result.",
+    "validation_notes": "Re-verified 2026-08-22: month dropdown runs Jan 2020 to June 2026 and the forthcoming 2 July 2026 meeting carries an 'Agenda & Papers' link; legacy ASP pages render statically.",
     "access_notes": "Legacy ASP CMS but fully live and current. The landing /about/trustboard/index.asp lists forthcoming meetings and a month dropdown (Jan 2020 through the latest 2026 meeting). Each meeting has its own month page /about/trustboard/YYYY_MM/index.asp linking a single combined PDF at /about/trustboard/YYYY_MM/documents/Combined_paper_pack.pdf. All pages render statically -- no Playwright. To find the newest pack, read the landing for the latest YYYY_MM then hit that month's Combined_paper_pack.pdf. Papers carry a press embargo until after the meeting.",
     "needs_playwright": false,
     "exclude_patterns": [
@@ -2711,7 +2720,10 @@
     "region": "South West",
     "ics": "Bath and North East Somerset, Swindon and Wiltshire",
     "correspondent": "Joe",
-    "url": "https://www.gwh.nhs.uk/about-us/trust-board/board-meetings/"
+    "url": "https://www.gwh.nhs.uk/about-us/trust-board/board-meetings/",
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 46 dated PDFs, 0 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RNZ",
@@ -2739,9 +2751,9 @@
       "council-of-governors",
       "minutes-of-previous"
     ],
-    "last_validated": "2026-06-04",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "board-papers page exposes Board papers 2025 and 2026 year archives, and the 2026 archive lists dated per-meeting sub-pages (8 Jan, 5 Mar, 13 May 2026)."
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 0 dated PDFs, 5 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RTE",
@@ -3238,7 +3250,10 @@
     "region": "London",
     "ics": "-",
     "correspondent": "Matt D",
-    "url": "https://www.londonambulance.nhs.uk/about-us/how-we-are-run/trust-board/"
+    "url": "https://www.londonambulance.nhs.uk/about-us/how-we-are-run/trust-board/",
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 0 dated PDFs, 3 year archives, 2 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RAT",
@@ -3251,7 +3266,10 @@
     "region": "London",
     "ics": "North East London",
     "correspondent": "Matt D",
-    "url": "https://www.nelft.nhs.uk/about-us-board-papers/"
+    "url": "https://www.nelft.nhs.uk/about-us-board-papers/",
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 18 dated PDFs, 0 year archives, 3 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RKL",
@@ -3319,7 +3337,10 @@
     "region": "London",
     "ics": "North Central London",
     "correspondent": "Matt D",
-    "url": "https://www.cnwl.nhs.uk/about/planning-performance-and-reports"
+    "url": "https://www.cnwl.nhs.uk/about/planning-performance-and-reports",
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 13 dated PDFs, 0 year archives, 5 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RWK",
@@ -3376,9 +3397,9 @@
       "sunderland legacy CHSFT governor pages",
       "council-of-governors pages"
     ],
-    "last_validated": "2026-08-15",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-15 via WebFetch: Board papers page live with fiscal-year groups, latest 6 August 2026 agenda via /download_file/view/<uuid>/668. The no_papers_visible result was a false negative."
+    "validation_notes": "Re-verified 2026-08-22: static fetch with a browser User-Agent returns the full fiscal-year archive with 18+ 'Agenda and papers' links on the /download_file/view/<uuid>/668 handler."
   },
   {
     "ods_code": "RNN",
@@ -3416,7 +3437,10 @@
     "region": "North East and Yorkshire",
     "ics": "North East and North Cumbria",
     "correspondent": "Matt M",
-    "url": "https://www.gatesheadhealth.nhs.uk/news/resources_type/board-papers/"
+    "url": "https://www.gatesheadhealth.nhs.uk/news/resources_type/board-papers/",
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 2 dated PDFs, 0 year archives, 2 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RTD",
@@ -3641,7 +3665,7 @@
     "ics": "Frimley",
     "correspondent": "Mimi",
     "url": "https://www.fhft.nhs.uk/about-us/how-we-are-run/trust-board",
-    "access_notes": "The URL is valid. The near-empty body is NOT client-side JS — the whole fhft.nhs.uk domain sits behind Imperva/Incapsula bot mitigation serving an hCaptcha 'Additional security check is required' interstitial to traffic it scores as automated. Behind the wall the board landing lists upcoming meetings and a 'Previous meetings' archive, with the dated pack list under the sub-page /about-us/how-we-are-run/trust-board/trust-board-and-meetings. Packs are combined PDFs under /application/files/ (pattern 'FHFT_Public_Bd_<D.MM.YY>_v1.pdf'). Do not confuse with the separate NHS Frimley ICB site (frimley.icb.nhs.uk). ACCESS ROUTE (checked 2026-07-31): the Imperva block is specific to the LOCAL fetch path — plain `requests` and local headless Playwright both get the 212-byte _Incapsula_Resource hCaptcha shell. Server-side WebFetch is NOT blocked and reaches this page normally, and pack PDFs on this domain download fine through it. So DO NOT read needs_playwright:true here as 'skip the cheap fetchers' — do the opposite: try WebFetch FIRST, and only escalate if it fails. Treat this record as 'local crawler blocked, server-side fetch works', not 'unreachable'. If you are running from a machine whose IP Imperva scores badly, a captcha-solving/residential session or an allowlisted IP is the fallback. Route check 2026-08-15: server-side WebFetch returned an empty body (the Incapsula shell) this run, so the WebFetch route is intermittent, NOT dead - it has previously pulled this domain's pages and packs fine. Keep trying WebFetch first and only escalate to a captcha-solving / residential session if it fails again. Landing URL unchanged (shallow check HTTP 200).",
+    "access_notes": "The URL is valid. The near-empty body is NOT client-side JS — the whole fhft.nhs.uk domain sits behind Imperva/Incapsula bot mitigation serving an hCaptcha 'Additional security check is required' interstitial to traffic it scores as automated. Behind the wall the board landing lists upcoming meetings and a 'Previous meetings' archive, with the dated pack list under the sub-page /about-us/how-we-are-run/trust-board/trust-board-and-meetings. Packs are combined PDFs under /application/files/ (pattern 'FHFT_Public_Bd_<D.MM.YY>_v1.pdf'). Do not confuse with the separate NHS Frimley ICB site (frimley.icb.nhs.uk). ACCESS ROUTE (checked 2026-07-31): the Imperva block is specific to the LOCAL fetch path — plain `requests` and local headless Playwright both get the 212-byte _Incapsula_Resource hCaptcha shell. Server-side WebFetch is NOT blocked and reaches this page normally, and pack PDFs on this domain download fine through it. So DO NOT read needs_playwright:true here as 'skip the cheap fetchers' — do the opposite: try WebFetch FIRST, and only escalate if it fails. Treat this record as 'local crawler blocked, server-side fetch works', not 'unreachable'. If you are running from a machine whose IP Imperva scores badly, a captcha-solving/residential session or an allowlisted IP is the fallback. Route check 2026-08-15: server-side WebFetch returned an empty body (the Incapsula shell) this run, so the WebFetch route is intermittent, NOT dead - it has previously pulled this domain's pages and packs fine. Keep trying WebFetch first and only escalate to a captcha-solving / residential session if it fails again. Landing URL unchanged (shallow check HTTP 200). Re-probe 2026-08-22: local requests and local headless Playwright both still get the Incapsula shell, and server-side WebFetch returned an empty body this run too, so the mitigation may have widened. Do NOT read that as the archive being dead - WebFetch has reached this domain before and remains the first thing to try.",
     "needs_playwright": true,
     "pack_pattern_hints": [
       "sub-page /about-us/how-we-are-run/trust-board/trust-board-and-meetings",
@@ -3652,8 +3676,8 @@
       "Imperva/hCaptcha challenge shell"
     ],
     "validation_status": "papers_found",
-    "validation_notes": "Re-probed 2026-07-30: local static fetch and local headless Playwright both return the 212-byte Imperva/Incapsula interstitial, browser User-Agent included. Cross-checked 2026-07-31 against the board-paper-machine state: the scanner holds 5 forward dates (Aug-Dec 2026) and downloaded + analysed the 3 Jul 2026 pack straight from fhft.nhs.uk/application/files/, so the site IS reachable server-side. Landing URL correct. || Re-probed 2026-08-08: server-side WebFetch also returned the empty Imperva/Incapsula shell today, so the challenge is currently being served to that route as well. This does NOT retire the recorded server-side route - the board-paper-machine's confirmed pulls from fhft.nhs.uk/application/files/ stand as the last positive evidence. Landing URL correct; keep trying WebFetch first.",
-    "last_validated": "2026-07-31"
+    "validation_notes": "Blocked on every route tried this run (2026-08-22): local requests, local headless Playwright and server-side WebFetch all returned the Incapsula challenge or an empty body. Status carried forward from the 2026-07-31 confirmation of the trust-board-and-meetings sub-page archive.",
+    "last_validated": "2026-08-22"
   },
   {
     "ods_code": "RHM",
@@ -3737,7 +3761,10 @@
     "region": "South East",
     "ics": "Buckinghamshire, Oxfordshire and Berkshire West",
     "correspondent": "Mimi",
-    "url": "https://www.oxfordhealth.nhs.uk/about-us/board-papers/"
+    "url": "https://www.oxfordhealth.nhs.uk/about-us/board-papers/",
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 0 dated PDFs, 0 year archives, 7 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RTH",
@@ -3762,7 +3789,10 @@
     "region": "South East",
     "ics": "Hampshire and Isle of Wight",
     "correspondent": "Mimi",
-    "url": "https://hiowhealthcare.nhs.uk/about-us/our-board/meetings-and-papers"
+    "url": "https://hiowhealthcare.nhs.uk/about-us/our-board/meetings-and-papers",
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 15 dated PDFs, 0 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RWX",
@@ -3862,9 +3892,9 @@
       "Committee in Common (legacy 2019-2021 folders)",
       "watch the meeting video links"
     ],
-    "last_validated": "2026-08-15",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "2026-08-15: WebFetch returned the synthetic HTTP 502 the edge serves to the ClaudeBot User-Agent, exactly as recorded on 2026-07-30; curl and python-requests remain the working route and the shallow check returned HTTP 200."
+    "validation_notes": "Re-verified 2026-08-22: curl with a browser User-Agent returns 200 and 20+ 'Download the meeting papers' links (/download_file/view/<id>/875). WebFetch/ClaudeBot still gets the synthetic 502 - User-Agent denylist, not an outage."
   },
   {
     "ods_code": "RMC",
@@ -3951,9 +3981,9 @@
       "pre-2020 archive under /2019/",
       "upcoming dates without a linked PDF"
     ],
-    "last_validated": "2026-08-15",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-15 via WebFetch: Board Papers page live with 2026 public bundles to 5 August 2026 under /media/board/Papers/2026/. The no_papers_visible result was a false negative."
+    "validation_notes": "Re-verified 2026-08-22: Board of Directors public meetings to 5 August 2026 all carry 'Meeting papers' links; Feb, Apr and Jun 2026 meetings also linked."
   },
   {
     "ods_code": "RT2",
@@ -4058,9 +4088,9 @@
     "needs_playwright": true,
     "pack_pattern_hints": "Board of Directors meeting in public papers; agenda and papers; combined papers",
     "exclude_patterns": "Confidential; Part 2; Private; Minutes only",
-    "last_validated": "2026-05-29",
-    "validation_status": "needs_playwright",
-    "validation_notes": "Year archives are share-my-box JS galleries. Playwright + year-tab click required; one Feb 2026 pack recovered (BAF score 236)."
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 0 dated PDFs, 5 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RC9",
@@ -4123,7 +4153,10 @@
     "region": "East of England",
     "ics": "Hertfordshire and West Essex",
     "correspondent": "TBC",
-    "url": "https://www.pah.nhs.uk/about/board/board-papers/"
+    "url": "https://www.pah.nhs.uk/about/board/board-papers/",
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 47 dated PDFs, 0 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RWG",
@@ -4151,9 +4184,9 @@
       "legacy /about/board_meetings/*/default.asp",
       "acronyms glossary download"
     ],
-    "last_validated": "2026-08-15",
-    "validation_status": "papers_partial",
-    "validation_notes": "Re-verified 2026-08-15 via WebFetch: Board papers page live with the July 2026 pack (21MB) via /download_file/<uuid>/368 plus the Previous board papers folder at /navigate/758/9379. Only one pack sits on the landing, hence the partial signal."
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Re-verified 2026-08-22 and upgraded from papers_partial: landing carries 'July 2026 Board Papers' (21.09MB) plus the 'Previous board papers' folder; the opaque /download_file/<uuid>/368 URLs are why the validator scores it weakly."
   },
   {
     "ods_code": "RWH",
@@ -4332,9 +4365,9 @@
       "legacy Concrete5 publications listing",
       "FOI disclosure-log PDFs"
     ],
-    "last_validated": "2026-08-15",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_partial",
-    "validation_notes": "Re-verified 2026-08-15 via WebFetch: the archive is live and paginated (page 2 of 12 reached), but the newest pack published is still Trust Board 2 April 2026 - no May/June/July/August 2026 pack has appeared despite the trust stating the board meets 11 times a year. URL is correct; the gap looks like a publication lapse, not a moved page."
+    "validation_notes": "Re-verified 2026-08-22: PUBLICATION GAP CONFIRMED AND WIDENING - newest Trust Board pack is still 2 April 2026 (26MB) and page 2 of the archive jumps straight back to 5 June 2025, so no board pack has been published for ~4.5 months. Site and archive are both healthy; this looks like a change in publishing behaviour, not a URL problem."
   },
   {
     "ods_code": "RBT",
@@ -4468,7 +4501,10 @@
     "region": "North West",
     "ics": "Cheshire and Merseyside",
     "correspondent": "Zoe",
-    "url": "https://www.thewaltoncentre.nhs.uk/trust-board/"
+    "url": "https://www.thewaltoncentre.nhs.uk/trust-board/",
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 66 dated PDFs, 1 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RJN",
@@ -4493,9 +4529,9 @@
       "mailto:",
       "committee/sub-board meetings if any (filter to Trust Board)"
     ],
-    "last_validated": "2026-06-27",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Two 2026 meetings (Mar 5, Jan 13) and full 2025 set each link to a working agenda+papers PDF on the trust's own eastcheshire.nhs.uk domain."
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 2 dated PDFs, 0 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "RJR",
@@ -4595,9 +4631,9 @@
       "/publications-reports-policies/",
       "/corporate-registers"
     ],
-    "last_validated": "2026-08-15",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-15 via WebFetch: Board papers page live, dated packs via /download_file/<id>/1439 through 4 June 2026. The no_papers_visible result was a false negative."
+    "validation_notes": "Re-verified 2026-08-22: packs listed to 'Board of Directors Meeting Papers - 02.07.2026'; year archive back to 2020, packs 4-20MB."
   },
   {
     "ods_code": "RWW",
@@ -4656,7 +4692,7 @@
     "ics": "Lancashire and South Cumbria",
     "correspondent": "Zoe",
     "url": "https://www.blackpoolteachinghospitals.nhs.uk/about-us/meet-board/board-meetings-public",
-    "access_notes": "URL is valid; the empty body is Imperva/Incapsula bot mitigation, not JS rendering — an hCaptcha 'Additional security check is required' interstitial is served to traffic scored as automated. Behind the wall the page states papers are posted at least three working days before each meeting; dated agendas/reports live on sub-pages .../board-meetings-public/previous-meetings-year (archive by year) and .../board-meetings-public/upcoming-meetings (calendar). Packs are served through the CMS download handler (/download_file/<id>/<id>, no .pdf suffix) so extension-based link filters will miss them. The trust also has a legacy/parallel domain bfwh.nhs.uk with its own board-meetings page — the ODS-mapped canonical is the blackpoolteachinghospitals.nhs.uk path. CAUTION: '31 March 2027' appears only in the heading 'Board meeting schedule to 31 March 2027' — it is not a meeting date. ACCESS ROUTE (checked 2026-07-31): the Imperva block is specific to the LOCAL fetch path — plain `requests` and local headless Playwright both get the 212-byte _Incapsula_Resource hCaptcha shell. Server-side WebFetch is NOT blocked and reaches this page normally, and pack PDFs on this domain download fine through it. So DO NOT read needs_playwright:true here as 'skip the cheap fetchers' — do the opposite: try WebFetch FIRST, and only escalate if it fails. Treat this record as 'local crawler blocked, server-side fetch works', not 'unreachable'. If you are running from a machine whose IP Imperva scores badly, a captcha-solving/residential session or an allowlisted IP is the fallback. Route check 2026-08-15: server-side WebFetch returned an empty body (the Incapsula shell) this run, so the WebFetch route is intermittent, NOT dead - it has previously reached this domain. Try WebFetch first and only escalate if it fails again. Landing URL unchanged (shallow check HTTP 200).",
+    "access_notes": "URL is valid; the empty body is Imperva/Incapsula bot mitigation, not JS rendering — an hCaptcha 'Additional security check is required' interstitial is served to traffic scored as automated. Behind the wall the page states papers are posted at least three working days before each meeting; dated agendas/reports live on sub-pages .../board-meetings-public/previous-meetings-year (archive by year) and .../board-meetings-public/upcoming-meetings (calendar). Packs are served through the CMS download handler (/download_file/<id>/<id>, no .pdf suffix) so extension-based link filters will miss them. The trust also has a legacy/parallel domain bfwh.nhs.uk with its own board-meetings page — the ODS-mapped canonical is the blackpoolteachinghospitals.nhs.uk path. CAUTION: '31 March 2027' appears only in the heading 'Board meeting schedule to 31 March 2027' — it is not a meeting date. ACCESS ROUTE (checked 2026-07-31): the Imperva block is specific to the LOCAL fetch path — plain `requests` and local headless Playwright both get the 212-byte _Incapsula_Resource hCaptcha shell. Server-side WebFetch is NOT blocked and reaches this page normally, and pack PDFs on this domain download fine through it. So DO NOT read needs_playwright:true here as 'skip the cheap fetchers' — do the opposite: try WebFetch FIRST, and only escalate if it fails. Treat this record as 'local crawler blocked, server-side fetch works', not 'unreachable'. If you are running from a machine whose IP Imperva scores badly, a captcha-solving/residential session or an allowlisted IP is the fallback. Route check 2026-08-15: server-side WebFetch returned an empty body (the Incapsula shell) this run, so the WebFetch route is intermittent, NOT dead - it has previously reached this domain. Try WebFetch first and only escalate if it fails again. Landing URL unchanged (shallow check HTTP 200). Re-probe 2026-08-22: local requests and local headless Playwright both still get the Incapsula shell, and server-side WebFetch returned an empty body this run too, so the mitigation may have widened. Still try WebFetch first - it has reached this domain before; treat a WebFetch miss as a routing problem, not as the trust having stopped publishing.",
     "needs_playwright": true,
     "pack_pattern_hints": [
       ".../board-meetings-public/previous-meetings-year (agendas & reports by year)",
@@ -4667,9 +4703,9 @@
       "bfwh.nhs.uk parallel/legacy pages",
       "Imperva/hCaptcha challenge shell"
     ],
-    "last_validated": "2026-07-31",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Re-probed 2026-07-30: local static fetch and local headless Playwright both return the 212-byte Imperva/Incapsula interstitial, browser User-Agent included. Cross-checked 2026-07-31 against the board-paper-machine state: WebFetch logged OK on 2026-07-13 (6 forward dates), the scanner holds 9 forward dates (Aug 2026-Mar 2027), and it downloaded + analysed the 2 Jul 2026 pack via /download_file/12115/2316. Landing URL correct. || Re-probed 2026-08-08: server-side WebFetch also returned the empty Imperva/Incapsula shell today. The recorded working route stands - the board-paper-machine's 2 Jul 2026 pack pull via /download_file/12115/2316 remains the last positive evidence. Landing URL correct; keep trying WebFetch first."
+    "validation_notes": "Blocked on every route tried this run (2026-08-22): local requests, local headless Playwright and server-side WebFetch all returned the Incapsula challenge or an empty body. Status carried forward from the 2026-07-31 confirmation of the previous-meetings-year archive."
   },
   {
     "ods_code": "RXN",
@@ -4696,7 +4732,7 @@
     "ics": "Lancashire and South Cumbria",
     "correspondent": "Zoe",
     "url": "https://elht.nhs.uk/about-us/our-trust-board/board-meetings-including-agenda-and-papers",
-    "access_notes": "URL is valid; the near-empty body is Imperva/Incapsula bot mitigation rather than JS-rendered content — an hCaptcha 'Additional security check is required' interstitial is served to traffic scored as automated. Once past the wall the page lists scheduled board meetings (Boardroom, Birch House, Royal Blackburn) with agenda/papers as combined PDFs; two delivery paths are in use — the /application/files/ path (filename pattern 'Trust_Board_Agenda_and_Papers_-_<Month>_<Year>.pdf') and the CMS download handler (/download_file/<id>/<id>, no .pdf suffix), so extension-based link filters will miss the latter. Accessible versions via TrustBoardQuestions@elht.nhs.uk. ACCESS ROUTE (checked 2026-07-31): the Imperva block is specific to the LOCAL fetch path — plain `requests` and local headless Playwright both get the 212-byte _Incapsula_Resource hCaptcha shell. Server-side WebFetch is NOT blocked and reaches this page normally, and pack PDFs on this domain download fine through it. So DO NOT read needs_playwright:true here as 'skip the cheap fetchers' — do the opposite: try WebFetch FIRST, and only escalate if it fails. Treat this record as 'local crawler blocked, server-side fetch works', not 'unreachable'. If you are running from a machine whose IP Imperva scores badly, a captcha-solving/residential session or an allowlisted IP is the fallback. Route check 2026-08-15: server-side WebFetch returned an empty body (the Incapsula shell) this run, so the WebFetch route is intermittent, NOT dead - it has previously reached this domain. Try WebFetch first and only escalate if it fails again. Landing URL unchanged (shallow check HTTP 200).",
+    "access_notes": "URL is valid; the near-empty body is Imperva/Incapsula bot mitigation rather than JS-rendered content — an hCaptcha 'Additional security check is required' interstitial is served to traffic scored as automated. Once past the wall the page lists scheduled board meetings (Boardroom, Birch House, Royal Blackburn) with agenda/papers as combined PDFs; two delivery paths are in use — the /application/files/ path (filename pattern 'Trust_Board_Agenda_and_Papers_-_<Month>_<Year>.pdf') and the CMS download handler (/download_file/<id>/<id>, no .pdf suffix), so extension-based link filters will miss the latter. Accessible versions via TrustBoardQuestions@elht.nhs.uk. ACCESS ROUTE (checked 2026-07-31): the Imperva block is specific to the LOCAL fetch path — plain `requests` and local headless Playwright both get the 212-byte _Incapsula_Resource hCaptcha shell. Server-side WebFetch is NOT blocked and reaches this page normally, and pack PDFs on this domain download fine through it. So DO NOT read needs_playwright:true here as 'skip the cheap fetchers' — do the opposite: try WebFetch FIRST, and only escalate if it fails. Treat this record as 'local crawler blocked, server-side fetch works', not 'unreachable'. If you are running from a machine whose IP Imperva scores badly, a captcha-solving/residential session or an allowlisted IP is the fallback. Route check 2026-08-15: server-side WebFetch returned an empty body (the Incapsula shell) this run, so the WebFetch route is intermittent, NOT dead - it has previously reached this domain. Try WebFetch first and only escalate if it fails again. Landing URL unchanged (shallow check HTTP 200). Re-probe 2026-08-22: local requests and local headless Playwright both still get the Incapsula shell, and server-side WebFetch returned an empty body this run too, so the mitigation may have widened. Still try WebFetch first - it has reached this domain before; the /application/files/ pack paths above remain the fastest way in once past the wall.",
     "needs_playwright": true,
     "pack_pattern_hints": [
       "/application/files/**/Trust_Board_Agenda_and_Papers_-_<Month>_<Year>.pdf",
@@ -4708,9 +4744,9 @@
       "TrustBoardQuestions@ contact link",
       "Imperva/hCaptcha challenge shell"
     ],
-    "last_validated": "2026-07-31",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Re-probed 2026-07-30: local static fetch and local headless Playwright both return the 212-byte Imperva/Incapsula interstitial, browser User-Agent included. Cross-checked 2026-07-31 against the board-paper-machine state: WebFetch logged OK on 2026-07-13 (earlier 404 no longer occurs), the scanner holds 4 forward dates (Sep 2026-Mar 2027), and it downloaded + analysed the 8 Jul 2026 pack via /download_file/30649/191. Landing URL correct. Note the path was corrected to /about-us/our-trust-board/... — the older /about-us/board-meetings-... path 404s. || Re-probed 2026-08-08: server-side WebFetch also returned the empty Imperva/Incapsula shell today. The recorded working route stands - the board-paper-machine's 8 Jul 2026 pack pull via /download_file/30649/191 remains the last positive evidence. Landing URL correct; keep trying WebFetch first."
+    "validation_notes": "Blocked on every route tried this run (2026-08-22): local requests, local headless Playwright and server-side WebFetch all returned the Incapsula challenge or an empty body. Status carried forward from the 2026-07-31 confirmation of the /application/files/ pack paths."
   },
   {
     "ods_code": "RY2",
@@ -4961,9 +4997,9 @@
       "constitution and committee terms of reference (table _3)",
       "superseded duplicate uploads of the same meeting"
     ],
-    "last_validated": "2026-08-08",
+    "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-08 via direct fetch: /about-scas/our-board/ returns HTTP 200 with the 2026 board meeting schedule (Apr, Jun, Sep, Oct, Nov 2026) in the HTML. The paper tables remain serverSide AJAX widgets whose rows never appear in source, which is what drives the no_papers_visible classification. URL correct."
+    "validation_notes": "Playwright re-check 2026-08-22: the Document Library Pro AJAX tables render fully - latest 'SCAS public Board papers - 3 June 2026' (17MB), archive back to 2023; next meeting 3 Sept 2026. The static empty-table reading is the known false negative."
   },
   {
     "ods_code": "RYF",
@@ -5006,7 +5042,10 @@
     "region": "London",
     "ics": "North Central London",
     "correspondent": "Matt Discombe",
-    "url": "https://www.northlondonmentalhealth.nhs.uk/meetings-and-papers/"
+    "url": "https://www.northlondonmentalhealth.nhs.uk/meetings-and-papers/",
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 16 dated PDFs, 0 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
   },
   {
     "ods_code": "K0N6A",

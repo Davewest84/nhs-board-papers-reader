@@ -470,7 +470,7 @@
     "foi_email": "foi@elht.nhs.uk",
     "foi_email_alt": null,
     "foi_source_url": "https://elht.nhs.uk/contact-us",
-    "notes": null
+    "notes": "2026-08-22: contact page could not be read from this machine (Imperva/Incapsula shell on plain fetch, server-side WebFetch and headless Playwright); communications@elht.nhs.uk and foi@elht.nhs.uk both corroborated against the 20 June 2026 Wayback snapshot, addresses left unchanged."
   },
   {
     "trust_name": "East London NHS Foundation Trust",
@@ -635,7 +635,7 @@
     "foi_email": "gwh.foi@nhs.net",
     "foi_email_alt": null,
     "foi_source_url": "https://www.gwh.nhs.uk/about-us/information-governance/freedom-of-information-foi/",
-    "notes": "FOI page not located; Great Western Hospitals FOI sub-pages 404 across all common paths. | source URLs corrected 2026-06-20 (prior press /contact-us/media-enquiries/ 404; FOI src was a placeholder); addresses unchanged"
+    "notes": "FOI page not located; Great Western Hospitals FOI sub-pages 404 across all common paths. | source URLs corrected 2026-06-20 (prior press /contact-us/media-enquiries/ 404; FOI src was a placeholder); addresses unchanged | 2026-08-22: /contact/ publishes only gwh.webmaster@nhs.net - no press address on the page, so gwh.comms@nhs.net is retained unverified this run; gwh.foi@nhs.net re-confirmed on the FOI page."
   },
   {
     "trust_name": "Greater Manchester Mental Health NHS Foundation Trust",
@@ -712,7 +712,7 @@
     "foi_email": "hpft.foi@nhs.net",
     "foi_email_alt": null,
     "foi_source_url": "https://www.hpft.nhs.uk/information-and-resources/your-information-and-privacy/foi-request-form/",
-    "notes": "press email not found on site; FOI email not found on site; Hertfordshire Partnership University: contact-us and FOI pages returned 403 to WebFetch (bot block). | contacts added 2026-06-20 from hpft.nhs.uk (record was previously empty)"
+    "notes": "press email not found on site; FOI email not found on site; Hertfordshire Partnership University: contact-us and FOI pages returned 403 to WebFetch (bot block). | contacts added 2026-06-20 from hpft.nhs.uk (record was previously empty) | 2026-08-22: both addresses confirmed via headless browser (hpft.comms@nhs.net on /contact-us/news-and-media/, hpft.foi@nhs.net on the FOI request form page); the pages still 403 plain fetches, so the earlier 'not found on site' note is superseded."
   },
   {
     "trust_name": "Homerton Healthcare NHS Foundation Trust",
@@ -984,10 +984,10 @@
     "press_email": "londamb.press.office@nhs.net",
     "press_email_alt": null,
     "press_source_url": "https://www.londonambulance.nhs.uk/news-2/follow-us-social-media/",
-    "foi_email": "londamb.foi@nhs.net?subject=enquiry%20from%20london%20ambulance%20service%20website",
+    "foi_email": "londamb.foi@nhs.net",
     "foi_email_alt": "foi@londonambulance.nhs.uk",
     "foi_source_url": "https://www.londonambulance.nhs.uk/talking-with-us/freedom-of-information/classes-of-information/",
-    "notes": null
+    "notes": "2026-08-22: foi_email cleaned to londamb.foi@nhs.net - the stored value carried a '?subject=...' mailto querystring that is not part of the address; address itself re-confirmed against published LAS FOI responses. Press address re-confirmed by decoding the cfemail token on the press page."
   },
   {
     "trust_name": "London North West University Healthcare NHS Trust",
@@ -1559,7 +1559,7 @@
     "foi_email": "shropcom.FOIR@infreemation.co.uk",
     "foi_email_alt": "shropcom.foi@nhs.net",
     "foi_source_url": "https://www.shropscommunityhealth.nhs.uk/foi",
-    "notes": "FOI uses third-party Infreemation portal"
+    "notes": "FOI uses third-party Infreemation portal | 2026-08-22: contact and FOI pages could not be read from this machine (Imperva/Incapsula shell on plain fetch, server-side WebFetch and headless Playwright); shropcom.FOIR@infreemation.co.uk corroborated against a 2026 Wayback snapshot, addresses left unchanged."
   },
   {
     "trust_name": "Solent NHS Trust",
@@ -1586,13 +1586,13 @@
   {
     "trust_name": "South Central Ambulance Service NHS Foundation Trust",
     "ods_code": "RYE",
-    "press_email": "oncallmedia@scas.nhs.uk",
-    "press_email_alt": null,
+    "press_email": "scas.oncallmedia@nhs.net",
+    "press_email_alt": "oncallmedia@scas.nhs.uk",
     "press_source_url": "https://www.scas.nhs.uk/contact-us/contact-the-media-team/",
-    "foi_email": "foi@scas.nhs.uk",
-    "foi_email_alt": null,
+    "foi_email": "scas.foi2@nhs.net",
+    "foi_email_alt": "foi@scas.nhs.uk",
     "foi_source_url": "https://www.scas.nhs.uk/contact-us/",
-    "notes": null
+    "notes": "primary updated 2026-08-22 from https://www.scas.nhs.uk/contact-us/contact-the-media-team/ and https://www.scas.nhs.uk/contact-us/; prior values moved to _alt (press oncallmedia@scas.nhs.uk, foi foi@scas.nhs.uk) - the trust now publishes nhs.net team mailboxes on both pages"
   },
   {
     "trust_name": "South East Coast Ambulance Service NHS Foundation Trust",
@@ -1854,9 +1854,9 @@
     "press_email_alt": null,
     "press_source_url": "https://www.pah.nhs.uk/contact/media-enquiries/",
     "foi_email": "paht.FOI@nhs.net",
-    "foi_email_alt": null,
-    "foi_source_url": "Temp/Comms contacts.xlsx (May 2026)",
-    "notes": "PAH uses online forms only for both media and FOI; emails are CloudFlare-protected share links not contact addresses; no direct inbox visible; Princess Alexandra: media page provides only enquiry form; FOI page Cloudflare-protected (cfemail not extracted). pah.foi@nhs.net is plausible but unverified. | press source URL set 2026-06-20 (was a placeholder); address confirmed unchanged"
+    "foi_email_alt": "FOI@pah.nhs.uk",
+    "foi_source_url": "https://www.pah.nhs.uk/foi/request/",
+    "notes": "PAH uses online forms only for both media and FOI; emails are CloudFlare-protected share links not contact addresses; no direct inbox visible; Princess Alexandra: media page provides only enquiry form; FOI page Cloudflare-protected (cfemail not extracted). pah.foi@nhs.net is plausible but unverified. | press source URL set 2026-06-20 (was a placeholder); address confirmed unchanged | 2026-08-22: foi_source_url repointed from the spreadsheet placeholder to the live /foi/request/ page (online form only, no address published there); FOI@pah.nhs.uk recorded as _alt from the trust's own FOI guidance. Press address paht.communications@nhs.net re-confirmed by decoding the cfemail token on the media-enquiries page."
   },
   {
     "trust_name": "The Queen Elizabeth Hospital King's Lynn NHS Foundation Trust",
@@ -1900,7 +1900,7 @@
     "foi_email": null,
     "foi_email_alt": null,
     "foi_source_url": "https://www.royalmarsden.nhs.uk/about-royal-marsden/freedom-information",
-    "notes": "Royal Marsden FOI handled via online request form only; no public FOI inbox; Royal Marsden FOI URL not fetched within budget. | 2026-06-20: Royal Marsden publishes no FOI email address (online form only)"
+    "notes": "Royal Marsden FOI handled via online request form only; no public FOI inbox; Royal Marsden FOI URL not fetched within budget. | 2026-06-20: Royal Marsden publishes no FOI email address (online form only) | 2026-08-22: pressteam@rmh.nhs.uk re-confirmed; FOI page still publishes no address (online form only), so foi_email stays null."
   },
   {
     "trust_name": "The Royal Orthopaedic Hospital NHS Foundation Trust",
@@ -1955,7 +1955,7 @@
     "foi_email": "tsdft.foirequests@nhs.net",
     "foi_email_alt": "foi.tsdft@nhs.net",
     "foi_source_url": "https://www.torbayandsouthdevon.nhs.uk/about-us/data-protection/freedom-of-information/",
-    "notes": "Press email reconstructed from contact form recipient (tsdft.communicationsteam@nhs.net) | press source URL corrected 2026-06-20 (prior URL 404); address unchanged"
+    "notes": "Press email reconstructed from contact form recipient (tsdft.communicationsteam@nhs.net) | press source URL corrected 2026-06-20 (prior URL 404); address unchanged | 2026-08-22: media-relations page is contact-form only with no address published, so the reconstructed press address is retained unverified; tsdft.foirequests@nhs.net re-confirmed."
   },
   {
     "trust_name": "United Lincolnshire Hospitals NHS Trust",
@@ -1999,7 +1999,7 @@
     "foi_email": "Foi@uhb.nhs.uk",
     "foi_email_alt": "foi.uhb@uhb.nhs.uk",
     "foi_source_url": "https://www.uhb.nhs.uk/get-in-touch/make-a-freedom-of-information-request/",
-    "notes": "press email not found on site; FOI email not found on site"
+    "notes": "press email not found on site; FOI email not found on site | 2026-08-22: both addresses now confirmed on the trust's own pages (communications@uhb.nhs.uk on /get-in-touch/media-enquiries/, Foi@uhb.nhs.uk on /get-in-touch/make-a-freedom-of-information-request/) - the earlier 'not found on site' note is superseded."
   },
   {
     "trust_name": "University Hospitals Bristol and Weston NHS Foundation Trust",
@@ -2229,8 +2229,8 @@
     "press_source_url": "https://www.wyevalley.nhs.uk/news-events/press-office.aspx",
     "foi_email": "Freedom.Information@wvt.nhs.uk",
     "foi_email_alt": null,
-    "foi_source_url": "https://www.wyevalley.nhs.uk/about-us/information-requests/make-a-freedom-of-information-request.aspx",
-    "notes": "2026-08-18: press and FOI emails both re-verified against the trust's own pages. foi_source_url repointed - the old freedom-of-information-requests.aspx now 404s. Press office page also lists three named comms staff (John Burnett, comms and engagement manager; Amanda Millichip and Fiona Gurney, comms officers) on 01432 372928."
+    "foi_source_url": "https://www.wyevalley.nhs.uk/about-us/information-requests/",
+    "notes": "2026-08-18: press and FOI emails both re-verified against the trust's own pages. foi_source_url repointed - the old freedom-of-information-requests.aspx now 404s. Press office page also lists three named comms staff (John Burnett, comms and engagement manager; Amanda Millichip and Fiona Gurney, comms officers) on 01432 372928. | 2026-08-22: foi_source_url repointed again - make-a-freedom-of-information-request.aspx now 404s; Freedom.Information@wvt.nhs.uk is published on the parent /about-us/information-requests/ page. Press address re-confirmed on the press office page."
   },
   {
     "trust_name": "York and Scarborough Teaching Hospitals NHS Foundation Trust",

@@ -19,7 +19,7 @@
     "foi_email": "bswicb.foi@nhs.net",
     "foi_email_alt": null,
     "foi_source_url": "https://bsw.icb.nhs.uk/about-us/freedom-of-information/",
-    "notes": "TODO — added 4 May 2026 during schema migration; press email not yet researched.; Forwarded to South Central and West CSU for processing | press source URL set 2026-06-20 (was a placeholder); address confirmed unchanged"
+    "notes": "TODO — added 4 May 2026 during schema migration; press email not yet researched.; Forwarded to South Central and West CSU for processing | press source URL set 2026-06-20 (was a placeholder); address confirmed unchanged | 2026-08-22: bswicb.media@nhs.net and bswicb.foi@nhs.net both re-confirmed on the freedom-of-information page (which carries the media address too)."
   },
   {
     "icb_name": "Birmingham and Solihull ICB",
@@ -228,7 +228,7 @@
     "foi_email": "eicb.foi@nhs.net",
     "foi_email_alt": "mseicb-foi@nhs.net",
     "foi_source_url": "https://www.essex.icb.nhs.uk/contact/foi/",
-    "notes": "New merged entity from 1 April 2026; predecessor Mid and South Essex address still active.; input website seed was mid and south Essex ICB | 2026-06-20: org migrated to essex.icb.nhs.uk (old midandsouthessex.ics.nhs.uk 301-redirects); FOI updated to eicb.foi@nhs.net (prior mseicb-foi@nhs.net moved to alt); new media page is form-only so the old press address may be defunct - manual check needed"
+    "notes": "New merged entity from 1 April 2026; predecessor Mid and South Essex address still active.; input website seed was mid and south Essex ICB | 2026-06-20: org migrated to essex.icb.nhs.uk (old midandsouthessex.ics.nhs.uk 301-redirects); FOI updated to eicb.foi@nhs.net (prior mseicb-foi@nhs.net moved to alt); new media page is form-only so the old press address may be defunct - manual check needed | 2026-08-22: /contact/press-media/ is still contact-form only with no address published, so communications@midandsouthessex.ics.nhs.uk remains unverified and may be defunct - manual check still outstanding. FOI address Eicb.foi@nhs.net re-confirmed by decoding the cfemail token on /contact/foi/."
   },
   {
     "icb_name": "Norfolk and Suffolk ICB",
@@ -294,7 +294,7 @@
     "foi_email": "stw.ssot.foi@nhs.net",
     "foi_email_alt": "mlcsu.foiteam@nhs.net",
     "foi_source_url": "https://www.shropshiretelfordandwrekin.nhs.uk/contact-us/",
-    "notes": null
+    "notes": "2026-08-22: stw.communications@nhs.net and stw.ssot.foi@nhs.net both re-confirmed on /contact-us/."
   },
   {
     "icb_name": "Somerset ICB",
