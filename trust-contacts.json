@@ -187,17 +187,6 @@
     "notes": "No press/comms email found on news-and-media page; switchboard 01274 542200 the only contact route; No dedicated press email surfaced on news/media or contact-us pages. 2026-08-15: press address re-confirmed unchanged; press_source_url repointed from the May 2026 spreadsheet placeholder to the live page [https://www.bradfordhospitals.nhs.uk/media-enquiries/]."
   },
   {
-    "trust_name": "Bridgewater Community Healthcare NHS Foundation Trust",
-    "ods_code": "RY2",
-    "press_email": "ncm.media@nhs.net",
-    "press_email_alt": null,
-    "press_source_url": "https://northcheshireandmersey.nhs.uk/contact-us/",
-    "foi_email": "ncm.foi@nhs.net",
-    "foi_email_alt": "foi@bridgewater.nhs.uk",
-    "foi_source_url": "https://northcheshireandmersey.nhs.uk/about-us/freedom-of-information/",
-    "notes": "Bridgewater merged into North Cheshire & Mersey FT; shared inbox"
-  },
-  {
     "trust_name": "Buckinghamshire Healthcare NHS Trust",
     "ods_code": "RXQ",
     "press_email": "bht.communications@nhs.net",
@@ -726,17 +715,6 @@
     "notes": "Homerton press contact is named individual (Mark Purcell) rather than team inbox"
   },
   {
-    "trust_name": "Hounslow and Richmond Community Healthcare NHS Trust",
-    "ods_code": "RY9",
-    "press_email": "krft.comms@nhs.net",
-    "press_email_alt": "hrch.communications@nhs.net",
-    "press_source_url": "https://www.kingstonandrichmond.nhs.uk/about-us/news/media-enquiries",
-    "foi_email": "krft.foienquiries@nhs.net",
-    "foi_email_alt": "hrch.freedomofinformation@nhs.net",
-    "foi_source_url": "https://www.kingstonandrichmond.nhs.uk/patients-and-families/patient-records-and-privacy/freedom-information-and-access-records",
-    "notes": "Hounslow & Richmond merged into Kingston & Richmond NHS Group; site redirects to kingstonandrichmond.nhs.uk"
-  },
-  {
     "trust_name": "Hull University Teaching Hospitals NHS Trust",
     "ods_code": "RWA",
     "press_email": "nlg-tr.comms@nhs.net",
@@ -836,15 +814,15 @@
     "notes": "FOI email obfuscated by Cloudflare; postal/online form available; FOI email decoded from Cloudflare cfemail attribute."
   },
   {
-    "trust_name": "Kingston Hospital NHS Foundation Trust",
+    "trust_name": "Kingston and Richmond NHS Foundation Trust",
     "ods_code": "RAX",
     "press_email": "krft.comms@nhs.net",
-    "press_email_alt": null,
+    "press_email_alt": "hrch.communications@nhs.net",
     "press_source_url": "https://www.kingstonandrichmond.nhs.uk/about-us/news/media-enquiries",
     "foi_email": "krft.foienquiries@nhs.net",
-    "foi_email_alt": null,
+    "foi_email_alt": "hrch.freedomofinformation@nhs.net",
     "foi_source_url": "https://www.kingstonandrichmond.nhs.uk/patients-and-families/patient-records-and-privacy/freedom-information-and-access-records",
-    "notes": "Trust now Kingston and Richmond NHS FT (merger). FOI email not surfaced on contact page"
+    "notes": "2026-08-22 ODS merge reconciliation: row RY9 (Hounslow and Richmond Community Healthcare) retired and folded in; merged 1 Nov 2024 to form Kingston and Richmond NHS FT. Legacy HRCH inboxes kept as _alt."
   },
   {
     "trust_name": "Lancashire Teaching Hospitals NHS Foundation Trust",
@@ -1152,17 +1130,6 @@
     "foi_email": "informationrights@nsft.nhs.uk",
     "foi_email_alt": null,
     "foi_source_url": "https://www.nsft.nhs.uk/freedom-of-information/",
-    "notes": null
-  },
-  {
-    "trust_name": "North Bristol NHS Trust",
-    "ods_code": "RVJ",
-    "press_email": "nbtcommunications@nbt.nhs.uk",
-    "press_email_alt": null,
-    "press_source_url": "https://www.nbt.nhs.uk/about-us/contact-us",
-    "foi_email": "FOIArequests@nbt.nhs.uk",
-    "foi_email_alt": "foi@nbt.nhs.uk",
-    "foi_source_url": "https://www.nbt.nhs.uk/about-us/freedom-information",
     "notes": null
   },
   {
@@ -1562,17 +1529,6 @@
     "notes": "FOI uses third-party Infreemation portal | 2026-08-22: contact and FOI pages could not be read from this machine (Imperva/Incapsula shell on plain fetch, server-side WebFetch and headless Playwright); shropcom.FOIR@infreemation.co.uk corroborated against a 2026 Wayback snapshot, addresses left unchanged."
   },
   {
-    "trust_name": "Solent NHS Trust",
-    "ods_code": "R1C",
-    "press_email": "hiowh.communications@nhs.net",
-    "press_email_alt": "communications@solent.nhs.uk",
-    "press_source_url": "https://hiowhealthcare.nhs.uk/contact-us",
-    "foi_email": "hiowh.freedomofinformation@nhs.net",
-    "foi_email_alt": "FreedomOfInformation@solent.nhs.uk",
-    "foi_source_url": "https://hiowhealthcare.nhs.uk/about-us/freedom-information",
-    "notes": "Solent merged into Hampshire & Isle of Wight Healthcare NHS FT (1 Oct 2024); FOI email not surfaced on contact page"
-  },
-  {
     "trust_name": "Somerset NHS Foundation Trust",
     "ods_code": "RH5",
     "press_email": "communications@somersetft.nhs.uk",
@@ -1683,7 +1639,7 @@
     "notes": null
   },
   {
-    "trust_name": "Southern Health NHS Foundation Trust",
+    "trust_name": "Hampshire and Isle of Wight Healthcare NHS Foundation Trust",
     "ods_code": "RW1",
     "press_email": "hiowh.communications@nhs.net",
     "press_email_alt": "communications@southernhealth.nhs.uk",
@@ -1691,7 +1647,7 @@
     "foi_email": "hiowh.freedomofinformation@nhs.net",
     "foi_email_alt": "freedom.information@southernhealth.nhs.uk",
     "foi_source_url": "https://hiowhealthcare.nhs.uk/freedom-information",
-    "notes": "Southern Health was reorganised into Hampshire and Isle of Wight Healthcare NHSFT"
+    "notes": "2026-08-22 ODS merge reconciliation: row R1C (Solent) retired and folded in; Solent and Southern Health merged 1 Oct 2024 to form Hampshire and Isle of Wight Healthcare NHS FT. Legacy Southern Health inboxes kept as _alt; legacy Solent inboxes were communications@solent.nhs.uk and FreedomOfInformation@solent.nhs.uk."
   },
   {
     "trust_name": "St George's University Hospitals NHS Foundation Trust",
@@ -1769,17 +1725,6 @@
     "foi_email_alt": null,
     "foi_source_url": "https://www.tamesideandglossopicft.nhs.uk/about-us/freedom-information-foi/freedom-information-request",
     "notes": "press/comms page not located"
-  },
-  {
-    "trust_name": "Tavistock and Portman NHS Foundation Trust",
-    "ods_code": "RNK",
-    "press_email": "nlft.communications@nhs.net",
-    "press_email_alt": "media@tavi-port.nhs.uk",
-    "press_source_url": "https://www.northlondonmentalhealth.nhs.uk/contact-us",
-    "foi_email": "nlft.freedom.information@nhs.net",
-    "foi_email_alt": "foi@tavi-port.nhs.uk",
-    "foi_source_url": "https://www.northlondonmentalhealth.nhs.uk/contact-us",
-    "notes": "Trust merged into North London FT April 2026; archived site; Note: Tavistock & Portman merged into North London NHS FT on 1 April 2026 - site archived. 2026-08-15: tavistockandportman.nhs.uk now 301-redirects to northlondonmentalhealth.nhs.uk (North London NHS Foundation Trust); both prior source URLs are dead. press + foi primaries updated from [https://www.northlondonmentalhealth.nhs.uk/contact-us]; prior values moved to _alt (displaced prior press _alt was communications@tavi-port.nhs.uk)."
   },
   {
     "trust_name": "Tees, Esk and Wear Valleys NHS Foundation Trust",
@@ -2002,15 +1947,15 @@
     "notes": "press email not found on site; FOI email not found on site | 2026-08-22: both addresses now confirmed on the trust's own pages (communications@uhb.nhs.uk on /get-in-touch/media-enquiries/, Foi@uhb.nhs.uk on /get-in-touch/make-a-freedom-of-information-request/) - the earlier 'not found on site' note is superseded."
   },
   {
-    "trust_name": "University Hospitals Bristol and Weston NHS Foundation Trust",
+    "trust_name": "Bristol NHS Foundation Trust",
     "ods_code": "RA7",
     "press_email": "pressoffice@uhbw.nhs.uk",
-    "press_email_alt": null,
-    "press_source_url": "https://www.uhbw.nhs.uk/p/get-in-touch/media-centre",
+    "press_email_alt": "nbtcommunications@nbt.nhs.uk",
+    "press_source_url": "https://www.bristolft.nhs.uk/about-us/news-and-media/media-enquiries",
     "foi_email": "FreedomOfInfo@uhbw.nhs.uk",
-    "foi_email_alt": "FreedomofInfo@uhbristol.nhs.uk",
-    "foi_source_url": "https://www.uhbw.nhs.uk/p/how-we-use-your-data/freedom-of-information-foi-requests",
-    "notes": null
+    "foi_email_alt": "FOIArequests@nbt.nhs.uk",
+    "foi_source_url": "https://www.bristolft.nhs.uk/contact-us/freedom-information",
+    "notes": "2026-08-22 ODS merge reconciliation: row RVJ (North Bristol) retired and folded in; merged 1 Jul 2026 to form Bristol NHS FT. The trust still runs two site-based routes and publishes no single trust-wide address. Press: city centre / South Bristol / Weston is phone-only on its own page (0117 342 3629; out of hours switchboard 0117 923 0000, ask for the on-call press officer) but pressoffice@uhbw.nhs.uk is still live on the UHBW media centre; Southmead / Cossham / Bristol Centre for Enablement is nbtcommunications@nbt.nhs.uk (0117 414 3990). FOI: City and Weston by email to FreedomOfInfo@uhbw.nhs.uk; Southmead via a web form at https://nhs1.radarhealthcare.net/incident/27/external-form/NBNT/Template_NHS_FOI_Request/694 with FOIArequests@nbt.nhs.uk still published on nbt.nhs.uk."
   },
   {
     "trust_name": "University Hospitals Coventry and Warwickshire NHS Trust",
@@ -2112,7 +2057,7 @@
     "notes": "No press email published; out-of-hours via switchboard 01922 721172; Walsall Healthcare media page advises out-of-hours via switchboard only; no published press email."
   },
   {
-    "trust_name": "Warrington and Halton Teaching Hospitals NHS Foundation Trust",
+    "trust_name": "North Cheshire and Mersey NHS Foundation Trust",
     "ods_code": "RWW",
     "press_email": "ncm.media@nhs.net",
     "press_email_alt": "whh.communications@nhs.net",
@@ -2120,7 +2065,7 @@
     "foi_email": "ncm.foi@nhs.net",
     "foi_email_alt": "whh.foi@nhs.net",
     "foi_source_url": "https://northcheshireandmersey.nhs.uk/about-us/freedom-of-information/",
-    "notes": "FOI primary updated 2026-05-16 from https://northcheshireandmersey.nhs.uk/about-us/freedom-of-information/; prior value moved to _alt"
+    "notes": "2026-08-22 ODS merge reconciliation: row RY2 (Bridgewater Community Healthcare) retired and folded in; Bridgewater and Warrington and Halton Teaching Hospitals merged 1 Apr 2026 to form North Cheshire and Mersey NHS FT, which uses shared ncm.* inboxes. Legacy WHH inboxes kept as _alt; legacy Bridgewater FOI inbox was foi@bridgewater.nhs.uk."
   },
   {
     "trust_name": "West Hertfordshire Teaching Hospitals NHS Trust",
@@ -2263,7 +2208,7 @@
     "foi_email": "nlft.freedom.information@nhs.net",
     "foi_email_alt": "nlft.information.request@nhs.net",
     "foi_source_url": "https://www.northlondonmentalhealth.nhs.uk/freedom-of-information",
-    "notes": "added 2026-05-16; new entity formed Nov 2024 from merger of Camden & Islington FT (TAF) and Barnet, Enfield and Haringey MH Trust (RRP); contacts to be populated by next rotation batch; press + FOI emails populated 2026-05-16 from northlondonmentalhealth.nhs.uk"
+    "notes": "2026-08-22 ODS merge reconciliation: row RNK (Tavistock and Portman) retired and folded in; Tavistock dissolved into North London NHS FT on 1 Apr 2026 and tavistockandportman.nhs.uk 301-redirects here. North London FT was formed Nov 2024 from Camden and Islington FT (TAF) and Barnet, Enfield and Haringey MH Trust (RRP). Press and FOI emails from northlondonmentalhealth.nhs.uk."
   },
   {
     "trust_name": "The Online NHS Trust",

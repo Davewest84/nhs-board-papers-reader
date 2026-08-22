@@ -1325,15 +1325,21 @@
   {
     "ods_code": "RAX",
     "names": [
+      "Kingston and Richmond NHS Foundation Trust",
+      "Kingston and Richmond",
+      "KRFT",
       "Kingston Hospital NHS Foundation Trust",
-      "Kingston Hospital"
+      "Kingston Hospital",
+      "Hounslow and Richmond Community Healthcare NHS Trust",
+      "Hounslow and Richmond Community Healthcare",
+      "HRCH"
     ],
     "type": "Acute and Acute & Community Trusts",
     "region": "London",
     "ics": "South West London",
     "correspondent": "Ella",
     "url": "https://www.kingstonandrichmond.nhs.uk/about-us/trust-board/board-meetings",
-    "access_notes": "Correct landing page for Kingston and Richmond NHS FT (formerly Kingston Hospital, RAX). The board-meetings page shows the current/latest Part 1 board pack as a force-download link, and links to a clean 'Board paper archive' at .../board-meetings/board-paper-archive listing prior years' packs in a Month/Year table. Both pages render links to plain HTTP fetch (no JS needed). Packs are served via opaque CMS download_file URLs of the form /download_file/force/{guid}/354 (current) or /download_file/{guid}/355 (archive), not human-readable filenames, so harvest the hrefs from the two pages rather than guessing paths.",
+    "access_notes": "MERGER: Kingston Hospital NHS FT (RAX) acquired Hounslow and Richmond Community Healthcare NHS Trust (RY9) on 1 November 2024 to form Kingston and Richmond NHS Foundation Trust; the RY9 row was retired on 2026-08-22 and folded into this one, and hrch.nhs.uk 301-redirects here. There is one combined board. Correct landing page for Kingston and Richmond NHS FT (formerly Kingston Hospital, RAX). The board-meetings page shows the current/latest Part 1 board pack as a force-download link, and links to a clean 'Board paper archive' at .../board-meetings/board-paper-archive listing prior years' packs in a Month/Year table. Both pages render links to plain HTTP fetch (no JS needed). Packs are served via opaque CMS download_file URLs of the form /download_file/force/{guid}/354 (current) or /download_file/{guid}/355 (archive), not human-readable filenames, so harvest the hrefs from the two pages rather than guessing paths.",
     "needs_playwright": false,
     "pack_pattern_hints": [
       "/download_file/force/{guid}/354 (latest pack on board-meetings)",
@@ -1345,11 +1351,17 @@
       "Ethnicity/Gender Pay Gap Report links",
       "'Former Trusts' report links",
       "/about-us/trust-board (board member bios index)",
-      "Part 2 / confidential papers"
+      "Part 2 / confidential papers",
+      "hrch.nhs.uk standalone paths (now redirect away)",
+      "separate HRCH board archive (does not exist post-merger)"
     ],
     "last_validated": "2026-07-04",
     "validation_status": "papers_found",
-    "validation_notes": "Kingston & Richmond board meetings page live; latest 7 May 2026 Part 1 pack + board paper archive link."
+    "validation_notes": "Kingston & Richmond board meetings page live; latest 7 May 2026 Part 1 pack + board paper archive link.",
+    "predecessor_codes": [
+      "RY9"
+    ],
+    "merger_date": "2024-11-01"
   },
   {
     "ods_code": "RJ1",
@@ -1571,35 +1583,6 @@
     "last_validated": "2026-08-22",
     "validation_status": "papers_found",
     "validation_notes": "Landing validator 2026-08-22: papers_found - 24 dated PDFs, 0 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
-  },
-  {
-    "ods_code": "RY9",
-    "names": [
-      "Hounslow and Richmond Community Healthcare NHS Trust",
-      "Hounslow and Richmond Community Healthcare"
-    ],
-    "type": "Community Trusts",
-    "region": "London",
-    "ics": "South West London",
-    "correspondent": "Ella",
-    "url": "https://www.kingstonandrichmond.nhs.uk/about-us/trust-board/board-meetings",
-    "access_notes": "RY9 (Hounslow and Richmond Community Healthcare NHS Trust, HRCH) was acquired by Kingston Hospital NHS FT on 1 November 2024; the merged body is Kingston and Richmond NHS Foundation Trust and there is no longer a separate HRCH board. hrch.nhs.uk now 301-redirects to kingstonandrichmond.nhs.uk, and the KRFT board-meetings page is the correct (and only) live board-papers source for RY9. HRCH appears on the KRFT site only as a 'Former Trusts' label on legacy pay-gap reports. Same crawl strategy and CMS download_file pack pattern as RAX; no JS needed. NOTE: RY9 and RAX now point at the same combined board — dedupe/flag in dataset.",
-    "needs_playwright": false,
-    "pack_pattern_hints": [
-      "/download_file/force/{guid}/354 (latest combined KRFT pack)",
-      "/download_file/{guid}/355 (archive packs)",
-      "'Board paper archive' subpage",
-      "hrch.nhs.uk -> kingstonandrichmond.nhs.uk 301 redirect"
-    ],
-    "exclude_patterns": [
-      "hrch.nhs.uk standalone paths (now redirect away)",
-      "Ethnicity/Gender Pay Gap 'Former Trusts' reports",
-      "Part 2 / confidential papers",
-      "separate HRCH board archive (does not exist post-merger)"
-    ],
-    "last_validated": "2026-07-04",
-    "validation_status": "papers_found",
-    "validation_notes": "HRCH merged into Kingston & Richmond (RAX) 1 Nov 2024; same combined board/URL as RAX (dedupe). Latest 7 May 2026."
   },
   {
     "ods_code": "RYX",
@@ -2459,22 +2442,27 @@
   {
     "ods_code": "RA7",
     "names": [
+      "Bristol NHS Foundation Trust",
+      "Bristol FT",
       "University Hospitals Bristol and Weston NHS Foundation Trust",
       "University Hospitals Bristol and Weston",
       "UHBW",
-      "University Hospitals Bristol Weston"
+      "North Bristol NHS Trust",
+      "North Bristol",
+      "NBT"
     ],
     "type": "Acute and Acute & Community Trusts",
     "region": "South West",
     "ics": "Bristol, North Somerset and South Gloucestershire",
     "correspondent": "Joe",
     "url": "https://www.bristolft.nhs.uk/about-us/our-board/board-meetings",
-    "access_notes": "URL PATCHED 2026-08-08: UHBW and North Bristol NHS Trust legally combined on 1 July 2026 to form Bristol NHS Foundation Trust, and the old landing /p/about-us/trust-board-meetings on uhbw.nhs.uk now serves only a redirect notice (\"We're moving content to our new website\") pointing at www.bristolft.nhs.uk/about-us/our-board/board-meetings. That new page is the live board archive: static server-rendered, no Playwright, listing each dated public board meeting with a 'Board papers published' link to a single combined PDF under /sites/default/files/<yyyy-mm>/ plus a YouTube recording link. Board meets roughly every other month (14 Jul 2026 papers live; forward dates 8 Sep, 10 Nov 2026, 12 Jan, 9 Mar 2027) and papers publish about a week before, under press embargo until the meeting. Months with no public meeting may still post a standalone Integrated Quality Performance Report - that is not a board pack. The legacy UHBW archive (uhbw.nhs.uk /p/historic-meeting-papers-1 and the flat /assets/1/ PDF store, filenames like public_group_board_meeting_13012026_papers.pdf) still resolves and remains the only source for pre-July-2026 UHBW/group packs, so keep it for backfill. Note the sibling entry RVJ (North Bristol) still points at nbt.nhs.uk, which was still serving papers at this scan - both entries will need repointing to the single Bristol FT board once NBT's pages retire; flagged for manual review.",
+    "access_notes": "MERGER: North Bristol NHS Trust (RVJ) and University Hospitals Bristol and Weston NHS FT (RA7) combined on 1 July 2026 to form Bristol NHS Foundation Trust, which holds a single board. The RVJ row was retired on 2026-08-22 and folded into this one. Live board archive is www.bristolft.nhs.uk/about-us/our-board/board-meetings: static server-rendered, no Playwright, listing each dated public board meeting with a 'Board papers published' link to a single combined PDF under /sites/default/files/<yyyy-mm>/ plus a YouTube recording link. Board meets roughly every other month (14 Jul 2026 papers live; forward dates 8 Sep, 10 Nov 2026, 12 Jan, 9 Mar 2027) and papers publish about a week before, under press embargo until the meeting. Months with no public meeting may still post a standalone Integrated Quality Performance Report - that is not a board pack. Two legacy archives remain live and are the only source for pre-July-2026 packs, so keep both for backfill: UHBW/group packs at uhbw.nhs.uk (/p/historic-meeting-papers-1 and the flat /assets/1/ PDF store, filenames like public_group_board_meeting_13012026_papers.pdf), and North Bristol's own year pages at nbt.nhs.uk/about-us/meet-our-board/trust-board-meetings-<yyyyyyyy>.",
     "needs_playwright": false,
     "pack_pattern_hints": [
       "'Board papers published' link on each dated meeting",
       "/sites/default/files/<yyyy-mm>/*Board*Meeting*.pdf",
-      "legacy UHBW backfill: /assets/1/public_group_board_meeting_<ddmmyyyy>_papers.pdf"
+      "legacy UHBW backfill: /assets/1/public_group_board_meeting_<ddmmyyyy>_papers.pdf",
+      "legacy NBT backfill: nbt.nhs.uk/about-us/meet-our-board/trust-board-meetings-<yyyyyyyy>"
     ],
     "exclude_patterns": [
       "Integrated Quality Performance Report (standalone, non-meeting months)",
@@ -2486,8 +2474,10 @@
     "last_validated": "2026-08-22",
     "validation_status": "papers_found",
     "validation_notes": "Re-verified 2026-08-22: 14 July 2026 board pack published on the bristolft.nhs.uk landing; Sept 2026 to Mar 2027 dates listed pending papers.",
-    "group_board": "Bristol group board - NBT and UHBW meet in common; NBT hosts the year pages",
-    "group_board_url": "https://www.nbt.nhs.uk/about-us/meet-our-board/trust-board-meetings-20262027"
+    "predecessor_codes": [
+      "RVJ"
+    ],
+    "merger_date": "2026-07-01"
   },
   {
     "ods_code": "RA9",
@@ -2799,20 +2789,6 @@
     "last_validated": "2026-05-29",
     "validation_status": "papers_found",
     "validation_notes": "Validator (static) found dated_pdfs=25, year_archives=0, meeting_subpages=1."
-  },
-  {
-    "ods_code": "RVJ",
-    "names": [
-      "North Bristol NHS Trust",
-      "North Bristol"
-    ],
-    "type": "Acute and Acute & Community Trusts",
-    "region": "South West",
-    "ics": "Bristol, North Somerset and South Gloucestershire",
-    "correspondent": "Joe",
-    "url": "https://www.nbt.nhs.uk/about-us/meet-our-board/trust-board-meetings-20252026",
-    "group_board": "Bristol group board - NBT and UHBW meet in common; NBT hosts the year pages",
-    "group_board_url": "https://www.nbt.nhs.uk/about-us/meet-our-board/trust-board-meetings-20262027"
   },
   {
     "ods_code": "RVN",
@@ -3303,31 +3279,6 @@
     "validation_notes": "Validator (static) found dated_pdfs=55, year_archives=0, meeting_subpages=0."
   },
   {
-    "ods_code": "RNK",
-    "names": [
-      "Tavistock and Portman NHS Foundation Trust",
-      "Tavistock and Portman"
-    ],
-    "type": "Mental Health & Learning Disability and Mental Health, Learning Disability & Community Trusts",
-    "region": "London",
-    "ics": "North Central London",
-    "correspondent": "Matt D",
-    "url": "https://www.northlondonmentalhealth.nhs.uk/meetings-and-papers/",
-    "access_notes": "MERGER: Tavistock and Portman NHS FT dissolved into North London NHS Foundation Trust (ODS G6V2S) on 1 April 2026; the old tavistockandportman.nhs.uk site is retired and 301-redirects to the successor homepage. URL repointed 2026-07-04 to the successor's board papers at northlondonmentalhealth.nhs.uk/meetings-and-papers/ (current packs; archive at /board-papers-archive/). NOTE: this now duplicates the North London NHS FT row (G6V2S) - this legacy Tavistock ODS code should be reconciled/removed by hand. Board meets bi-monthly; click a meeting date to open the combined agenda/papers PDF. Static fetch works.",
-    "needs_playwright": false,
-    "pack_pattern_hints": [
-      "Board papers - {Month Year}",
-      "board-papers-{month}-{year}"
-    ],
-    "exclude_patterns": [
-      "Extraordinary board papers",
-      "archived website"
-    ],
-    "last_validated": "2026-07-04",
-    "validation_status": "papers_found",
-    "validation_notes": "MERGER: Tavistock & Portman dissolved into North London NHS FT (ODS G6V2S) on 1 Apr 2026; old site retired (301 to successor). URL repointed to successor board papers. Duplicates row G6V2S - flag for reconciliation."
-  },
-  {
     "ods_code": "RV3",
     "names": [
       "Central and North West London NHS Foundation Trust",
@@ -3618,31 +3569,6 @@
     "url": "https://www.cddft.nhs.uk/about-us/corporate-information/trust-board/board-meetings-and-papers"
   },
   {
-    "ods_code": "R1C",
-    "names": [
-      "Solent NHS Trust",
-      "Solent"
-    ],
-    "type": "Mental Health & Learning Disability and Mental Health, Learning Disability & Community Trusts",
-    "region": "South East",
-    "ics": "Hampshire and Isle of Wight",
-    "correspondent": "Mimi",
-    "url": "https://hiowhealthcare.nhs.uk/about-us/our-board/meetings-and-papers",
-    "access_notes": "Static-fetchable landing (Hampshire & IoW Healthcare, successor to Solent) listing dated public board meetings directly under year-range headings ('Board Meeting Papers 2026-2027', 'Board Meeting Papers 2025-2026', 'Most Recent Board Papers'). Each meeting is anchored by its date (e.g. 'Tuesday 09 December 2025') which links to the agenda/papers PDF; meetings run roughly bi-monthly on Tuesdays. No intermediate year folders or per-meeting hub pages — the dated anchor resolves to the PDF. Pattern A. Take date-text anchors under the 2025-2026 / 2026-2027 headings. Exclude the 'Confidential agenda' link that accompanies each public entry (closed-session agenda, not the public pack).",
-    "needs_playwright": false,
-    "pack_pattern_hints": [
-      "Tuesday {DD} {Month} {Year}",
-      "Board Meeting Papers {Year}-{Year}"
-    ],
-    "exclude_patterns": [
-      "Confidential agenda",
-      "confidential"
-    ],
-    "last_validated": "2026-06-13",
-    "validation_status": "papers_found",
-    "validation_notes": "Confirmed dated entries e.g. 'Tuesday 10 February 2026' and 'Tuesday 09 December 2025', each with a public agenda link plus a 'Confidential agenda' to skip."
-  },
-  {
     "ods_code": "R1F",
     "names": [
       "Isle of Wight NHS Trust"
@@ -3782,8 +3708,13 @@
   {
     "ods_code": "RW1",
     "names": [
+      "Hampshire and Isle of Wight Healthcare NHS Foundation Trust",
+      "Hampshire and Isle of Wight Healthcare",
+      "HIOW Healthcare",
       "Southern Health NHS Foundation Trust",
-      "Southern Health"
+      "Southern Health",
+      "Solent NHS Trust",
+      "Solent"
     ],
     "type": "Mental Health & Learning Disability and Mental Health, Learning Disability & Community Trusts",
     "region": "South East",
@@ -3792,7 +3723,21 @@
     "url": "https://hiowhealthcare.nhs.uk/about-us/our-board/meetings-and-papers",
     "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Landing validator 2026-08-22: papers_found - 15 dated PDFs, 0 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 15 dated PDFs, 0 year archives, 0 meeting sub-pages visible on the landing (HTTP 200).",
+    "access_notes": "MERGER: Solent NHS Trust (R1C) and Southern Health NHS FT (RW1) combined on 1 October 2024 to form Hampshire and Isle of Wight Healthcare NHS Foundation Trust, which holds one board. The R1C row was retired on 2026-08-22 and folded into this one. Static-fetchable landing (Hampshire & IoW Healthcare, successor to Solent) listing dated public board meetings directly under year-range headings ('Board Meeting Papers 2026-2027', 'Board Meeting Papers 2025-2026', 'Most Recent Board Papers'). Each meeting is anchored by its date (e.g. 'Tuesday 09 December 2025') which links to the agenda/papers PDF; meetings run roughly bi-monthly on Tuesdays. No intermediate year folders or per-meeting hub pages — the dated anchor resolves to the PDF. Pattern A. Take date-text anchors under the 2025-2026 / 2026-2027 headings. Exclude the 'Confidential agenda' link that accompanies each public entry (closed-session agenda, not the public pack).",
+    "needs_playwright": false,
+    "pack_pattern_hints": [
+      "Tuesday {DD} {Month} {Year}",
+      "Board Meeting Papers {Year}-{Year}"
+    ],
+    "exclude_patterns": [
+      "Confidential agenda",
+      "confidential"
+    ],
+    "predecessor_codes": [
+      "R1C"
+    ],
+    "merger_date": "2024-10-01"
   },
   {
     "ods_code": "RWX",
@@ -4638,16 +4583,41 @@
   {
     "ods_code": "RWW",
     "names": [
+      "North Cheshire and Mersey NHS Foundation Trust",
+      "North Cheshire and Mersey",
+      "NCM",
       "Warrington and Halton Teaching Hospitals NHS Foundation Trust",
       "Warrington and Halton Teaching Hospitals",
-      "Warrington Halton Teaching Hospitals",
-      "WHH"
+      "WHH",
+      "Bridgewater Community Healthcare NHS Foundation Trust",
+      "Bridgewater Community Healthcare",
+      "Bridgewater"
     ],
     "type": "Acute and Acute & Community Trusts",
     "region": "North West",
     "ics": "Cheshire and Merseyside",
     "correspondent": "Zoe",
-    "url": "https://whh.nhs.uk/about-us/how-we-work/board-meetings-and-papers/"
+    "url": "https://northcheshireandmersey.nhs.uk/about-us/how-we-work/board-meetings-and-papers/",
+    "access_notes": "MERGER: Warrington and Halton Teaching Hospitals NHS FT (RWW) and Bridgewater Community Healthcare NHS FT (RY2) combined on 1 April 2026 to form North Cheshire and Mersey NHS Foundation Trust, which holds one board. The RY2 row was retired on 2026-08-22 and folded into this one. Both legacy domains 301-redirect to the successor: whh.nhs.uk/about-us/how-we-work/board-meetings-and-papers/ and bridgewater.nhs.uk/about-us/how-we-work/board-meetings-and-papers/ both land on northcheshireandmersey.nhs.uk/about-us/how-we-work/board-meetings-and-papers/. That single page is a static, server-rendered archive listing every pack back to 2021 as direct PDF links under /media/{guid}/; no Playwright needed. Post-merger packs are named trust-board-agenda-and-papers-<d-month-yyyy>.pdf or z-prefixed variants (ztrust-board-part-1-papers-<ddmmyy>.pdf, zncm-publictrust-board-agenda-<ddmmyyyy>.pdf); pre-merger WHH packs are public-board-papers-<month-year>.pdf.",
+    "needs_playwright": false,
+    "pack_pattern_hints": [
+      "/media/{guid}/trust-board-agenda-and-papers-<d-month-yyyy>.pdf",
+      "/media/{guid}/ztrust-board-part-1-papers-<ddmmyy>.pdf",
+      "/media/{guid}/public-board-papers-<month-year>.pdf (pre-merger WHH)"
+    ],
+    "exclude_patterns": [
+      "supplementary-public-board-papers (addendum, not the main pack)",
+      "council-of-governors-meetings",
+      "extraordinary trust board",
+      "Part 2 / confidential papers"
+    ],
+    "last_validated": "2026-08-22",
+    "validation_status": "papers_found",
+    "validation_notes": "Verified 2026-08-22: whh.nhs.uk and bridgewater.nhs.uk both 301 to the North Cheshire and Mersey board page; 40+ dated packs listed, latest trust-board-agenda-and-papers-5-august-2026.pdf.",
+    "predecessor_codes": [
+      "RY2"
+    ],
+    "merger_date": "2026-04-01"
   },
   {
     "ods_code": "RXA",
@@ -4747,19 +4717,6 @@
     "last_validated": "2026-08-22",
     "validation_status": "papers_found",
     "validation_notes": "Blocked on every route tried this run (2026-08-22): local requests, local headless Playwright and server-side WebFetch all returned the Incapsula challenge or an empty body. Status carried forward from the 2026-07-31 confirmation of the /application/files/ pack paths."
-  },
-  {
-    "ods_code": "RY2",
-    "names": [
-      "Bridgewater Community Healthcare NHS Foundation Trust",
-      "Bridgewater Community Healthcare",
-      "Bridgewater"
-    ],
-    "type": "Community Trusts",
-    "region": "North West",
-    "ics": "Cheshire and Merseyside",
-    "correspondent": "Zoe",
-    "url": "https://bridgewater.nhs.uk/about-us/how-we-work/board-meetings-and-papers/"
   },
   {
     "ods_code": "RY7",
@@ -5036,16 +4993,33 @@
     "names": [
       "North London NHS Foundation Trust",
       "North London FT",
-      "North London Mental Health Foundation Trust"
+      "North London Mental Health Foundation Trust",
+      "Tavistock and Portman NHS Foundation Trust",
+      "Tavistock and Portman",
+      "Tavistock"
     ],
     "type": "Mental Health & Learning Disability and Mental Health, Learning Disability & Community Trusts",
     "region": "London",
     "ics": "North Central London",
-    "correspondent": "Matt Discombe",
+    "correspondent": "Matt D",
     "url": "https://www.northlondonmentalhealth.nhs.uk/meetings-and-papers/",
     "last_validated": "2026-08-22",
     "validation_status": "papers_found",
-    "validation_notes": "Landing validator 2026-08-22: papers_found - 16 dated PDFs, 0 year archives, 0 meeting sub-pages visible on the landing (HTTP 200)."
+    "validation_notes": "Landing validator 2026-08-22: papers_found - 16 dated PDFs, 0 year archives, 0 meeting sub-pages visible on the landing (HTTP 200).",
+    "access_notes": "MERGER: Tavistock and Portman NHS FT (RNK) dissolved into North London NHS Foundation Trust on 1 April 2026; tavistockandportman.nhs.uk is retired and 301-redirects to the successor homepage. The RNK row was retired on 2026-08-22 and folded into this one. Current packs at northlondonmentalhealth.nhs.uk/meetings-and-papers/, archive at /board-papers-archive/. Board meets bi-monthly; click a meeting date to open the combined agenda/papers PDF. Static fetch works, no Playwright. North London FT was itself formed in November 2024 from Camden and Islington FT (TAF) and Barnet, Enfield and Haringey Mental Health Trust (RRP).",
+    "needs_playwright": false,
+    "pack_pattern_hints": [
+      "Board papers - {Month Year}",
+      "board-papers-{month}-{year}"
+    ],
+    "exclude_patterns": [
+      "Extraordinary board papers",
+      "archived website"
+    ],
+    "predecessor_codes": [
+      "RNK"
+    ],
+    "merger_date": "2026-04-01"
   },
   {
     "ods_code": "K0N6A",

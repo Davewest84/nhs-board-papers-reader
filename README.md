@@ -4,9 +4,9 @@ Public dataset of English NHS **trust + integrated care board** reference data, 
 
 | Dataset | JSON (canonical) | CSV | XLSX | Entries |
 |---|---|---|---|---:|
-| Trust board-papers URLs | [`trust_urls.json`](trust_urls.json) | [`trust_urls.csv`](trust_urls.csv) | [`trust_urls.xlsx`](trust_urls.xlsx) | ~207 |
+| Trust board-papers URLs | [`trust_urls.json`](trust_urls.json) | [`trust_urls.csv`](trust_urls.csv) | [`trust_urls.xlsx`](trust_urls.xlsx) | ~202 |
 | ICB board-papers URLs | [`icb_urls.json`](icb_urls.json) | [`icb_urls.csv`](icb_urls.csv) | [`icb_urls.xlsx`](icb_urls.xlsx) | 36 |
-| Trust press & FOI contacts | [`trust-contacts.json`](trust-contacts.json) | [`trust-contacts.csv`](trust-contacts.csv) | [`trust-contacts.xlsx`](trust-contacts.xlsx) | ~207 |
+| Trust press & FOI contacts | [`trust-contacts.json`](trust-contacts.json) | [`trust-contacts.csv`](trust-contacts.csv) | [`trust-contacts.xlsx`](trust-contacts.xlsx) | ~202 |
 | ICB press & FOI contacts | [`icb-contacts.json`](icb-contacts.json) | [`icb-contacts.csv`](icb-contacts.csv) | [`icb-contacts.xlsx`](icb-contacts.xlsx) | 36 |
 
 JSON is the authoritative format; CSV and XLSX are regenerated from it each Saturday by [`scripts/build_derivatives.py`](scripts/build_derivatives.py). Don't edit the CSV or XLSX directly — your edits will be lost on the next refresh.
@@ -39,6 +39,8 @@ https://raw.githubusercontent.com/Davewest84/nhs-trust-icb-data/main/icb-contact
 ```
 
 In the CSV/XLSX, the `names` array is flattened: first entry → `name`, remainder → `alt_names` (semicolon-separated).
+
+Where a trust has absorbed another, the surviving row carries two optional extra fields (same convention as the ICB file): `predecessor_codes` lists the retired ODS codes and `merger_date` is the date the succession took effect. The retired code's own row is deleted, and its former names are kept in `alt_names` so historic data keyed on the old name still joins.
 
 ### ICB URLs
 
