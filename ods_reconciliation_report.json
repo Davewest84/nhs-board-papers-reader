@@ -1,75 +1,35 @@
 {
-  "generated_at": "2026-08-22T04:36:40.252239+00:00",
-  "last_ods_sync_date_used": "2026-08-15",
-  "method_note": "ADD candidates derived from the live superset (PrimaryRoleId RO197 + RO57 + RO107 for trusts, RO261 name-filtered to \"INTEGRATED CARE BOARD\" for ICBs) minus DB membership, then filtered by Date[Legal].End. REMOVE candidates come from a FULL Legal-End sweep of all 243 DB members, not just the /sync change feed: the feed only surfaces orgs whose ODS record changed since last_ods_sync_date, so an org that died months ago and has not been touched since is invisible to it (R1C, legal end 2024-09-30, is the standing example). The plain set-difference misses them too because a merged org keeps Status \"Active\". This run also ran the change feed (1,162 orgs changed since 2026-08-15, 0 of them in-DB deaths) as a cross-check; the full sweep is the authoritative list. All 243 detail lookups succeeded.",
+  "generated_at": "2026-09-05T04:35:19.620282+00:00",
+  "last_ods_sync_date_used": "2026-08-22",
+  "live_counts": {
+    "ord_trusts": 251,
+    "ord_icbs": 48,
+    "db_trusts": 202,
+    "db_icbs": 36
+  },
+  "change_feed_orgs_in_db": [],
   "add_candidates": [
     {
       "ods": "RQF",
       "name": "VELINDRE NHS TRUST",
       "role": "trust",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh / non-England body, permanently out of scope - no action needed."
+      "note": "Non-England organisation - permanently out of scope, no action needed."
     },
     {
       "ods": "RT4",
       "name": "WELSH AMBULANCE SERVICES NHS TRUST",
       "role": "trust",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh / non-England body, permanently out of scope - no action needed."
+      "note": "Non-England organisation - permanently out of scope, no action needed."
     },
     {
       "ods": "RYT",
       "name": "PUBLIC HEALTH WALES NHS TRUST",
       "role": "trust",
       "suggested_region": "Wales (out-of-scope)",
-      "note": "Welsh / non-England body, permanently out of scope - no action needed."
+      "note": "Non-England organisation - permanently out of scope, no action needed."
     }
   ],
-  "remove_candidates": [],
-  "resolved": {
-    "date": "2026-08-22",
-    "action": "All 5 standing remove candidates actioned by hand: the dead row was deleted and its names, access notes, pack hints and legacy press/FOI inboxes folded into the live successor row, which now carries predecessor_codes + merger_date.",
-    "merges": [
-      {
-        "removed": "RY9",
-        "removed_name": "HOUNSLOW AND RICHMOND COMMUNITY HEALTHCARE NHS TRUST",
-        "into": "RAX",
-        "into_name": "Kingston and Richmond NHS Foundation Trust",
-        "merger_date": "2024-11-01"
-      },
-      {
-        "removed": "RVJ",
-        "removed_name": "NORTH BRISTOL NHS TRUST",
-        "into": "RA7",
-        "into_name": "Bristol NHS Foundation Trust",
-        "merger_date": "2026-07-01"
-      },
-      {
-        "removed": "RNK",
-        "removed_name": "TAVISTOCK AND PORTMAN NHS FOUNDATION TRUST",
-        "into": "G6V2S",
-        "into_name": "North London NHS Foundation Trust",
-        "merger_date": "2026-04-01"
-      },
-      {
-        "removed": "R1C",
-        "removed_name": "SOLENT NHS TRUST",
-        "into": "RW1",
-        "into_name": "Hampshire and Isle of Wight Healthcare NHS Foundation Trust",
-        "merger_date": "2024-10-01"
-      },
-      {
-        "removed": "RY2",
-        "removed_name": "BRIDGEWATER COMMUNITY HEALTHCARE NHS FOUNDATION TRUST",
-        "into": "RWW",
-        "into_name": "North Cheshire and Mersey NHS Foundation Trust",
-        "merger_date": "2026-04-01"
-      }
-    ],
-    "post_action_sweep": "Full Date[Legal].End sweep re-run over all 238 remaining DB members (202 trusts + 36 ICBs) on 2026-08-22 after the edits: 0 dead members, 0 lookup failures.",
-    "db_counts_after": {
-      "trusts": 202,
-      "icbs": 36
-    }
-  }
+  "remove_candidates": []
 }
