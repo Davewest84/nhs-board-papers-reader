@@ -96,9 +96,9 @@
       "Annual General Meeting papers",
       "draft minutes of prior meetings"
     ],
-    "last_validated": "2026-08-22",
-    "validation_status": "papers_partial",
-    "validation_notes": "Re-verified 2026-08-22: the hub page carries no PDFs by design (papers_partial is expected here) but links one hop to 'Board meeting held in public on Wednesday 29 July 2026' and to the Previous Board meetings archive; forward dates 30 Sept 2026, 27 Jan and 31 Mar 2027."
+    "last_validated": "2026-09-05",
+    "validation_status": "papers_found",
+    "validation_notes": "2026-09-05: WebFetch reached the page; landing links the 29 July 2026 meeting sub-page plus a 'Previous Board meetings' archive - papers sit one hop deeper, which is why the validator scores it partial."
   },
   {
     "ods_code": "QOQ",
@@ -303,9 +303,9 @@
       "committee/ICP/Joint content (not on these pages)",
       "XLSX governance-log attachments"
     ],
-    "last_validated": "2026-08-22",
+    "last_validated": "2026-09-05",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-22: /meetings/board-papers holds the 15 July 2026 pack as 15 separate agenda-item PDFs on the hwics.org.uk download_file handler; 'Past Board Papers' archive link present."
+    "validation_notes": "2026-09-05: WebFetch reached the page; 15 documents for the 15 July 2026 public board, served as https://www.hwics.org.uk/download_file/{id}/414 links."
   },
   {
     "ods_code": "QJ2",
@@ -751,9 +751,9 @@
       "legacy NCL/NWL pre-merger links",
       "watch-live / YouTube recording links"
     ],
-    "last_validated": "2026-08-22",
+    "last_validated": "2026-09-05",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-22: landing lists the 22 July 2026 meeting with papers in the policies-and-publications document library plus a recording and a Q&A response; forward dates 23 Sept 2026 (AGM), 21 Oct 2026, 27 Jan and 24 Mar 2027."
+    "validation_notes": "2026-09-05: WebFetch reached the page; newest entry 'Board meeting - 22 July 2026 - agenda papers' linking into the /navigate/486/2410 document library."
   },
   {
     "ods_code": "QRL",
@@ -852,9 +852,9 @@
       "nhs-bob-icb-board-meetings-* and nhs-frimley-icb-* paths",
       "ICP / Joint Committee items"
     ],
-    "last_validated": "2026-08-22",
+    "last_validated": "2026-09-05",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-22: the sub-page lists 'Thames Valley ICB Board papers 15 July 2026' (10.50MB) and '20 May 2026' (2.81MB) - still only two packs, as expected for a board established 1 April 2026."
+    "validation_notes": "2026-09-05: WebFetch reached the page; newest 'Thames Valley ICB Board papers 15 July 2026' (10.5MB) served via the /file endpoint."
   },
   {
     "ods_code": "S9B9J",
@@ -1038,9 +1038,9 @@
       "Joint Committee",
       "Cluster governance committee"
     ],
-    "last_validated": "2026-08-15",
+    "last_validated": "2026-09-05",
     "validation_status": "papers_found",
-    "validation_notes": "Re-verified 2026-08-15 via WebFetch: Meetings in public page live; packs served from docs.cios.icb.nhs.uk including the 28 May 2026 extraordinary meeting. The local 403 was a WAF false positive."
+    "validation_notes": "2026-09-05: WebFetch reached the page; packs hosted on docs.cios.icb.nhs.uk with per-year archive sections, newest the 28 May 2026 extraordinary meeting."
   },
   {
     "ods_code": "QJK",

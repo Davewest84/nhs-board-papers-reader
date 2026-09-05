@@ -30,7 +30,7 @@
     "foi_email": "asp-tr.foi@nhs.net",
     "foi_email_alt": null,
     "foi_source_url": "https://www.ashfordstpeters.nhs.uk/about-us/useful-contacts",
-    "notes": "press email not found on site; FOI email not found on site; Ashford & St Peter's website returns empty body / Cloudflare-blocked to WebFetch on /, /contact-us, /freedom-of-information. Could not verify any email. | press_email & foi_email re-verified on site 2026-06-27 (Useful Contacts page, JS-obfuscated mailto); source_urls updated from xlsx placeholder, emails unchanged"
+    "notes": "press email not found on site; FOI email not found on site; Ashford & St Peter's website returns empty body / Cloudflare-blocked to WebFetch on /, /contact-us, /freedom-of-information. Could not verify any email. | press_email & foi_email re-verified on site 2026-06-27 (Useful Contacts page, JS-obfuscated mailto); source_urls updated from xlsx placeholder, emails unchanged verified 2026-09-05: both addresses unchanged. Note for future runs - ashfordstpeters.nhs.uk hides addresses in Joomla 4 <joomla-hidden-mail> tags (base64 in the first/last/text attributes), NOT Cloudflare cfemail, so a plain regex and decode_cfemail.py both find nothing. Base64-decode the text= attribute instead; no browser needed."
   },
   {
     "trust_name": "Avon and Wiltshire Mental Health Partnership NHS Trust",
@@ -398,13 +398,13 @@
   {
     "trust_name": "Doncaster and Bassetlaw Teaching Hospitals NHS Foundation Trust",
     "ods_code": "RP5",
-    "press_email": "Adam.Tingle@nhs.net",
-    "press_email_alt": null,
+    "press_email": "dbth.comms@nhs.net",
+    "press_email_alt": "Adam.Tingle@nhs.net",
     "press_source_url": "https://www.dbth.nhs.uk/contact/communications-team/",
     "foi_email": "d.wraith@nhs.net",
     "foi_email_alt": "dbth.foi@nhs.net",
     "foi_source_url": "https://www.dbth.nhs.uk/about-us/freedom-of-information/",
-    "notes": "FOI is named individual; Doncaster & Bassetlaw publishes only personal comms emails (Emma.Shaheen@nhs.net, adam.tingle@nhs.net) - no generic press address. | press_email re-verified 2026-06-27 on Communications Team page; source_url updated from xlsx placeholder, email unchanged"
+    "notes": "FOI is named individual; Doncaster & Bassetlaw publishes only personal comms emails (Emma.Shaheen@nhs.net, adam.tingle@nhs.net) - no generic press address. | press_email re-verified 2026-06-27 on Communications Team page; source_url updated from xlsx placeholder, email unchanged primary updated 2026-09-05 from https://www.dbth.nhs.uk/contact/communications-team/ (page's Media enquiries section now names the generic team mailbox dbth.comms@nhs.net); prior value Adam.Tingle@nhs.net moved to _alt."
   },
   {
     "trust_name": "Dorset County Hospital NHS Foundation Trust",
@@ -631,11 +631,11 @@
     "ods_code": "RXV",
     "press_email": "communications@gmmh.nhs.uk",
     "press_email_alt": null,
-    "press_source_url": "https://www.gmmh.nhs.uk/contact-us",
+    "press_source_url": "https://www.gmmh.nhs.uk/media-centre",
     "foi_email": "foi@gmmh.nhs.uk",
     "foi_email_alt": null,
     "foi_source_url": "https://www.gmmh.nhs.uk/contact-us",
-    "notes": null
+    "notes": "source url updated 2026-09-05: press address unchanged (communications@gmmh.nhs.uk) but it is no longer printed on https://www.gmmh.nhs.uk/contact-us - it now sits on https://www.gmmh.nhs.uk/media-centre, verified there this run."
   },
   {
     "trust_name": "Guy's and St Thomas' NHS Foundation Trust",
